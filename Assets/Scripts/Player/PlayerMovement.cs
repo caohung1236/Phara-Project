@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerMovement : OurMonoBehaviour
 {
     [SerializeField] protected float jumpForce;
-    [SerializeField] protected bool isFloating = false;
     private float originalGravityScale;
+    [SerializeField] protected bool isFloating = false;
+    private bool isOnGround = true;
     private Rigidbody2D playerRb;
 
     protected override void Start()
@@ -21,6 +22,7 @@ public class PlayerMovement : OurMonoBehaviour
         {
             Jump();
             isFloating = true;
+            isOnGround = false;
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -41,5 +43,10 @@ public class PlayerMovement : OurMonoBehaviour
     protected virtual void Jump()
     {
         playerRb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+    }
+
+    protected virtual void OnCollisisonEnter2D(Collision2D collision2D)
+    {
+        isOnGround = true;
     }
 }
