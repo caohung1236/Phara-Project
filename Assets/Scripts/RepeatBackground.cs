@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class RepeatBackground : OurMonoBehaviour
 {
-    private Vector3 startPos;
-    private float repeatWidth = 50;
+    [SerializeField] protected float speed = 0.5f;
+    [SerializeField] protected float repeatDistance = 21;
+    private Vector3 startPosition;
 
     protected override void Start()
     {
-        base.Start();
-        startPos = transform.position;
-        repeatWidth = GetComponent<BoxCollider>().size.x / 2;
+        startPosition = transform.position;
     }
 
-    protected virtual void Update()
+    void Update()
     {
-        if (transform.position.x < startPos.x - repeatWidth)
-        {
-            transform.position = startPos;
-        }
+        float newPosition = Mathf.Repeat(Time.time * speed, repeatDistance);
+        transform.position = startPosition + Vector3.left * newPosition;
     }
 }
