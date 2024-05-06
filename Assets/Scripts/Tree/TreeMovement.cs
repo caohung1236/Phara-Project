@@ -7,7 +7,7 @@ public class TreeMovement : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 15f;
-    protected float rangeY = 1.9f;
+    protected float rangeY = 1.5f;
     protected override void Start()
     {
         base.Start();
