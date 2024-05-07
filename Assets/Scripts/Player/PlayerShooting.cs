@@ -15,7 +15,7 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
-        IsShooting();
+        //IsShooting();
         Shooting();
     }
 
@@ -26,7 +26,7 @@ public class PlayerShooting : MonoBehaviour
 
     protected virtual void Shooting()
     {
-        if (!isShooting) return;
+        //if (!isShooting) return;
 
         shootTimer += Time.fixedDeltaTime;
         if (shootTimer < shootDelay) return;
