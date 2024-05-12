@@ -1,52 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ParallaxEffect : OurMonoBehaviour
 {
-    // public Camera cam;
-    // public Transform followTarget;
-    // Vector2 startingPosition;
-    // float startingZ;
-    
-    // Vector2 canMoveSinceStart => (Vector2)cam.transform.position - startingPosition;
-    // float zDistanceFromTarget => transform.position.z - followTarget.transform.position.z;
-    // float clippingPlane => (cam.transform.position.z + (zDistanceFromTarget > 0 ? cam.farClipPlane : cam.nearClipPlane));
-    // float parallaxFactor => Mathf.Abs(zDistanceFromTarget) / clippingPlane;
+    Transform cam;
+    Vector3 camStartPos;
+    float distance;
 
-    // protected override void Start()
-    // {
-    //     base.Start();
-    //     startingPosition = transform.position;
-    //     startingZ = transform.position.z;
-    // }
+    GameObject[] backgrounds;
+    Material[] mat;
+    float[] backSpeed;
 
-    // protected virtual void Update()
-    // {
-    //     Vector2 newPosition = startingPosition + canMoveSinceStart * parallaxFactor;
+    float farthestBack;
 
-    //     transform.position = new Vector3(newPosition.x, newPosition.y, startingZ);
-    // }
-
-    public float speed = 0.5f;
-    public float repeatDistance = 20f;
-    public Transform cameraTransform;
-    private Vector3 lastCameraPosition;
-    private Vector3 startPosition;
+    [Range(0.01f, 0.05f)]
+    public float parallaxSpeed;
 
     protected override void Start()
     {
-        startPosition = transform.position;
-        lastCameraPosition = cameraTransform.position;
+        base.Start();
+        cam = Camera.main.transform;
+        camStartPos = cam.position;
+
+        int backCount = transform.childCount;
+        mat = new Material[backCount];
+        backSpeed = new float[backCount];
+        backgrounds = new GameObject[backCount];
+
+        for (int i = 0; i < backCount; i++)
+        {
+            backgrounds[i] = transform.GetChild(i).gameObject;
+            mat[i] = backgrounds[i].GetComponent<Renderer>().material;
+        }
+
+        BackSpeedCalculate(backCount);
     }
 
-    void Update()
+    void BackSpeedCalculate(int backCount)
     {
-        Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;
-        transform.position += deltaMovement * speed;
-        lastCameraPosition = cameraTransform.position;
+        for (int i = 0; i < backCount; i++)
+        {
+            if ((backgrounds[i].transform.position.z - cam.position.z) > farthestBack)
+            {
+                farthestBack = backgrounds[i].transform.position.z - cam.position.z;
+            }
+        }
 
-        float newPosition = Mathf.Repeat(transform.position.x, repeatDistance);
-        transform.position = new Vector3(startPosition.x + newPosition, transform.position.y, transform.position.z);
+        for (int i = 0; i < backCount; i++)
+        {
+            backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) / farthestBack;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        distance = cam.position.x - camStartPos.x;
+        //transform.position = new Vector3(cam.position.x, transform.position.y, 0);
+
+        for (int i = 0; i < backgrounds.Length; i++)
+        {
+            float speed = backSpeed[i] * parallaxSpeed;
+            mat[i].SetTextureOffset("_MainTex", new Vector2(distance, 0) * speed);
+        }
     }
 }
