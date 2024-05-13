@@ -12,11 +12,5 @@ public class PlayerDetect : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Destroy...");
         }
-        
-        if (collider2D.CompareTag("NPC"))
-        {
-            LevelChanger.instance.NextLevel();
-            Debug.Log("Scene...");
-        }
     }
 }

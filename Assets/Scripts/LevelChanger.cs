@@ -5,29 +5,30 @@ using UnityEngine;
 
 public class LevelChanger : MonoBehaviour
 {
-    public static LevelChanger instance;
+    public float timeRemaining;
     [SerializeField] Animator transitionAnim;
 
-    protected virtual void Awake()
+    public void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void Update()
-    {
-        
+        NextLevel();
     }
 
     public void NextLevel()
     {
+        StartCoroutine(LoadNextLevel());
+    }
+
+    IEnumerator LoadNextLevel()
+    {
+        float timer = timeRemaining;
+
+        while (timer > 0)
+        {
+            yield return new WaitForSeconds(1);
+            timer -= 1f;
+        }
+
+        yield return new WaitForSeconds(3);
         transitionAnim.SetTrigger("End");
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         transitionAnim.SetTrigger("Start");
