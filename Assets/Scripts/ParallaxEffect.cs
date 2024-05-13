@@ -1,68 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class ParallaxEffect : OurMonoBehaviour
+public class ParallaxEffect : MonoBehaviour
 {
-    Transform cam;
-    Vector3 camStartPos;
-    float distance;
+    [SerializeField] private Transform[] backgrounds; // List of all back- and foregrounds to be parallaxed
+    [SerializeField] private float smoothing = 1f; // How smooth the parallax effect should be. Make sure to set this above 0
 
-    GameObject[] backgrounds;
-    Material[] mat;
-    float[] backSpeed;
+    private float[] parallaxScales; // Proportion of the camera's movement to move the backgrounds by
+    private Transform cam; // Reference to the main camera's transform
+    private Vector3 previousCamPos; // Position of the camera in the previous frame
 
-    float farthestBack;
-
-    [Range(0.01f, 0.05f)]
-    public float parallaxSpeed;
-
-    protected override void Start()
+    // Called before Start(). Great for references
+    void Awake()
     {
-        base.Start();
+        // Set up the camera reference
         cam = Camera.main.transform;
-        camStartPos = cam.position;
-
-        int backCount = transform.childCount;
-        mat = new Material[backCount];
-        backSpeed = new float[backCount];
-        backgrounds = new GameObject[backCount];
-
-        for (int i = 0; i < backCount; i++)
-        {
-            backgrounds[i] = transform.GetChild(i).gameObject;
-            mat[i] = backgrounds[i].GetComponent<Renderer>().material;
-        }
-
-        BackSpeedCalculate(backCount);
     }
 
-    void BackSpeedCalculate(int backCount)
+    // Use this for initialization
+    void Start()
     {
-        for (int i = 0; i < backCount; i++)
-        {
-            if ((backgrounds[i].transform.position.z - cam.position.z) > farthestBack)
-            {
-                farthestBack = backgrounds[i].transform.position.z - cam.position.z;
-            }
-        }
+        // The previous frame had the current frame's camera position
+        previousCamPos = cam.position;
 
-        for (int i = 0; i < backCount; i++)
-        {
-            backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) / farthestBack;
-        }
-    }
-
-    private void LateUpdate()
-    {
-        distance = cam.position.x - camStartPos.x;
-        //transform.position = new Vector3(cam.position.x, transform.position.y, 0);
-
+        // Assigning corresponding parallaxScales
+        parallaxScales = new float[backgrounds.Length];
         for (int i = 0; i < backgrounds.Length; i++)
         {
-            float speed = backSpeed[i] * parallaxSpeed;
-            mat[i].SetTextureOffset("_MainTex", new Vector2(distance, 0) * speed);
+            parallaxScales[i] = backgrounds[i].position.z * -1;
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // For each background
+        for (int i = 0; i < backgrounds.Length; i++)
+        {
+            // Parallax is the opposite of the camera movement because the previous frame multiplied by the scale
+            float parallax = (previousCamPos.x - cam.position.x) * parallaxScales[i];
+
+            // Set a target x position which is the current position plus the parallax, multiplied by the scale
+            float backgroundTargetPosX = backgrounds[i].position.x + parallax;
+
+            // Create a target position which is the background's current position with its target x position
+            Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, backgrounds[i].position.y, backgrounds[i].position.z);
+
+            // Fade between current position and the target position using lerp
+            backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, backgroundTargetPos, smoothing * Time.deltaTime);
+        }
+
+        // Set the previousCamPos to the camera's position at the end of this frame
+        previousCamPos = cam.position;
     }
 }

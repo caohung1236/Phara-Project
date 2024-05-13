@@ -28,10 +28,13 @@ public class LevelChanger : MonoBehaviour
             timer -= 1f;
         }
 
-        yield return new WaitForSeconds(3);
-        transitionAnim.SetTrigger("End");
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-        transitionAnim.SetTrigger("Start");
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) // Kiểm tra xem có scene tiếp theo không
+        {
+            transitionAnim.SetTrigger("End");
+            SceneManager.LoadSceneAsync(nextSceneIndex);
+            transitionAnim.SetTrigger("Start");
+        }
     }
 
     public void LoadScene(string sceneName)
