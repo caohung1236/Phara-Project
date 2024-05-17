@@ -1,0 +1,42 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ArrowRandom : OurMonoBehaviour
+{
+    [SerializeField] protected bool isSpawning = false;
+    protected float rangeX = 15f;
+    protected float rangeY = 5.5f;
+    protected override void Start()
+    {
+        base.Start();
+    }
+
+    protected virtual void Update()
+    {
+        if (!isSpawning)
+        {
+            SpawnGround();
+        }
+    }
+
+    protected virtual void SpawnGround()
+    {
+        float spawnPosX = UnityEngine.Random.Range(rangeX, rangeX + rangeX);
+        float spawnPosY = UnityEngine.Random.Range(-2f, rangeY);
+        Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
+        Quaternion rotation = transform.rotation;
+        Transform newArrow = ArrowSpawner.Instance.Spawn(ArrowSpawner.arrowOne, spawnPos, rotation);
+        if (newArrow == null) return;
+        newArrow.gameObject.SetActive(true);
+        isSpawning = true;
+        Invoke(nameof(ResetSpawning), 1.5f);
+        Debug.Log("Spawning...");
+    }
+
+    protected void ResetSpawning()
+    {
+        isSpawning = false;
+    }
+}
