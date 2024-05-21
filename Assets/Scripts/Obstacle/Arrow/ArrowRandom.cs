@@ -17,11 +17,11 @@ public class ArrowRandom : OurMonoBehaviour
     {
         if (!isSpawning)
         {
-            SpawnGround();
+            SpawnArrow();
         }
     }
 
-    protected virtual void SpawnGround()
+    protected virtual void SpawnArrow()
     {
         float spawnPosX = UnityEngine.Random.Range(rangeX, rangeX + rangeX);
         float spawnPosY = UnityEngine.Random.Range(-2f, rangeY);

@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Enemy
-  - NPC
   - Arrow
+  - NPC
+  - Enemy
+  - Collectible
   layers:
   - Default
   - TransparentFX
@@ -17,6 +17,8 @@ TagManager:
   - UI
   - 
   - 
+  - player
+  - projectile
   - 
   - 
   - 
@@ -37,13 +39,11 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - NPC
+  - Camera
   m_SortingLayers:
   - name: Background
-    uniqueID: 1126776609
+    uniqueID: 2766579207
     locked: 0
   - name: Default
     uniqueID: 0
