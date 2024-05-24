@@ -7,7 +7,14 @@ public class LevelChanger : MonoBehaviour
 {
     public float timeRemaining;
     [SerializeField] Animator transitionAnim;
+    private static LevelChanger instance;
+    public static LevelChanger Instance { get { return instance; } }
 
+    void Awake()
+    {
+        LevelChanger.instance = this;
+    }
+    
     public void Start()
     {
         NextLevel();

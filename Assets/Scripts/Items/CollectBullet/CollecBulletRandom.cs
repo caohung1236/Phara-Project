@@ -1,13 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowRandom : OurMonoBehaviour
+public class CollectBulletRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 15f;
-    protected float rangeY = 5.5f;
+    protected float rangeX = 40f;
+    protected float rangeY = -2f;
     protected override void Start()
     {
         base.Start();
@@ -17,21 +16,21 @@ public class ArrowRandom : OurMonoBehaviour
     {
         if (!isSpawning)
         {
-            SpawnArrow();
+            SpawnCollectible();
         }
     }
 
-    protected virtual void SpawnArrow()
+    protected virtual void SpawnCollectible()
     {
-        float spawnPosX = UnityEngine.Random.Range(rangeX, rangeX + rangeX);
-        float spawnPosY = UnityEngine.Random.Range(2f, rangeY);
+        float spawnPosX = rangeX;
+        float spawnPosY = Random.Range(rangeY, 4.5f);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
-        Transform newArrow = ArrowSpawner.Instance.Spawn(ArrowSpawner.arrowOne, spawnPos, rotation);
-        if (newArrow == null) return;
-        newArrow.gameObject.SetActive(true);
+        Transform newCollect = CollectBulletSpawner.Instance.Spawn(CollectBulletSpawner.collectBullet, spawnPos, rotation);
+        if (newCollect == null) return;
+        newCollect.gameObject.SetActive(true);
         isSpawning = true;
-        Invoke(nameof(ResetSpawning), 2f);
+        Invoke(nameof(ResetSpawning), 20f);
         Debug.Log("Spawning...");
     }
 

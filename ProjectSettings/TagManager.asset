@@ -7,7 +7,8 @@ TagManager:
   - Arrow
   - NPC
   - Enemy
-  - Collectible
+  - CollectBullet
+  - CollectShield
   layers:
   - Default
   - TransparentFX

@@ -1201,9 +1201,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 411747632}
-  - component: {fileID: 411747633}
   m_Layer: 0
-  m_Name: SlimeMoveSpeed
+  m_Name: TreeMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1224,20 +1223,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1920644120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &411747633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411747631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f648c4e415d36b74e820df01942582d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  direction: {x: -1, y: 0, z: 0}
 --- !u!1 &426104096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,7 +1986,7 @@ Animator:
   m_GameObject: {fileID: 587340494}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 503ca6671560877409b2b1eeda30cf09, type: 2}
+  m_Controller: {fileID: 9100000, guid: b97c346008ebd9d45b921383627a528c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2837,15 +2822,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 889902371}
-  - component: {fileID: 889902373}
-  - component: {fileID: 889902372}
   m_Layer: 0
-  m_Name: SlimeSpawn
+  m_Name: TreeMonsterSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &889902371
 Transform:
   m_ObjectHideFlags: 0
@@ -2863,35 +2846,6 @@ Transform:
   - {fileID: 1172933128}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &889902372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889902368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a682b4656011f6347bd796fc748760b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSpawning: 0
---- !u!114 &889902373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889902368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603fca9304c6299498cd79cb1908ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holder: {fileID: 1172933128}
-  prefabs:
-  - {fileID: 1920644120}
-  poolObjs: []
 --- !u!1 &912141812
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,6 +3142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShooting: {fileID: 31287028}
+  shootingTime: 5
+  remainingTime: 0
 --- !u!61 &917915551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6073,12 +6029,12 @@ GameObject:
   - component: {fileID: 1920644122}
   - component: {fileID: 1920644121}
   m_Layer: 0
-  m_Name: Slime_1
+  m_Name: Tree_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1920644120
 Transform:
   m_ObjectHideFlags: 0
@@ -6088,7 +6044,7 @@ Transform:
   m_GameObject: {fileID: 1920644119}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6156,7 +6112,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.046166897, y: -0.01813373}
+  m_Offset: {x: 1.1888545, y: -1.5903418}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6167,7 +6123,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3323741, y: 0.64374465}
+  m_Size: {x: 0.9271655, y: 3.3019109}
   m_EdgeRadius: 0
 --- !u!1 &1926641425
 GameObject:
@@ -6481,7 +6437,7 @@ Transform:
   m_GameObject: {fileID: 2068492491}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6497,7 +6453,7 @@ Animator:
   m_GameObject: {fileID: 2068492491}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 95e278e9f6b9f92448959c1a9afdf44d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 503ca6671560877409b2b1eeda30cf09, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6549,7 +6505,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 9f635162eca8695448a5cb042bfc90d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b45e31ddd6d3da488c81cb466a9ecc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6576,7 +6532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2110731036
 Transform:
   m_ObjectHideFlags: 0
@@ -6713,8 +6669,8 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 917915546}
   - {fileID: 889902371}
-  - {fileID: 877824816}
   - {fileID: 1288305633}
+  - {fileID: 877824816}
   - {fileID: 1331735576}
   - {fileID: 1386401028}
   - {fileID: 1305230493}

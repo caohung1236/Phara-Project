@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectibleRandom : OurMonoBehaviour
+public class CollectShieldRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 50f;
-    protected float rangeY = -3.1f;
+    protected float rangeX = 32f;
+    protected float rangeY = -2;
     protected override void Start()
     {
         base.Start();
@@ -23,14 +23,14 @@ public class CollectibleRandom : OurMonoBehaviour
     protected virtual void SpawnCollectible()
     {
         float spawnPosX = rangeX;
-        float spawnPosY = rangeY;
+        float spawnPosY = Random.Range(rangeY, 5.5f);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
-        Transform newCollect = CollectibleSpawner.Instance.Spawn(CollectibleSpawner.collectOne, spawnPos, rotation);
+        Transform newCollect = CollectShieldSpawner.Instance.Spawn(CollectShieldSpawner.collectShield, spawnPos, rotation);
         if (newCollect == null) return;
         newCollect.gameObject.SetActive(true);
         isSpawning = true;
-        Invoke(nameof(ResetSpawning), 30f);
+        Invoke(nameof(ResetSpawning), 40f);
         Debug.Log("Spawning...");
     }
 

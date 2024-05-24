@@ -28,7 +28,7 @@ public class SlimeRandom : OurMonoBehaviour
         if (newSlime == null) return;
         newSlime.gameObject.SetActive(true);
         isSpawning = true;
-        Invoke(nameof(ResetSpawning), 10f);
+        Invoke(nameof(ResetSpawning), 5f);
         Debug.Log("Spawning...");
     }
 
