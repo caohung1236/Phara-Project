@@ -11,9 +11,14 @@ public class PlayerDetect : OurMonoBehaviour
     [SerializeField] private bool isInvincible = false;
     [SerializeField] private float invincibilityTimer = 0f;
     [SerializeField] private float maxInvincibilityTime = 15.0f;
+    public ParticleSystem picksItemsParicles;
+    private BoxCollider2D myCollider;
+    private Rigidbody2D myRigidbody;
 
     protected override void Start()
     {
+        myCollider = GetComponent<BoxCollider2D>();
+        myRigidbody = GetComponent<Rigidbody2D>();
         remainingTime = shootingTime;
     }
 
@@ -46,8 +51,10 @@ public class PlayerDetect : OurMonoBehaviour
         {
             if (!isInvincible)
             {
-                Destroy(gameObject);
                 Debug.Log("Destroy...");
+                myCollider.enabled = false;
+                myRigidbody.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
+                myRigidbody.gravityScale = 50;
             }
             else
             {

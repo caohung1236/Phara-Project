@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - CollectBullet
   - CollectShield
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
