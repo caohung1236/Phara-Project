@@ -14,11 +14,14 @@ public class PlayerDetect : OurMonoBehaviour
     public ParticleSystem picksItemsParicles;
     private BoxCollider2D myCollider;
     private Rigidbody2D myRigidbody;
+    private AudioSource audioSource;
+    public AudioClip collectSound;
 
     protected override void Start()
     {
         myCollider = GetComponent<BoxCollider2D>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         remainingTime = shootingTime;
     }
 
@@ -78,6 +81,7 @@ public class PlayerDetect : OurMonoBehaviour
         
         if (collider2D.CompareTag("CollectBullet"))
         {
+            audioSource.PlayOneShot(collectSound, 1f);
             Destroy(collider2D.gameObject);
             playerShooting.SetActive(true);
             remainingTime = shootingTime;
@@ -85,9 +89,16 @@ public class PlayerDetect : OurMonoBehaviour
 
         if (collider2D.CompareTag("CollectShield"))
         {
+            audioSource.PlayOneShot(collectSound, 1f);
             Destroy(collider2D.gameObject);
             isInvincible = true;
             invincibilityTimer = 0;
+        }
+
+        if (collider2D.CompareTag("CollectGem"))
+        {
+            audioSource.PlayOneShot(collectSound, 1f);
+            Destroy(collider2D.gameObject);
         }
     }
 }

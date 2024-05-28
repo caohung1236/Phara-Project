@@ -23,7 +23,7 @@ public class CollectShieldRandom : OurMonoBehaviour
     protected virtual void SpawnCollectible()
     {
         float spawnPosX = rangeX;
-        float spawnPosY = Random.Range(rangeY, 5.5f);
+        float spawnPosY = Random.Range(rangeY, 4.5f);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
         Transform newCollect = CollectShieldSpawner.Instance.Spawn(CollectShieldSpawner.collectShield, spawnPos, rotation);

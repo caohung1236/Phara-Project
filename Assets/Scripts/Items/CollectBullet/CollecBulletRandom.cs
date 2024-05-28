@@ -23,7 +23,7 @@ public class CollectBulletRandom : OurMonoBehaviour
     protected virtual void SpawnCollectible()
     {
         float spawnPosX = rangeX;
-        float spawnPosY = Random.Range(rangeY, 4.5f);
+        float spawnPosY = Random.Range(rangeY, 3.5f);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
         Transform newCollect = CollectBulletSpawner.Instance.Spawn(CollectBulletSpawner.collectBullet, spawnPos, rotation);

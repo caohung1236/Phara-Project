@@ -5,12 +5,23 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : OurMonoBehaviour
 {
-    [SerializeField] protected float jumpForce;
+    private static PlayerMovement instance;
+    public static PlayerMovement Instance { get => instance; }
+    public float jumpForce;
     private float originalGravityScale;
     [SerializeField] protected bool isFloating = false;
     // private bool isOnGround = true;
     private Rigidbody2D playerRb;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        if (PlayerMovement.instance != null)
+        {
+            Debug.LogError("Only 1 PlayerMovement allow to exist");
+        }
+        PlayerMovement.instance = this;
+    }
 
     protected override void Start()
     {

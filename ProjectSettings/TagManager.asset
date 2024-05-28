@@ -10,6 +10,9 @@ TagManager:
   - CollectBullet
   - CollectShield
   - FxTemporaire
+  - Bullet
+  - Collectible
+  - CollectGem
   layers:
   - Default
   - TransparentFX

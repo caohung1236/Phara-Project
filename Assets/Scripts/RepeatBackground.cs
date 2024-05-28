@@ -7,7 +7,6 @@ public class RepeatBackground : OurMonoBehaviour
     [SerializeField] protected float speed = 0.5f;
     [SerializeField] protected float repeatDistance = 21;
     private Vector3 startPosition;
-
     protected override void Start()
     {
         startPosition = transform.position;
