@@ -51,9 +51,9 @@ public class PlayerMovement : OurMonoBehaviour
         {
             playerRb.gravityScale = originalGravityScale;
         }
-        if (transform.parent.position.x < -8)
+        if (transform.parent.position.x < -7)
         {
-            transform.parent.position = new Vector3(-8, transform.parent.position.y, transform.parent.position.z);
+            transform.parent.position = new Vector3(-7, transform.parent.position.y, transform.parent.position.z);
         }
     }
 
