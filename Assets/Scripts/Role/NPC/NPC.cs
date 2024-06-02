@@ -12,6 +12,7 @@ public class NPC : MonoBehaviour
     public GameObject background;
     public GameObject background1;
     public GameObject background2;
+    public GameObject background3;
     public GameObject sceneTransition;
     public Text dialogueText;
     [SerializeField] Animator transitionAnim;
@@ -61,8 +62,9 @@ public class NPC : MonoBehaviour
             NPCMove.Instance.speed = 3;
             PlayerMovement.Instance.jumpForce = 3;
             background.SetActive(false);
-            background1.SetActive(true);
+            background1.SetActive(false);
             background2.SetActive(true);
+            background3.SetActive(true);
             gameObject.SetActive(false);
             ActivateGameObjects();
             transitionAnim.SetTrigger("End");
@@ -120,8 +122,9 @@ public class NPC : MonoBehaviour
             NPCMove.Instance.speed = 0;
             PlayerMovement.Instance.jumpForce = 0;
             background.SetActive(true);
-            background1.SetActive(false);
+            background1.SetActive(true);
             background2.SetActive(false);
+            background3.SetActive(false);
             transitionAnim.SetTrigger("End");
         }
     }

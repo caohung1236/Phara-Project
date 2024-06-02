@@ -16,6 +16,8 @@ public class PlayerDetect : OurMonoBehaviour
     private Rigidbody2D myRigidbody;
     private AudioSource audioSource;
     public AudioClip collectSound;
+    public AudioClip playerHitSound;
+    public AudioClip footstepSound;
 
     protected override void Start()
     {
@@ -55,9 +57,11 @@ public class PlayerDetect : OurMonoBehaviour
             if (!isInvincible)
             {
                 Debug.Log("Destroy...");
+                audioSource.PlayOneShot(playerHitSound, 1);
                 myCollider.enabled = false;
                 myRigidbody.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
                 myRigidbody.gravityScale = 50;
+                PlayerMovement.Instance.jumpForce = 0;
             }
             else
             {
@@ -69,6 +73,7 @@ public class PlayerDetect : OurMonoBehaviour
         {
             if (!isInvincible)
             {
+                audioSource.PlayOneShot(playerHitSound, 1);
                 Destroy(gameObject);
                 Destroy(collider2D.gameObject);
                 Debug.Log("Destroy...");
@@ -99,6 +104,23 @@ public class PlayerDetect : OurMonoBehaviour
         {
             audioSource.PlayOneShot(collectSound, 1f);
             Destroy(collider2D.gameObject);
+        }
+    }
+
+    protected virtual void OnCollisisonEnter2D(Collision2D collision2D)
+    {
+        if (collision2D.gameObject.CompareTag("Ground") && PlayerMovement.isOnGround)
+        {
+            Debug.Log("Playing sound...");
+            audioSource.PlayOneShot(footstepSound, 1);
+        }
+    }
+
+    protected virtual void OnCollisionExit2D(Collision2D collision2D)
+    {
+        if (collision2D.gameObject.CompareTag("Ground"))
+        {
+            audioSource.Stop();
         }
     }
 }

@@ -10,7 +10,7 @@ public class PlayerMovement : OurMonoBehaviour
     public float jumpForce;
     private float originalGravityScale;
     [SerializeField] protected bool isFloating = false;
-    // private bool isOnGround = true;
+    public static bool isOnGround = true;
     private Rigidbody2D playerRb;
 
     protected override void Awake()
@@ -35,7 +35,7 @@ public class PlayerMovement : OurMonoBehaviour
         {
             Jump();
             isFloating = true;
-            // isOnGround = false;
+            isOnGround = false;
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -61,9 +61,4 @@ public class PlayerMovement : OurMonoBehaviour
     {
         playerRb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
     }
-
-    // protected virtual void OnCollisisonEnter2D(Collision2D collision2D)
-    // {
-    //     isOnGround = true;
-    // }
 }
