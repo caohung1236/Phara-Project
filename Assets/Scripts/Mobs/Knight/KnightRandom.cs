@@ -24,10 +24,13 @@ public class KnightRandom : OurMonoBehaviour
     {
         Vector3 spawnPos = new(rangeX, -rangeY, 0);
         Quaternion rotation = transform.rotation;
-        Transform newKnight = KnightSpawner.Instance.Spawn(KnightSpawner.knightOne, spawnPos, rotation);
-        if (newKnight == null) return;
-        newKnight.gameObject.SetActive(true);
-        isSpawning = true;
+        if (PlayerDetect.Instance.isGameOver == false)
+        {
+            Transform newKnight = KnightSpawner.Instance.Spawn(KnightSpawner.knightOne, spawnPos, rotation);
+            if (newKnight == null) return;
+            newKnight.gameObject.SetActive(true);
+            isSpawning = true;
+        }
         Invoke(nameof(ResetSpawning), 10f);
         Debug.Log("Spawning...");
     }

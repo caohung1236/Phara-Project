@@ -18,6 +18,22 @@ public class PlayerDetect : OurMonoBehaviour
     public AudioClip collectSound;
     public AudioClip playerHitSound;
     public AudioClip footstepSound;
+    private static PlayerDetect instance;
+    public static PlayerDetect Instance { get => instance; }
+    public bool isGameOver = false;
+    public GameObject bulletEffect;
+    public GameObject shieldEffect;
+    public GameObject shield;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        if (PlayerDetect.instance != null )
+        {
+            Debug.LogError("Only 1 PlayerDetect allow to exist");
+        }
+        PlayerDetect.instance = this;
+    }
 
     protected override void Start()
     {
@@ -35,6 +51,7 @@ public class PlayerDetect : OurMonoBehaviour
 
             if (remainingTime <= 0)
             {
+                bulletEffect.SetActive(false);
                 playerShooting.SetActive(false);
             }
         }
@@ -45,6 +62,8 @@ public class PlayerDetect : OurMonoBehaviour
 
             if (invincibilityTimer >= maxInvincibilityTime)
             {
+                shieldEffect.SetActive(false);
+                shield.SetActive(false);
                 isInvincible = false;
                 invincibilityTimer = 0;
             }
@@ -60,8 +79,9 @@ public class PlayerDetect : OurMonoBehaviour
                 audioSource.PlayOneShot(playerHitSound, 1);
                 myCollider.enabled = false;
                 myRigidbody.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
-                myRigidbody.gravityScale = 50;
+                myRigidbody.gravityScale = 100;
                 PlayerMovement.Instance.jumpForce = 0;
+                isGameOver = true;
             }
             else
             {
@@ -74,6 +94,7 @@ public class PlayerDetect : OurMonoBehaviour
             if (!isInvincible)
             {
                 audioSource.PlayOneShot(playerHitSound, 1);
+                isGameOver = true;
                 Destroy(gameObject);
                 Destroy(collider2D.gameObject);
                 Debug.Log("Destroy...");
@@ -84,26 +105,32 @@ public class PlayerDetect : OurMonoBehaviour
             }
         }
         
-        if (collider2D.CompareTag("CollectBullet"))
+        if (isGameOver == false)
         {
-            audioSource.PlayOneShot(collectSound, 1f);
-            Destroy(collider2D.gameObject);
-            playerShooting.SetActive(true);
-            remainingTime = shootingTime;
-        }
+            if (collider2D.CompareTag("CollectBullet"))
+            {
+                audioSource.PlayOneShot(collectSound, 1f);
+                Destroy(collider2D.gameObject);
+                playerShooting.SetActive(true);
+                bulletEffect.SetActive(true);
+                remainingTime = shootingTime;
+            }
 
-        if (collider2D.CompareTag("CollectShield"))
-        {
-            audioSource.PlayOneShot(collectSound, 1f);
-            Destroy(collider2D.gameObject);
-            isInvincible = true;
-            invincibilityTimer = 0;
-        }
+            if (collider2D.CompareTag("CollectShield"))
+            {
+                audioSource.PlayOneShot(collectSound, 1f);
+                Destroy(collider2D.gameObject);
+                isInvincible = true;
+                shieldEffect.SetActive(true);
+                shield.SetActive(true);
+                invincibilityTimer = 0;
+            }
 
-        if (collider2D.CompareTag("CollectGem"))
-        {
-            audioSource.PlayOneShot(collectSound, 1f);
-            Destroy(collider2D.gameObject);
+            if (collider2D.CompareTag("CollectGem"))
+            {
+                audioSource.PlayOneShot(collectSound, 1f);
+                Destroy(collider2D.gameObject);
+            }
         }
     }
 

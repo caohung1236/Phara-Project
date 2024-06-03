@@ -43,9 +43,4 @@ public class LevelChanger : MonoBehaviour
             transitionAnim.SetTrigger("Start");
         }
     }
-
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadSceneAsync(sceneName);
-    }
 }

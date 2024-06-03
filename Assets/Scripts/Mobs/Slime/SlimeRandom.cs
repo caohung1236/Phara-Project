@@ -24,10 +24,13 @@ public class SlimeRandom : OurMonoBehaviour
     {
         Vector3 spawnPos = new(rangeX, -rangeY, 0);
         Quaternion rotation = transform.rotation;
-        Transform newSlime = SlimeSpawner.Instance.Spawn(SlimeSpawner.slimeOne, spawnPos, rotation);
-        if (newSlime == null) return;
-        newSlime.gameObject.SetActive(true);
-        isSpawning = true;
+        if (PlayerDetect.Instance.isGameOver == false)
+        {
+            Transform newSlime = SlimeSpawner.Instance.Spawn(SlimeSpawner.slimeOne, spawnPos, rotation);
+            if (newSlime == null) return;
+            newSlime.gameObject.SetActive(true);
+            isSpawning = true;
+        }
         Invoke(nameof(ResetSpawning), 5f);
         Debug.Log("Spawning...");
     }

@@ -27,10 +27,13 @@ public class ArrowRandom : OurMonoBehaviour
         float spawnPosY = UnityEngine.Random.Range(2f, rangeY);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
-        Transform newArrow = ArrowSpawner.Instance.Spawn(ArrowSpawner.arrowOne, spawnPos, rotation);
-        if (newArrow == null) return;
-        newArrow.gameObject.SetActive(true);
-        isSpawning = true;
+        if (PlayerDetect.Instance.isGameOver == false)
+        {
+            Transform newArrow = ArrowSpawner.Instance.Spawn(ArrowSpawner.arrowOne, spawnPos, rotation);
+            if (newArrow == null) return;
+            newArrow.gameObject.SetActive(true);
+            isSpawning = true;
+        }
         Invoke(nameof(ResetSpawning), 2f);
         Debug.Log("Spawning...");
     }
