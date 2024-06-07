@@ -10,9 +10,11 @@ public class PlayerMovement : OurMonoBehaviour
     public float jumpForce;
     private float originalGravityScale;
     [SerializeField] protected bool isFloating = false;
-    public static bool isOnGround = true;
+    public bool isOnGround = true;
     private Rigidbody2D playerRb;
-
+    private AudioSource audioSource;
+    public AudioClip clickSound;
+    public bool isPaused;
     protected override void Awake()
     {
         base.Awake();
@@ -27,15 +29,25 @@ public class PlayerMovement : OurMonoBehaviour
     {
         base.Start();
         playerRb = transform.parent.GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         originalGravityScale = playerRb.gravityScale;
     }
     protected virtual void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Time.timeScale == 0)
+        {
+            isPaused = true;
+        }
+        else
+        {
+            isPaused = false;
+        }
+
+        if (Input.GetMouseButtonDown(0) && isPaused == false)
         {
             Jump();
             isFloating = true;
-            isOnGround = false;
+            audioSource.PlayOneShot(clickSound, 1);
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -50,10 +62,6 @@ public class PlayerMovement : OurMonoBehaviour
         else
         {
             playerRb.gravityScale = originalGravityScale;
-        }
-        if (transform.parent.position.x < -7)
-        {
-            transform.parent.position = new Vector3(-7, transform.parent.position.y, transform.parent.position.z);
         }
     }
 

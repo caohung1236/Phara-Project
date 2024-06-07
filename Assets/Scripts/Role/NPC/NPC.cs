@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
@@ -9,17 +8,17 @@ public class NPC : MonoBehaviour
     public GameObject[] gameObjects;
     public GameObject dialoguePanel;
     public GameObject contButton;
-    public GameObject background;
     public GameObject background1;
     public GameObject background2;
     public GameObject background3;
+    public GameObject background4;
     public GameObject sceneTransition;
     public Text dialogueText;
     [SerializeField] Animator transitionAnim;
-    public GameObject slimeSpawn;
-    public GameObject knightSpawn;
+    public GameObject mobGroundSpawn1;
+    public GameObject mobGroundSpawn2;
     public GameObject bulletSpawn;
-    public GameObject arrowSpawn;
+    public GameObject flyObjSpawn;
     public GameObject coBulletSpawn;
     public GameObject coShieldSpawn;
     public GameObject coGemsSpawn;
@@ -33,7 +32,7 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {slimeSpawn, knightSpawn, bulletSpawn, arrowSpawn, coBulletSpawn, coShieldSpawn, coGemsSpawn};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, bulletSpawn, flyObjSpawn, coBulletSpawn, coShieldSpawn, coGemsSpawn};
     }
 
     void Update()
@@ -61,10 +60,10 @@ public class NPC : MonoBehaviour
             transitionAnim.SetTrigger("Start");
             NPCMove.Instance.speed = 3;
             PlayerMovement.Instance.jumpForce = 3;
-            background.SetActive(false);
-            background1.SetActive(false);
+            background1.SetActive(true);
             background2.SetActive(true);
-            background3.SetActive(true);
+            background3.SetActive(false);
+            background4.SetActive(false);
             gameObject.SetActive(false);
             ActivateGameObjects();
             transitionAnim.SetTrigger("End");
@@ -121,10 +120,10 @@ public class NPC : MonoBehaviour
             isDialogueFinished = false;
             NPCMove.Instance.speed = 0;
             PlayerMovement.Instance.jumpForce = 0;
-            background.SetActive(true);
-            background1.SetActive(true);
+            background1.SetActive(false);
             background2.SetActive(false);
-            background3.SetActive(false);
+            background3.SetActive(true);
+            background4.SetActive(true);
             transitionAnim.SetTrigger("End");
         }
     }

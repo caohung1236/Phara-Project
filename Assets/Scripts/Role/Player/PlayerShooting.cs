@@ -7,28 +7,17 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 1.0f;
     [SerializeField] protected float shootTimer = 0.0f;
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         //IsShooting();
         Shooting();
     }
 
-    void FixedUpdate()
-    {
-
-    }
-
     protected virtual void Shooting()
     {
         //if (!isShooting) return;
 
-        shootTimer += Time.fixedDeltaTime;
+        shootTimer += Time.deltaTime;
         if (shootTimer < shootDelay) return;
         shootTimer = 0;
 

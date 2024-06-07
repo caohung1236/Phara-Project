@@ -8,15 +8,16 @@ public class IntroToMain : MonoBehaviour
     public GameObject loadingScreen;
     public GameObject menu;
     public Slider slider;
-
     public void LoadLevel(int sceneIndex)
     {
         StartCoroutine(LoadAsynchronously(sceneIndex));
+        Time.timeScale = 1;
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+
 
         loadingScreen.SetActive(true);
         menu.SetActive(false);
