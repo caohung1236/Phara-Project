@@ -26,7 +26,6 @@ public class PlayerDetect : OurMonoBehaviour
     public GameObject targetObject;
     private new ParticleSystem particleSystem;
     private GameObject particleSystemInstance;
-    Vector2 startPos;
     protected override void Awake()
     {
         base.Awake();
@@ -47,7 +46,6 @@ public class PlayerDetect : OurMonoBehaviour
         particleSystemInstance.transform.SetParent(targetObject.transform);
         particleSystemInstance.transform.localPosition = Vector2.zero;
         particleSystem = particleSystemInstance.GetComponent<ParticleSystem>();
-        startPos = transform.position;
     }
 
     void Update()
@@ -65,25 +63,14 @@ public class PlayerDetect : OurMonoBehaviour
     }
     protected virtual void OnTriggerEnter2D(UnityEngine.Collider2D collider2D)
     {
-        if (collider2D.CompareTag("Enemy"))
+        if (collider2D.CompareTag("EnemySlime"))
         {
-            if (isInvincible == true)
-            {
-                shieldEffect.SetActive(false);
-                shield.SetActive(false);
-                isInvincible = false;
-                Destroy(collider2D.gameObject);
-            }
-            else
-            {
-                audioSource.PlayOneShot(playerHitSound, 1);
-                Debug.Log("Destroy...");
-                myCollider.enabled = false;
-                myRigidbody.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
-                myRigidbody.gravityScale = 100;
-                PlayerMovement.Instance.jumpForce = 0;
-                isGameOver = true;
-            }
+            HandlerKillEnemy(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyKnight"))
+        {
+            HandlerKillEnemy(collider2D);
         }
 
         if (collider2D.CompareTag("Arrow"))
@@ -155,5 +142,26 @@ public class PlayerDetect : OurMonoBehaviour
             isOnGround = false;
             audioSource.Stop();
         }
+    }
+
+    void HandlerKillEnemy(Collider2D collider2D)
+    {
+        if (isInvincible == true)
+            {
+                shieldEffect.SetActive(false);
+                shield.SetActive(false);
+                isInvincible = false;
+                Destroy(collider2D.gameObject);
+            }
+            else
+            {
+                audioSource.PlayOneShot(playerHitSound, 1);
+                Debug.Log("Destroy...");
+                myCollider.enabled = false;
+                myRigidbody.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
+                myRigidbody.gravityScale = 100;
+                PlayerMovement.Instance.jumpForce = 0;
+                isGameOver = true;
+            }
     }
 }

@@ -14,11 +14,23 @@ public class BulletDetect : MonoBehaviour
     }
     protected virtual void OnTriggerEnter2D(UnityEngine.Collider2D collider2D)
     {
-        if (collider2D.gameObject.CompareTag("Enemy"))
+        if (collider2D.gameObject.CompareTag("EnemySlime"))
         {
-            audioSource.PlayOneShot(shootSound, 10);
-            Destroy(gameObject);
-            Debug.Log("Destroy...");
+            GameManager.Instance.slimesCount += 1;
+            HandlerKillEnemy();
         }
+
+        if (collider2D.gameObject.CompareTag("EnemyKnight"))
+        {
+            GameManager.Instance.knightsCount += 1;
+            HandlerKillEnemy();
+        }
+    }
+
+    void HandlerKillEnemy()
+    {
+        audioSource.PlayOneShot(shootSound, 10);
+        Destroy(gameObject);
+        Debug.Log("Destroy...");
     }
 }

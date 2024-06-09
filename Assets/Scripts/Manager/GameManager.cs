@@ -16,7 +16,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] float tweenDuration;
     [SerializeField] CanvasGroup canvasGroup;
     public int gemsCount = 0;
+    public int slimesCount = 0;
+    public int knightsCount = 0;
     public Text gemsText;
+    public Text slimesText;
+    public Text knightsText;
 
 
     // public Text enemysCount;
@@ -28,15 +32,32 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CountGems();
+        CountSlimes();
+        CountKnights();
+        ConditionsMap1();
         IsGameOver();
     }
 
     void CountGems()
     {
-        gemsText.text = $":{gemsCount}/5";
-        if (gemsCount < 5)
+        gemsText.text = $":{gemsCount}/1";
+    }
+
+    void CountSlimes()
+    {
+        slimesText.text = $":{slimesCount}/1";
+    }
+
+    void CountKnights()
+    {
+        knightsText.text = $":{knightsCount}/2";
+    }
+
+    void ConditionsMap1()
+    {
+        if (gemsCount == 1 && slimesCount == 1 && knightsCount == 2)
         {
-            gemsText.text = $":{gemsCount}/5";
+            // SceneManager.LoadScene(2);
         }
     }
 
@@ -49,10 +70,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Retry()
+    public async void Retry()
     {
-        PausePanelOutro();
+        await PausePanelOutro();
         gameOverMenu.SetActive(false);
+        SceneManager.LoadScene(1);
     }
     void PausePanelIntro()
     {
@@ -60,9 +82,9 @@ public class GameManager : MonoBehaviour
         gameOverPanelRect.DOAnchorPosY(middlePosY, tweenDuration).SetUpdate(true);
     }
 
-    void PausePanelOutro()
+    async Task PausePanelOutro()
     {
         canvasGroup.DOFade(0, tweenDuration).SetUpdate(true);
-        gameOverPanelRect.DOAnchorPosY(topPosY, tweenDuration).SetUpdate(true);
+        await gameOverPanelRect.DOAnchorPosY(topPosY, tweenDuration).SetUpdate(true).AsyncWaitForCompletion();
     }
 }

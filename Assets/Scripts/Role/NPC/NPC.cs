@@ -110,6 +110,21 @@ public class NPC : MonoBehaviour
         }
     }
 
+    public void SkipDialogue()
+    {
+        if (isTyping == true)
+        {
+            StopCoroutine(Typing());
+            dialogueText.text = dialogue[index];
+            isTyping = false;
+        }
+        else
+        {
+            dialoguePanel.SetActive(false);
+            isDialogueFinished = true;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
