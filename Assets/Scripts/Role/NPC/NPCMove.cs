@@ -12,10 +12,6 @@ public class NPCMove : OurMonoBehaviour
     protected override void Awake()
     {
         base.Awake();
-        if (NPCMove.instance != null)
-        {
-            Debug.LogError("Only 1 NPCMove allow to exist");
-        }
         NPCMove.instance = this;
     }
 

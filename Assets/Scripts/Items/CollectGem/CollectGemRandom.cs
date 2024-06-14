@@ -5,8 +5,8 @@ using UnityEngine;
 public class CollectGemRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 40f;
-    protected float rangeY = -2f;
+    protected float rangeX = 35f;
+    protected float rangeY = 0.5f;
     protected override void Start()
     {
         base.Start();

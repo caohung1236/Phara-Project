@@ -33,7 +33,7 @@ public class CollectBulletRandom : OurMonoBehaviour
             newCollect.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 20f);
+        Invoke(nameof(ResetSpawning), 15f);
         Debug.Log("Spawning...");
     }
 

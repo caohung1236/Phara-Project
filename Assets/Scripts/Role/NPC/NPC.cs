@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
-    public GameObject[] gameObjects;
+    private GameObject[] gameObjects;
     public GameObject dialoguePanel;
     public GameObject contButton;
     public GameObject background1;
@@ -17,22 +19,32 @@ public class NPC : MonoBehaviour
     [SerializeField] Animator transitionAnim;
     public GameObject mobGroundSpawn1;
     public GameObject mobGroundSpawn2;
+    public GameObject mobGroundSpawn3;
     public GameObject bulletSpawn;
     public GameObject flyObjSpawn;
+    public GameObject groundObjSpawn;
+    public GameObject groundObjSpawn2;
     public GameObject coBulletSpawn;
     public GameObject coShieldSpawn;
     public GameObject coGemsSpawn;
     public string[] dialogue;
     private int index;
-
     public float wordSpeed;
     public bool playerIsClose;
     private bool isDialogueFinished = false;
     private bool isTyping = false;
+    private static NPC instance;
+
+    public static NPC Instance { get => instance; }
+
+    void Awake()
+    {
+        NPC.instance = this;
+    }
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, bulletSpawn, flyObjSpawn, coBulletSpawn, coShieldSpawn, coGemsSpawn};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, bulletSpawn, flyObjSpawn, groundObjSpawn, groundObjSpawn2, coBulletSpawn, coShieldSpawn, coGemsSpawn};
     }
 
     void Update()

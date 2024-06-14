@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Arrow
   - NPC
-  - Enemy
   - CollectBullet
   - CollectShield
   - FxTemporaire
@@ -14,8 +13,14 @@ TagManager:
   - Collectible
   - CollectGem
   - Ground
-  - EnemySlime
   - EnemyKnight
+  - EnemyGoblin
+  - EnemyMushroom
+  - EnemySlime
+  - EnemyCrab
+  - EnemyFish
+  - Waves
+  - Roots
   layers:
   - Default
   - TransparentFX

@@ -16,7 +16,6 @@ public class PlayerShooting : MonoBehaviour
     protected virtual void Shooting()
     {
         //if (!isShooting) return;
-
         shootTimer += Time.deltaTime;
         if (shootTimer < shootDelay) return;
         shootTimer = 0;
@@ -27,6 +26,7 @@ public class PlayerShooting : MonoBehaviour
         if (newBullet == null) return;
 
         newBullet.gameObject.SetActive(true);
+        AudioManager.Instance.PlaySFX("BulletSound");
         Debug.Log("Shooting...");
     }
 

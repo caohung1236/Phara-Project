@@ -5,31 +5,47 @@ using UnityEngine.Rendering;
 
 public class BulletDetect : MonoBehaviour
 {
-    private AudioSource audioSource;
-    public AudioClip shootSound;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
     protected virtual void OnTriggerEnter2D(UnityEngine.Collider2D collider2D)
     {
-        if (collider2D.gameObject.CompareTag("EnemySlime"))
+        if (collider2D.CompareTag("EnemySlime"))
         {
             GameManager.Instance.slimesCount += 1;
             HandlerKillEnemy();
         }
 
-        if (collider2D.gameObject.CompareTag("EnemyKnight"))
+        if (collider2D.CompareTag("EnemyKnight"))
         {
             GameManager.Instance.knightsCount += 1;
             HandlerKillEnemy();
         }
+
+        if (collider2D.CompareTag("EnemyGoblin"))
+        {
+            GameManager.Instance.goblinsCount += 1;
+            HandlerKillEnemy();
+        }
+
+        if (collider2D.CompareTag("EnemyMushroom"))
+        {
+            GameManager.Instance.mushroomsCount += 1;
+            HandlerKillEnemy();
+        }
+
+        // if (collider2D.CompareTag("EnemyFish"))
+        // {
+        //     GameManager.Instance.knightsCount += 1;
+        //     HandlerKillEnemy();
+        // }
+
+        // if (collider2D.CompareTag("EnemyCrab"))
+        // {
+        //     GameManager.Instance.knightsCount += 1;
+        //     HandlerKillEnemy();
+        // }
     }
 
     void HandlerKillEnemy()
     {
-        audioSource.PlayOneShot(shootSound, 10);
         Destroy(gameObject);
         Debug.Log("Destroy...");
     }

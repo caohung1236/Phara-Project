@@ -12,8 +12,6 @@ public class PlayerMovement : OurMonoBehaviour
     [SerializeField] protected bool isFloating = false;
     public bool isOnGround = true;
     private Rigidbody2D playerRb;
-    private AudioSource audioSource;
-    public AudioClip clickSound;
     public bool isPaused;
     protected override void Awake()
     {
@@ -29,7 +27,6 @@ public class PlayerMovement : OurMonoBehaviour
     {
         base.Start();
         playerRb = transform.parent.GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
         originalGravityScale = playerRb.gravityScale;
     }
     protected virtual void Update()
@@ -47,7 +44,6 @@ public class PlayerMovement : OurMonoBehaviour
         {
             Jump();
             isFloating = true;
-            audioSource.PlayOneShot(clickSound, 1);
         }
 
         if (Input.GetMouseButtonUp(0))

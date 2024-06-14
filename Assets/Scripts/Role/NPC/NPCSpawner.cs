@@ -6,7 +6,7 @@ public class NPCSpawner : Spawner
 {
     private static NPCSpawner instance;
     public static NPCSpawner Instance { get => instance; }
-    public static string npcOne = "NPC_1";
+    public static string npcOne = "NPC";
 
     protected override void Awake()
     {
