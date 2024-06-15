@@ -13089,7 +13089,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -41050,6 +41050,8 @@ MonoBehaviour:
   mobGroundSpawn3: {fileID: 206872857}
   bulletSpawn: {fileID: 877824814}
   flyObjSpawn: {fileID: 1288305630}
+  groundObjSpawn: {fileID: 1716233044}
+  groundObjSpawn2: {fileID: 1873858238}
   coBulletSpawn: {fileID: 1331735575}
   coShieldSpawn: {fileID: 1713405015}
   coGemsSpawn: {fileID: 320389561}
@@ -42491,6 +42493,37 @@ Transform:
   - {fileID: 847809026}
   m_Father: {fileID: 1229913383}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1716233044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716233045}
+  m_Layer: 0
+  m_Name: GroundObjSpawn1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1716233045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716233044}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717823495
 GameObject:
   m_ObjectHideFlags: 0
@@ -43242,6 +43275,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   direction: {x: -1, y: 0, z: 0}
+--- !u!1 &1873858238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1873858239}
+  m_Layer: 0
+  m_Name: GroundObjSpawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1873858239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873858238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1886158899
 GameObject:
   m_ObjectHideFlags: 0
@@ -55553,6 +55617,8 @@ SceneRoots:
   - {fileID: 1713405018}
   - {fileID: 320389564}
   - {fileID: 206872858}
+  - {fileID: 1716233045}
+  - {fileID: 1873858239}
   - {fileID: 1305230493}
   - {fileID: 1229913383}
   - {fileID: 653977649}

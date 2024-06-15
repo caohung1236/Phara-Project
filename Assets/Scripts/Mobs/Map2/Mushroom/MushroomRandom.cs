@@ -5,7 +5,7 @@ using UnityEngine;
 public class MushroomRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 33f;
+    protected float rangeX = 34f;
     protected float rangeY = 1.5f;
     protected override void Start()
     {

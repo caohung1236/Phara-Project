@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CrabRandom : OurMonoBehaviour
@@ -10,19 +11,17 @@ public class CrabRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
+        Invoke(nameof(SpawnCrab), 5f);
     }
 
     protected virtual void Update()
     {
-        if (!isSpawning)
-        {
-            SpawnCrab();
-        }
+
     }
 
     protected virtual void SpawnCrab()
     {
-        Vector3 spawnPos = new(Random.Range(36, rangeX), -rangeY, 0);
+        Vector3 spawnPos = new(Random.Range(36.5f, rangeX), -rangeY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
         {
@@ -31,7 +30,7 @@ public class CrabRandom : OurMonoBehaviour
             newCrab.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 7f);
+        Invoke(nameof(ResetSpawning), 12f);
         Debug.Log("Spawning...");
     }
 

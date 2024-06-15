@@ -140,7 +140,24 @@ public class PlayerDetect : OurMonoBehaviour
                 Destroy(gameObject);
             }
         }
-        
+
+        if (collider2D.CompareTag("Tide"))
+        {
+            if (isInvincible == true)
+            {
+                shieldEffect.SetActive(false);
+                shield.SetActive(false);
+                isInvincible = false;
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
+
         if (isGameOver == false)
         {
             if (collider2D.CompareTag("CollectBullet"))

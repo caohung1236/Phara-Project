@@ -22,7 +22,7 @@ public class FishRandom : OurMonoBehaviour
 
     protected virtual void SpawnFish()
     {
-        Vector3 spawnPos = new(Random.Range(40, rangeX), -rangeY, 0);
+        Vector3 spawnPos = new(Random.Range(39.5f, rangeX), -rangeY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
         {
@@ -31,7 +31,7 @@ public class FishRandom : OurMonoBehaviour
             newFish.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 5f);
+        Invoke(nameof(ResetSpawning), 8f);
         Debug.Log("Spawning...");
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlimeRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 28f;
+    protected float rangeX = 30f;
     protected float rangeY = 1.5f;
     protected override void Start()
     {
@@ -22,7 +22,7 @@ public class SlimeRandom : OurMonoBehaviour
 
     protected virtual void SpawnSlime()
     {
-        Vector3 spawnPos = new(Random.Range(25, 30), -rangeY, 0);
+        Vector3 spawnPos = new(Random.Range(rangeX, 32), -rangeY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
         {
@@ -31,7 +31,7 @@ public class SlimeRandom : OurMonoBehaviour
             newSlime.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 3f);
+        Invoke(nameof(ResetSpawning), 5f);
         Debug.Log("Spawning...");
     }
 

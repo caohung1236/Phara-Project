@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoblinRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 40f;
+    protected float rangeX = 41f;
     protected float rangeY = 1.5f;
     protected override void Start()
     {
@@ -31,7 +31,7 @@ public class GoblinRandom : OurMonoBehaviour
             newGoblin.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 2f);
+        Invoke(nameof(ResetSpawning), 3f);
         Debug.Log("Spawning...");
     }
 

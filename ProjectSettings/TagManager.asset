@@ -21,6 +21,7 @@ TagManager:
   - EnemyFish
   - Waves
   - Roots
+  - Tide
   layers:
   - Default
   - TransparentFX
