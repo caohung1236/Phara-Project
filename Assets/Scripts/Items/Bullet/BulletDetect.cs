@@ -31,17 +31,17 @@ public class BulletDetect : MonoBehaviour
             HandlerKillEnemy();
         }
 
-        // if (collider2D.CompareTag("EnemyFish"))
-        // {
-        //     GameManager.Instance.knightsCount += 1;
-        //     HandlerKillEnemy();
-        // }
+        if (collider2D.CompareTag("EnemyCrab"))
+        {
+            GameManager.Instance.crabCount += 1;
+            HandlerKillEnemy();
+        }
 
-        // if (collider2D.CompareTag("EnemyCrab"))
-        // {
-        //     GameManager.Instance.knightsCount += 1;
-        //     HandlerKillEnemy();
-        // }
+        if (collider2D.CompareTag("EnemyFish"))
+        {
+            GameManager.Instance.fishCount += 1;
+            HandlerKillEnemy();
+        }
     }
 
     void HandlerKillEnemy()

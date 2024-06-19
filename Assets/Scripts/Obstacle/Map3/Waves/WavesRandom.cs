@@ -7,7 +7,7 @@ public class WavesRandom : OurMonoBehaviour
     [SerializeField] protected bool isSpawning = false;
     public GameObject warningObject;
     protected float rangeX = 4f;
-    protected float rangeY = 2f;
+    protected float rangeY = 2.5f;
     protected override void Start()
     {
         base.Start();

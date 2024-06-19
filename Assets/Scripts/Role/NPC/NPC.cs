@@ -14,6 +14,8 @@ public class NPC : MonoBehaviour
     public GameObject background2;
     public GameObject background3;
     public GameObject background4;
+    public GameObject background5;
+    public GameObject background6;
     public GameObject sceneTransition;
     public Text dialogueText;
     [SerializeField] Animator transitionAnim;
@@ -22,11 +24,14 @@ public class NPC : MonoBehaviour
     public GameObject mobGroundSpawn3;
     public GameObject bulletSpawn;
     public GameObject flyObjSpawn;
+    public GameObject obstacles1;
     public GameObject groundObjSpawn;
     public GameObject groundObjSpawn2;
     public GameObject coBulletSpawn;
     public GameObject coShieldSpawn;
+    public GameObject coExplosionSpawn;
     public GameObject coGemsSpawn;
+    public GameObject timer;
     public string[] dialogue;
     private int index;
     public float wordSpeed;
@@ -44,7 +49,7 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, bulletSpawn, flyObjSpawn, groundObjSpawn, groundObjSpawn2, coBulletSpawn, coShieldSpawn, coGemsSpawn};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, bulletSpawn, flyObjSpawn, obstacles1, groundObjSpawn, groundObjSpawn2, coBulletSpawn, coExplosionSpawn, coShieldSpawn, coGemsSpawn, timer};
     }
 
     void Update()
@@ -76,6 +81,8 @@ public class NPC : MonoBehaviour
             background2.SetActive(true);
             background3.SetActive(false);
             background4.SetActive(false);
+            background5.SetActive(false);
+            background6.SetActive(false);
             gameObject.SetActive(false);
             ActivateGameObjects();
             transitionAnim.SetTrigger("End");
@@ -149,8 +156,10 @@ public class NPC : MonoBehaviour
             PlayerMovement.Instance.jumpForce = 0;
             background1.SetActive(false);
             background2.SetActive(false);
-            background3.SetActive(true);
-            background4.SetActive(true);
+            background3.SetActive(false);
+            background4.SetActive(false);
+            background5.SetActive(true);
+            background6.SetActive(true);
             transitionAnim.SetTrigger("End");
         }
     }

@@ -16,11 +16,15 @@ public class GameManager : MonoBehaviour
     public int knightsCount = 0;
     public int goblinsCount = 0;
     public int mushroomsCount = 0;
+    public int crabCount = 0;
+    public int fishCount = 0;
     public Text gemsText;
     public Text slimesText;
     public Text knightsText;
     public Text goblinsText;
     public Text mushroomsText;
+    public Text crabText;
+    public Text fishText;
     public GameObject levelChanger;
     void Awake()
     {
@@ -36,6 +40,8 @@ public class GameManager : MonoBehaviour
         CountMushrooms();
         ConditionsMap1();
         ConditionsMap2();
+        CountCrab();
+        CountFish();
         ClickEffect();
         IsGameOver();
     }
@@ -65,6 +71,16 @@ public class GameManager : MonoBehaviour
         mushroomsText.text = $":{mushroomsCount}/2";
     }
 
+    void CountCrab()
+    {
+        crabText.text = $":{crabCount}/2";
+    }
+
+    void CountFish()
+    {
+        fishText.text = $":{fishCount}/2";
+    }
+
     void ConditionsMap1()
     {
         if (gemsCount >= 1 && slimesCount >= 1 && knightsCount >= 2)
@@ -76,6 +92,14 @@ public class GameManager : MonoBehaviour
     void ConditionsMap2()
     {
         if (gemsCount >= 2 && goblinsCount >= 2 && mushroomsCount >= 2)
+        {
+            levelChanger.SetActive(true);
+        }
+    }
+
+    void ConditionsMap3()
+    {
+        if (gemsCount >= 2 && slimesCount >= 2 && crabCount >= 2 && fishCount >= 2)
         {
             levelChanger.SetActive(true);
         }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class ArrowRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 15f;
+    protected float rangeX = 12f;
     protected float rangeY = 5.5f;
     protected override void Start()
     {
@@ -32,6 +32,7 @@ public class ArrowRandom : OurMonoBehaviour
             Transform newArrow = ArrowSpawner.Instance.Spawn(ArrowSpawner.arrowOne, spawnPos, rotation);
             if (newArrow == null) return;
             newArrow.gameObject.SetActive(true);
+            AudioManager.Instance.PlaySFX("ArrowFly");
             isSpawning = true;
         }
         Invoke(nameof(ResetSpawning), 2f);

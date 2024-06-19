@@ -30,9 +30,8 @@ public class LevelChanger : MonoBehaviour
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) // Kiểm tra xem có scene tiếp theo không
         {
-            transitionAnim.SetTrigger("Start");
-            SceneManager.LoadSceneAsync(nextSceneIndex);
             transitionAnim.SetTrigger("End");
+            SceneManager.LoadSceneAsync(nextSceneIndex);
         }
     }
 }

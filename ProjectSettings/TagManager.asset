@@ -22,6 +22,10 @@ TagManager:
   - Waves
   - Roots
   - Tide
+  - Pillar
+  - LimitKill
+  - CollectExplosion
+  - Explosion
   layers:
   - Default
   - TransparentFX

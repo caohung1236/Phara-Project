@@ -32,5 +32,10 @@ public class ParentDetect : MonoBehaviour
             boxCollider2D.enabled = false;
             rigidbody2D.AddForce(new Vector2(11, 3), ForceMode2D.Impulse);
         }
+
+        if (collider2D.CompareTag("Explosion"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

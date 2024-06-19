@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerDetect : OurMonoBehaviour
 {
     public GameObject playerShooting;
+    public GameObject playerExplosion;
     [SerializeField] private float shootingTime = 5.0f;
+    [SerializeField] private float explosionTime = 5.0f;
     [SerializeField] private float remainingTime;
     [SerializeField] private bool isInvincible = false;
     private BoxCollider2D myCollider;
@@ -15,14 +17,20 @@ public class PlayerDetect : OurMonoBehaviour
     private static PlayerDetect instance;
     public static PlayerDetect Instance { get => instance; }
     public bool isGameOver = false;
+    public bool isUseExplosionItem = false;
     public bool isOnGround = true;
     public GameObject bulletEffect;
     public GameObject shieldEffect;
+    public GameObject explosionEffect;
     public GameObject shield;
-    public GameObject picksItemsParicles;
+    public GameObject explosion;
+    public GameObject picksItemsParticles;
+    public GameObject hitEffectParticles;
     public GameObject targetObject;
     private new ParticleSystem particleSystem;
+    private ParticleSystem hitParticleSystem;
     private GameObject particleSystemInstance;
+    private GameObject hitParticleSystemInstance;
     public Animator playerAnim;
     protected override void Awake()
     {
@@ -39,10 +47,16 @@ public class PlayerDetect : OurMonoBehaviour
         myCollider = GetComponent<BoxCollider2D>();
         myRigidbody = GetComponent<Rigidbody2D>();
         remainingTime = shootingTime;
-        particleSystemInstance = Instantiate(picksItemsParicles);
+
+        particleSystemInstance = Instantiate(picksItemsParticles);
         particleSystemInstance.transform.SetParent(targetObject.transform);
         particleSystemInstance.transform.localPosition = Vector2.zero;
         particleSystem = particleSystemInstance.GetComponent<ParticleSystem>();
+
+        hitParticleSystemInstance = Instantiate(hitEffectParticles);
+        hitParticleSystemInstance.transform.SetParent(targetObject.transform);
+        hitParticleSystemInstance.transform.localPosition = Vector2.zero;
+        hitParticleSystem = hitParticleSystemInstance.GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -57,6 +71,18 @@ public class PlayerDetect : OurMonoBehaviour
                 playerShooting.SetActive(false);
             }
         }
+
+        if (playerExplosion.activeSelf)
+        {
+            explosionTime -= Time.deltaTime;
+
+            if (explosionTime <= 0)
+            {
+                explosionEffect.SetActive(false);
+                explosion.SetActive(false);
+                PlayerMovement.Instance.jumpForce = 3;
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision2D)
@@ -64,6 +90,23 @@ public class PlayerDetect : OurMonoBehaviour
         if (collision2D.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+        }
+        
+        if (collision2D.gameObject.CompareTag("Pillar"))
+        {
+            hitParticleSystem.Play();
+            AudioManager.Instance.PlaySFX("PlayerHit");
+            myCollider.enabled = false;
+            myRigidbody.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
+            myRigidbody.gravityScale = 100;
+            PlayerMovement.Instance.jumpForce = 0;
+            isGameOver = true;
+        }
+
+        if (collision2D.gameObject.CompareTag("LimitKill"))
+        {
+            AudioManager.Instance.PlaySFX("PlayerHit");
+            isGameOver = true;
         }
     }
 
@@ -177,6 +220,16 @@ public class PlayerDetect : OurMonoBehaviour
                 isInvincible = true;
                 shieldEffect.SetActive(true);
                 shield.SetActive(true);
+                particleSystem.Play();
+            }
+
+            if (collider2D.CompareTag("CollectExplosion"))
+            {
+                AudioManager.Instance.PlaySFX("Collectable");
+                Destroy(collider2D.gameObject);
+                PlayerMovement.Instance.jumpForce = 0;
+                explosionEffect.SetActive(true);
+                explosion.SetActive(true);
                 particleSystem.Play();
             }
 
