@@ -8,10 +8,8 @@ public class IntroToMain : MonoBehaviour
     public GameObject loadingScreen;
     public GameObject menu;
     public Slider slider;
-    [SerializeField] Animator transitionAnim;
     public void LoadLevel(int sceneIndex)
     {
-        transitionAnim.SetTrigger("End");
         StartCoroutine(LoadAsynchronously(sceneIndex));
         Time.timeScale = 1;
     }

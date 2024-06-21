@@ -10,14 +10,12 @@ public class CollectExplosionRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
+        Invoke(nameof(SpawnCollectible), 30f);
     }
 
     protected virtual void Update()
     {
-        if (!isSpawning)
-        {
-            SpawnCollectible();
-        }
+
     }
 
     protected virtual void SpawnCollectible()

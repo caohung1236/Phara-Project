@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class NPC : MonoBehaviour
+
+public class NPCMap2 : MonoBehaviour
 {
     private GameObject[] gameObjects;
     public GameObject dialoguePanel;
@@ -14,42 +13,35 @@ public class NPC : MonoBehaviour
     public GameObject background2;
     public GameObject background3;
     public GameObject background4;
-    public GameObject background5;
-    public GameObject background6;
     public GameObject sceneTransition;
     public Text dialogueText;
     [SerializeField] Animator transitionAnim;
     public GameObject mobGroundSpawn1;
     public GameObject mobGroundSpawn2;
-    public GameObject mobGroundSpawn3;
     public GameObject bulletSpawn;
     public GameObject flyObjSpawn;
-    public GameObject obstacles1;
-    public GameObject groundObjSpawn;
-    public GameObject groundObjSpawn2;
     public GameObject coBulletSpawn;
     public GameObject coShieldSpawn;
-    public GameObject coExplosionSpawn;
     public GameObject coGemsSpawn;
-    public GameObject timer;
+    public GameObject obstacle1;
     public string[] dialogue;
     private int index;
     public float wordSpeed;
     public bool playerIsClose;
     private bool isDialogueFinished = false;
     private bool isTyping = false;
-    private static NPC instance;
+    private static NPCMap2 instance;
 
-    public static NPC Instance { get => instance; }
+    public static NPCMap2 Instance { get => instance; }
 
     void Awake()
     {
-        NPC.instance = this;
+        NPCMap2.instance = this;
     }
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, bulletSpawn, flyObjSpawn, obstacles1, groundObjSpawn, groundObjSpawn2, coBulletSpawn, coExplosionSpawn, coShieldSpawn, coGemsSpawn, timer};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, bulletSpawn, flyObjSpawn, coBulletSpawn, coShieldSpawn, coGemsSpawn, obstacle1};
     }
 
     void Update()
@@ -75,14 +67,11 @@ public class NPC : MonoBehaviour
         if (isDialogueFinished == true)
         {
             transitionAnim.SetTrigger("Start");
-            NPCMove.Instance.speed = 3;
             PlayerMovement.Instance.jumpForce = 3;
             background1.SetActive(true);
             background2.SetActive(true);
             background3.SetActive(false);
             background4.SetActive(false);
-            background5.SetActive(false);
-            background6.SetActive(false);
             gameObject.SetActive(false);
             ActivateGameObjects();
             transitionAnim.SetTrigger("End");
@@ -156,10 +145,8 @@ public class NPC : MonoBehaviour
             PlayerMovement.Instance.jumpForce = 0;
             background1.SetActive(false);
             background2.SetActive(false);
-            background3.SetActive(false);
-            background4.SetActive(false);
-            background5.SetActive(true);
-            background6.SetActive(true);
+            background3.SetActive(true);
+            background4.SetActive(true);
             transitionAnim.SetTrigger("End");
         }
     }
