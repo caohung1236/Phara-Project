@@ -43285,7 +43285,7 @@ MonoBehaviour:
   background5: {fileID: 256535702}
   background6: {fileID: 1492563596}
   sceneTransition: {fileID: 1591724592}
-  timer: {fileID: 956609513}
+  timer: {fileID: 1058070016}
   dialogueText: {fileID: 1709714700}
   transitionAnim: {fileID: 1591724593}
   dialogue:
