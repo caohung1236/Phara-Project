@@ -9,9 +9,12 @@ public class PlayerDetect : OurMonoBehaviour
     public GameObject playerShooting;
     public GameObject playerExplosion;
     [SerializeField] private float shootingTime = 5.0f;
-    [SerializeField] private float explosionTime = 5.0f;
+    [SerializeField] private float immortalTime = 5.0f;
+    [SerializeField] private float doubleItemsTime = 5.0f;
     [SerializeField] private float remainingTime;
     [SerializeField] private bool isInvincible = false;
+    [SerializeField] private bool isImmortal = false;
+    [SerializeField] private bool isDoubleItems = false;
     private BoxCollider2D myCollider;
     private Rigidbody2D myRigidbody;
     private static PlayerDetect instance;
@@ -24,6 +27,7 @@ public class PlayerDetect : OurMonoBehaviour
     public GameObject explosionEffect;
     public GameObject shield;
     public GameObject explosion;
+    public GameObject doubleItems;
     public GameObject picksItemsParticles;
     public GameObject hitEffectParticles;
     public GameObject targetObject;
@@ -72,15 +76,26 @@ public class PlayerDetect : OurMonoBehaviour
             }
         }
 
-        if (playerExplosion.activeSelf)
+        if (isImmortal == true)
         {
-            explosionTime -= Time.deltaTime;
-
-            if (explosionTime <= 0)
+            immortalTime -= Time.deltaTime;
+            if (immortalTime <= 0)
             {
-                explosionEffect.SetActive(false);
+                isImmortal = false;
                 explosion.SetActive(false);
+                explosionEffect.SetActive(false);
                 PlayerMovement.Instance.jumpForce = 3;
+            }
+        }
+
+        if (isDoubleItems == true)
+        {
+            doubleItemsTime -= Time.deltaTime;
+            if (doubleItemsTime <= 0)
+            {
+                isDoubleItems = false;
+                doubleItems.SetActive(false);
+                GameManager.Instance.gemsCount += 2;
             }
         }
     }
@@ -225,11 +240,21 @@ public class PlayerDetect : OurMonoBehaviour
 
             if (collider2D.CompareTag("CollectExplosion"))
             {
+                isImmortal = true;
                 AudioManager.Instance.PlaySFX("Collectable");
                 Destroy(collider2D.gameObject);
                 PlayerMovement.Instance.jumpForce = 0;
                 explosionEffect.SetActive(true);
                 explosion.SetActive(true);
+                particleSystem.Play();
+            }
+
+            if (collider2D.CompareTag("CollectDouble"))
+            {
+                isDoubleItems = true;
+                AudioManager.Instance.PlaySFX("Collectable");
+                doubleItems.SetActive(true);
+                Destroy(collider2D.gameObject);
                 particleSystem.Play();
             }
 
@@ -258,7 +283,7 @@ public class PlayerDetect : OurMonoBehaviour
 
     void HandlerKillEnemy(Collider2D collider2D)
     {
-        if (isInvincible == true)
+        if (isInvincible == true || isImmortal == true)
         {
             shieldEffect.SetActive(false);
             shield.SetActive(false);

@@ -26,6 +26,7 @@ TagManager:
   - LimitKill
   - CollectExplosion
   - Explosion
+  - CollectDouble
   layers:
   - Default
   - TransparentFX
