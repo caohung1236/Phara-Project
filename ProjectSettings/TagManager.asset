@@ -27,6 +27,7 @@ TagManager:
   - CollectExplosion
   - Explosion
   - CollectDouble
+  - Laser
   layers:
   - Default
   - TransparentFX

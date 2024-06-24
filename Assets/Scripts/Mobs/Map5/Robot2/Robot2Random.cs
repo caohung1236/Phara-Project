@@ -5,7 +5,7 @@ using UnityEngine;
 public class Robot2Random : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 32f;
+    protected float rangeX = 15f;
     protected float rangeY = 1.5f;
     protected override void Start()
     {

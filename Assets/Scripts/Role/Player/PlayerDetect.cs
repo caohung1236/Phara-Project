@@ -216,6 +216,24 @@ public class PlayerDetect : OurMonoBehaviour
             }
         }
 
+        if (collider2D.CompareTag("Laser"))
+        {
+            if (isInvincible == true)
+            {
+                shieldEffect.SetActive(false);
+                shield.SetActive(false);
+                isInvincible = false;
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
+
         if (isGameOver == false)
         {
             if (collider2D.CompareTag("CollectBullet"))

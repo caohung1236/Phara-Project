@@ -26,10 +26,13 @@ public class BatRandom : OurMonoBehaviour
         float spawnPosY = UnityEngine.Random.Range(2f, rangeY);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
-        Transform newBat = BatSpawner.Instance.Spawn(BatSpawner.batOne, spawnPos, rotation);
-        if (newBat == null) return;
-        newBat.gameObject.SetActive(true);
-        isSpawning = true;
+        if (PlayerDetect.Instance.isGameOver == false)
+        {
+            Transform newBat = BatSpawner.Instance.Spawn(BatSpawner.batOne, spawnPos, rotation);
+            if (newBat == null) return;
+            newBat.gameObject.SetActive(true);
+            isSpawning = true;
+        }
         Invoke(nameof(ResetSpawning), 3f);
         Debug.Log("Spawning...");
     }

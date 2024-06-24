@@ -17,6 +17,7 @@ public class NPCMap5 : MonoBehaviour
     [SerializeField] Animator transitionAnim;
     public GameObject mobGroundSpawn1;
     public GameObject mobGroundSpawn2;
+    public GameObject mobGroundSpawn3;
     public GameObject bulletPlayerSpawn;
     public GameObject bulletRobot1Spawn;
     public GameObject bulletRobot2Spawn;
@@ -26,6 +27,7 @@ public class NPCMap5 : MonoBehaviour
     public GameObject coExplosionSpawn;
     public GameObject coDoubleSpawn;
     public GameObject coGemsSpawn;
+    public GameObject obstacles1;
     public string[] dialogue;
     private int index;
     public float wordSpeed;
@@ -43,7 +45,7 @@ public class NPCMap5 : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, bulletPlayerSpawn, bulletRobot1Spawn, bulletRobot2Spawn, flyObjSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coGemsSpawn, coDoubleSpawn};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, bulletPlayerSpawn, bulletRobot1Spawn, bulletRobot2Spawn, flyObjSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coGemsSpawn, coDoubleSpawn, obstacles1};
     }
 
     void Update()
