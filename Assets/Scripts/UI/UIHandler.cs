@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour
 {
-    public Button startGame;
+    public string scene;
 
-    public virtual void StartGame()
+    public virtual void Skip()
     {
-        startGame.gameObject.SetActive(false);
+        SceneManager.LoadScene(scene);
     }
 }

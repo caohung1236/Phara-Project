@@ -62,7 +62,7 @@ public class NPCMap4 : MonoBehaviour
         if (isDialogueFinished == true)
         {
             transitionAnim.SetTrigger("Start");
-            PlayerMovement.Instance.jumpForce = 3;
+            PlayerMovement.Instance.jumpForce = 3.5f;
             background1.SetActive(true);
             background2.SetActive(true);
             background3.SetActive(false);

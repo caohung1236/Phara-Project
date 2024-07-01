@@ -13,7 +13,7 @@ public class LaserRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        Invoke(nameof(Warning), 10f);
+        InvokeRepeating(nameof(SpawnLaser), 15f, 15f);
     }
 
     protected virtual void Update()
@@ -34,7 +34,6 @@ public class LaserRandom : OurMonoBehaviour
             newLaser.gameObject.SetActive(true);
             isSpawning = true;
         }
-        warningObject.SetActive(false);
         Invoke(nameof(ResetSpawning), 15f);
         Debug.Log("Spawning...");
     }
@@ -42,15 +41,5 @@ public class LaserRandom : OurMonoBehaviour
     protected void ResetSpawning()
     {
         isSpawning = false;
-    }
-
-    protected virtual void Warning()
-    {
-        spawnPosX = rangeX;
-        spawnPosY = UnityEngine.Random.Range(rangeY, 5.5f);
-        Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
-        warningObject.transform.position = spawnPos;
-        warningObject.SetActive(true);
-        Invoke(nameof(SpawnLaser), 3f);
     }
 }

@@ -30859,9 +30859,12 @@ MonoBehaviour:
   playerShooting: {fileID: 1256083657}
   playerExplosion: {fileID: 1871718458}
   shootingTime: 5
-  explosionTime: 5
+  immortalTime: 5
+  doubleItemsTime: 5
   remainingTime: 0
   isInvincible: 0
+  isImmortal: 0
+  isDoubleItems: 0
   isGameOver: 0
   isUseExplosionItem: 0
   isOnGround: 1
@@ -30870,6 +30873,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 1143076205}
   shield: {fileID: 2051312895}
   explosion: {fileID: 518168819}
+  doubleItems: {fileID: 0}
   picksItemsParticles: {fileID: 274016814}
   hitEffectParticles: {fileID: 817449166}
   targetObject: {fileID: 715901704}
@@ -47028,7 +47032,7 @@ Transform:
   m_GameObject: {fileID: 1602096661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.852, y: -2.738, z: 0}
+  m_LocalPosition: {x: 9, y: -2.738, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

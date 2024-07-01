@@ -32,6 +32,7 @@ Library: D:\GithubDocs\Phara-Project\Temp\BurstOutput\tempburstlibs\x86\lib_burs
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
 --assembly-defines=Unity.TextMeshPro;
+--assembly-defines=Unity.Timeline;
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\GithubDocs\Phara-Project\Temp\Burst
@@ -73,6 +74,7 @@ Library: D:\GithubDocs\Phara-Project\Temp\BurstOutput\tempburstlibs\x86\lib_burs
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
 --assembly-defines=Unity.TextMeshPro;
+--assembly-defines=Unity.Timeline;
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\GithubDocs\Phara-Project\Temp\Burst

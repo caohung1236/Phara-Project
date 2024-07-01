@@ -10,7 +10,7 @@ public class Robot2Random : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        Invoke(nameof(SpawnRobot2), 20f);
+        InvokeRepeating(nameof(SpawnRobot2), 20f, 15);
     }
 
     protected virtual void Update()
@@ -29,7 +29,6 @@ public class Robot2Random : OurMonoBehaviour
             newRobot1.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 20f);
         Debug.Log("Spawning...");
     }
 
