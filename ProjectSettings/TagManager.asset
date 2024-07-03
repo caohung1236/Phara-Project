@@ -28,6 +28,10 @@ TagManager:
   - Explosion
   - CollectDouble
   - Laser
+  - EnemyRobot1
+  - EnemyRobot2
+  - EnemyRobot3
+  - EnemyBird
   layers:
   - Default
   - TransparentFX

@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public int mushroomsCount = 0;
     public int crabCount = 0;
     public int fishCount = 0;
+    public int robot1Count = 0;
+    public int robot2Count = 0;
+    public int robot3Count = 0;
     public Text gemsText;
     public Text slimesText;
     public Text knightsText;
@@ -25,6 +28,9 @@ public class GameManager : MonoBehaviour
     public Text mushroomsText;
     public Text crabText;
     public Text fishText;
+    public Text robot1Text;
+    public Text robot2Text;
+    public Text robot3Text;
     public GameObject levelChanger;
     void Awake()
     {
@@ -38,10 +44,15 @@ public class GameManager : MonoBehaviour
         CountKnights();
         CountGoblins();
         CountMushrooms();
-        ConditionsMap1();
-        ConditionsMap2();
         CountCrab();
         CountFish();
+        CountRobot1();
+        CountRobot2();
+        CountRobot3();
+        ConditionsMap1();
+        ConditionsMap2();
+        ConditionsMap3();
+        ConditionsMap5();
         ClickEffect();
         IsGameOver();
     }
@@ -81,6 +92,21 @@ public class GameManager : MonoBehaviour
         fishText.text = $":{fishCount}/2";
     }
 
+    void CountRobot1()
+    {
+        robot1Text.text = $":{robot1Count}/2";
+    }
+
+    void CountRobot2()
+    {
+        robot2Text.text = $":{robot2Count}/2";
+    }
+
+    void CountRobot3()
+    {
+        robot3Text.text = $":{robot3Count}/2";
+    }
+
     void ConditionsMap1()
     {
         if (gemsCount >= 1 && slimesCount >= 1 && knightsCount >= 2)
@@ -100,6 +126,14 @@ public class GameManager : MonoBehaviour
     void ConditionsMap3()
     {
         if (gemsCount >= 2 && slimesCount >= 2 && crabCount >= 2 && fishCount >= 2)
+        {
+            levelChanger.SetActive(true);
+        }
+    }
+
+    void ConditionsMap5()
+    {
+        if (gemsCount >= 2 && robot1Count >= 2 && robot2Count >= 2 && robot3Count >= 2)
         {
             levelChanger.SetActive(true);
         }
@@ -125,6 +159,5 @@ public class GameManager : MonoBehaviour
         {
             AudioManager.Instance.PlaySFX("ClickSound");
         }
-        
     }
 }

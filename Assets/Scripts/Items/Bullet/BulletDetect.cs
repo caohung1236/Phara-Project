@@ -42,6 +42,24 @@ public class BulletDetect : MonoBehaviour
             GameManager.Instance.fishCount += 1;
             HandlerKillEnemy();
         }
+
+        if (collider2D.CompareTag("EnemyRobot1"))
+        {
+            GameManager.Instance.robot1Count += 1;
+            HandlerKillEnemy();
+        }
+
+        if (collider2D.CompareTag("EnemyRobot2"))
+        {
+            GameManager.Instance.robot2Count += 1;
+            HandlerKillEnemy();
+        }
+
+        if (collider2D.CompareTag("EnemyRobot3"))
+        {
+            GameManager.Instance.robot3Count += 1;
+            HandlerKillEnemy();
+        }
     }
 
     void HandlerKillEnemy()
