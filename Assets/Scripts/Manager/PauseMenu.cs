@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] RectTransform groundMobRect;
     [SerializeField] RectTransform groundMobRect2;
     [SerializeField] RectTransform groundMobRect3;
+    [SerializeField] RectTransform groundMobRect4;
     [SerializeField] float topPosY, middlePosY;
     [SerializeField] float tweenDuration;
     [SerializeField] CanvasGroup canvasGroup;
@@ -69,10 +70,11 @@ public class PauseMenu : MonoBehaviour
         canvasGroup2.DOFade(1, tweenDuration).SetUpdate(true);
         pausePanelRect.DOAnchorPosY(middlePosY, tweenDuration).SetUpdate(true);
         pauseButtonRect.DOAnchorPosX(100, tweenDuration).SetUpdate(true);
-        gemsCollectRect.DOAnchorPosX(-300, tweenDuration).SetUpdate(true);
-        groundMobRect.DOAnchorPosX(-300, tweenDuration).SetUpdate(true);
-        groundMobRect2.DOAnchorPosX(-300, tweenDuration).SetUpdate(true);
-        groundMobRect3.DOAnchorPosX(-300, tweenDuration).SetUpdate(true);
+        gemsCollectRect.DOAnchorPosX(-400, tweenDuration).SetUpdate(true);
+        groundMobRect.DOAnchorPosX(-400, tweenDuration).SetUpdate(true);
+        groundMobRect2.DOAnchorPosX(-400, tweenDuration).SetUpdate(true);
+        groundMobRect3.DOAnchorPosX(-400, tweenDuration).SetUpdate(true);
+        groundMobRect4.DOAnchorPosX(-400, tweenDuration).SetUpdate(true);
     }
 
     async Task PausePanelOutro()
@@ -85,5 +87,6 @@ public class PauseMenu : MonoBehaviour
         groundMobRect.DOAnchorPosX(0, tweenDuration).SetUpdate(true);
         groundMobRect2.DOAnchorPosX(0, tweenDuration).SetUpdate(true);
         groundMobRect3.DOAnchorPosX(0, tweenDuration).SetUpdate(true);
+        groundMobRect4.DOAnchorPosX(0, tweenDuration).SetUpdate(true);
     }
 }

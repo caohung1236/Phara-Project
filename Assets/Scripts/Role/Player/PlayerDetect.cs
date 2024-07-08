@@ -105,6 +105,7 @@ public class PlayerDetect : OurMonoBehaviour
         if (collision2D.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+            playerAnim.SetFloat("jumpForce", 0);
         }
         
         if (collision2D.gameObject.CompareTag("Pillar"))
@@ -130,41 +131,126 @@ public class PlayerDetect : OurMonoBehaviour
         if (collision2D.gameObject.CompareTag("Ground"))
         {
             isOnGround = false;
+            playerAnim.SetFloat("jumpForce", 3);
         }
     }
     protected virtual void OnTriggerEnter2D(UnityEngine.Collider2D collider2D)
     {
         if (collider2D.CompareTag("EnemySlime"))
         {
-            HandlerKillEnemy(collider2D);
+            HandlerDetectEnemy(collider2D);
         }
 
         if (collider2D.CompareTag("EnemyKnight"))
         {
-            HandlerKillEnemy(collider2D);
+            HandlerDetectEnemy(collider2D);
         }
 
         if (collider2D.CompareTag("EnemyGoblin"))
         {
-            HandlerKillEnemy(collider2D);
+            HandlerDetectEnemy(collider2D);
         }
 
         if (collider2D.CompareTag("EnemyMushroom"))
         {
-            HandlerKillEnemy(collider2D);
+            HandlerDetectEnemy(collider2D);
         }
 
         if (collider2D.CompareTag("EnemyFish"))
         {
-            HandlerKillEnemy(collider2D);
+            HandlerDetectEnemy(collider2D);
         }
 
         if (collider2D.CompareTag("EnemyCrab"))
         {
-            HandlerKillEnemy(collider2D);
+            HandlerDetectEnemy(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyRobot1"))
+        {
+            HandlerDetectEnemy(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyRobot2"))
+        {
+            HandlerDetectEnemy(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyBird"))
+        {
+            HandlerDetectEnemy(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyDragon"))
+        {
+            HandlerDetectEnemy(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyBatMonster"))
+        {
+            HandlerDetectEnemy(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyPhoenix"))
+        {
+            HandlerDetectEnemy(collider2D);
         }
 
         if (collider2D.CompareTag("Arrow"))
+        {
+            if (isInvincible == true)
+            {
+                shieldEffect.SetActive(false);
+                shield.SetActive(false);
+                isInvincible = false;
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
+
+        if (collider2D.CompareTag("EnemyBat"))
+        {
+            if (isInvincible == true)
+            {
+                shieldEffect.SetActive(false);
+                shield.SetActive(false);
+                isInvincible = false;
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
+
+        if (collider2D.CompareTag("EnemyFly"))
+        {
+            if (isInvincible == true)
+            {
+                shieldEffect.SetActive(false);
+                shield.SetActive(false);
+                isInvincible = false;
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
+
+        if (collider2D.CompareTag("EnemyRobot3"))
         {
             if (isInvincible == true)
             {
@@ -299,7 +385,7 @@ public class PlayerDetect : OurMonoBehaviour
         }
     }
 
-    void HandlerKillEnemy(Collider2D collider2D)
+    void HandlerDetectEnemy(Collider2D collider2D)
     {
         if (isInvincible == true || isImmortal == true)
         {

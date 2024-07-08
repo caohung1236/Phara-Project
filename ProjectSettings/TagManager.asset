@@ -32,6 +32,12 @@ TagManager:
   - EnemyRobot2
   - EnemyRobot3
   - EnemyBird
+  - EnemyDragon
+  - EnemyBatMonster
+  - EnemyPhoenix
+  - EnemyFly
+  - EnemyBat
+  - Thunder
   layers:
   - Default
   - TransparentFX

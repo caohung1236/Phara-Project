@@ -6,24 +6,22 @@ public class DragonRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 20f;
-    protected float rangeY = 6f;
+    protected float rangeY = 2.5f;
     protected override void Start()
     {
         base.Start();
+        InvokeRepeating(nameof(SpawnDragon), 20f, 15f);
     }
 
     protected virtual void Update()
     {
-        if (!isSpawning)
-        {
-            SpawnDragon();
-        }
+        
     }
 
     protected virtual void SpawnDragon()
     {
         float spawnPosX = UnityEngine.Random.Range(rangeX, rangeX + rangeX);
-        float spawnPosY = UnityEngine.Random.Range(2f, rangeY);
+        float spawnPosY = UnityEngine.Random.Range(-3f, rangeY);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
@@ -33,7 +31,6 @@ public class DragonRandom : OurMonoBehaviour
             newDragon.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 15f);
         Debug.Log("Spawning...");
     }
 

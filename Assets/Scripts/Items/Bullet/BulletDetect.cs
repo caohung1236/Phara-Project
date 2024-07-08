@@ -31,6 +31,12 @@ public class BulletDetect : MonoBehaviour
             HandlerKillEnemy();
         }
 
+        if (collider2D.CompareTag("EnemyBat"))
+        {
+            GameManager.Instance.batsCount += 1;
+            HandlerKillEnemy();
+        }
+
         if (collider2D.CompareTag("EnemyCrab"))
         {
             GameManager.Instance.crabCount += 1;
@@ -40,6 +46,12 @@ public class BulletDetect : MonoBehaviour
         if (collider2D.CompareTag("EnemyFish"))
         {
             GameManager.Instance.fishCount += 1;
+            HandlerKillEnemy();
+        }
+
+        if (collider2D.CompareTag("EnemyFly"))
+        {
+            GameManager.Instance.flyCount += 1;
             HandlerKillEnemy();
         }
 
@@ -58,6 +70,30 @@ public class BulletDetect : MonoBehaviour
         if (collider2D.CompareTag("EnemyRobot3"))
         {
             GameManager.Instance.robot3Count += 1;
+            HandlerKillEnemy();
+        }
+
+        if (collider2D.CompareTag("EnemyBird"))
+        {
+            GameManager.Instance.birdsCount += 1;
+            HandlerKillEnemy();
+        }
+
+        if (collider2D.CompareTag("EnemyDragon"))
+        {
+            GameManager.Instance.dragonsCount += 1;
+            HandlerKillEnemy();
+        }
+
+        if (collider2D.CompareTag("EnemyBatMonster"))
+        {
+            GameManager.Instance.batMonstersCount += 1;
+            HandlerKillEnemy();
+        }
+
+        if (collider2D.CompareTag("EnemyPhoenix"))
+        {
+            GameManager.Instance.phoenixCount += 1;
             HandlerKillEnemy();
         }
     }

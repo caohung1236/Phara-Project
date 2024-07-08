@@ -10,7 +10,7 @@ public class Robot2Random : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(SpawnRobot2), 20f, 15);
+        InvokeRepeating(nameof(SpawnRobot2), 20f, 17);
     }
 
     protected virtual void Update()
