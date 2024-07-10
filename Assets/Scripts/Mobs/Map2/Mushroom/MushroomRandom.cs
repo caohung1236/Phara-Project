@@ -5,7 +5,7 @@ using UnityEngine;
 public class MushroomRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 38f;
+    protected float rangeX = 35f;
     protected float rangeY = 1.5f;
     protected override void Start()
     {
@@ -31,7 +31,7 @@ public class MushroomRandom : OurMonoBehaviour
             newMushroom.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 6f);
+        Invoke(nameof(ResetSpawning), 5f);
         Debug.Log("Spawning...");
     }
 

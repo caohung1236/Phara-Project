@@ -84,7 +84,7 @@ public class PlayerDetect : OurMonoBehaviour
                 isImmortal = false;
                 explosion.SetActive(false);
                 explosionEffect.SetActive(false);
-                PlayerMovement.Instance.jumpForce = 3;
+                PlayerMovement.Instance.jumpForce = 4.5f;
             }
         }
 
@@ -105,7 +105,7 @@ public class PlayerDetect : OurMonoBehaviour
         if (collision2D.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
-            playerAnim.SetFloat("jumpForce", 0);
+            playerAnim.SetFloat("jumpForce", 1f);
         }
         
         if (collision2D.gameObject.CompareTag("Pillar"))
@@ -123,15 +123,6 @@ public class PlayerDetect : OurMonoBehaviour
         {
             AudioManager.Instance.PlaySFX("PlayerHit");
             isGameOver = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision2D)
-    {
-        if (collision2D.gameObject.CompareTag("Ground"))
-        {
-            isOnGround = false;
-            playerAnim.SetFloat("jumpForce", 3);
         }
     }
     protected virtual void OnTriggerEnter2D(UnityEngine.Collider2D collider2D)

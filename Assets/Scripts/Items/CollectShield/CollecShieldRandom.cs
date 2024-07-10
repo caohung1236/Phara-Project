@@ -6,7 +6,7 @@ public class CollectShieldRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 45f;
-    protected float rangeY = -2;
+    protected float rangeY = 2;
     protected override void Start()
     {
         base.Start();

@@ -26,6 +26,7 @@ public class NPCMap3 : MonoBehaviour
     public GameObject coGemsSpawn;
     public GameObject obstacle1;
     public GameObject obstacle2;
+    public GameObject playerMovement;
     public string[] dialogue;
     private int index;
     public float wordSpeed;
@@ -43,7 +44,7 @@ public class NPCMap3 : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, bulletSpawn, flyObjSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coGemsSpawn, obstacle1, obstacle2};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, bulletSpawn, flyObjSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coGemsSpawn, obstacle1, obstacle2, playerMovement};
     }
 
     void Update()
@@ -69,7 +70,7 @@ public class NPCMap3 : MonoBehaviour
         if (isDialogueFinished == true)
         {
             transitionAnim.SetTrigger("Start");
-            PlayerMovement.Instance.jumpForce = 3;
+            playerMovement.SetActive(true);
             background1.SetActive(true);
             background2.SetActive(true);
             background3.SetActive(false);
@@ -144,7 +145,6 @@ public class NPCMap3 : MonoBehaviour
             playerIsClose = true;
             isDialogueFinished = false;
             NPCMove.Instance.speed = 0;
-            PlayerMovement.Instance.jumpForce = 0;
             background1.SetActive(false);
             background2.SetActive(false);
             background3.SetActive(true);

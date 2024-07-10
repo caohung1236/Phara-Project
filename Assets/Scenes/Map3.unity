@@ -15037,7 +15037,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448619807}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd3c4e617e8fe5643b27b21532fe3d95, type: 3}
   m_Name: 
@@ -15051,7 +15051,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448619807}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3236d75fdc0c8c9498833bfb3bfa7704, type: 3}
   m_Name: 
@@ -17079,7 +17079,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678050545}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95779793ad8188b4086a96fc2ff96c48, type: 3}
   m_Name: 
@@ -18348,7 +18348,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889902368}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a682b4656011f6347bd796fc748760b5, type: 3}
   m_Name: 
@@ -18571,7 +18571,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -18649,7 +18649,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0073189735, y: -0.06649244}
+  m_Offset: {x: 0.01293135, y: -0.06746423}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -18940,7 +18940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - name: Map1
-    clip: {fileID: 8300000, guid: 39a7366f07ef62940b02dbd96f5350ba, type: 3}
+    clip: {fileID: 8300000, guid: 5eea2a28dab33c74799c980769168fec, type: 3}
   - name: Footsteps
     clip: {fileID: 8300000, guid: a0ccbead04ec99c4e9ddc660333de268, type: 3}
   sfxSounds:
@@ -20494,6 +20494,7 @@ GameObject:
   - component: {fileID: 1174606502}
   - component: {fileID: 1174606505}
   - component: {fileID: 1174606504}
+  - component: {fileID: 1174606506}
   m_Layer: 0
   m_Name: Fly_1
   m_TagString: EnemyFly
@@ -20581,6 +20582,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.07013122, y: -0.23994873}
   m_Size: {x: 0.8407719, y: 0.77579397}
   m_Direction: 1
+--- !u!114 &1174606506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174606501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3d3e4662e4e4f4c95eadc677a4c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1176605905
 Transform:
   m_ObjectHideFlags: 0
@@ -40974,7 +40987,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288305630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b4d222415172a445b9171bab4f41ce5, type: 3}
   m_Name: 
@@ -41886,7 +41899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1386401027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42534,7 +42547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1469668081
 Transform:
   m_ObjectHideFlags: 0
@@ -42562,9 +42575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c4e6eddc724d64d8a2b479c565df1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 0
+  jumpForce: 4.5
   isFloating: 0
-  isOnGround: 1
   isPaused: 0
 --- !u!1 &1481929993
 GameObject:
@@ -48685,6 +48697,7 @@ MonoBehaviour:
   coGemsSpawn: {fileID: 320389561}
   obstacle1: {fileID: 1811969298}
   obstacle2: {fileID: 448619807}
+  playerMovement: {fileID: 1469668080}
   dialogue:
   - "Xin ch\xE0o!"
   wordSpeed: 0.0001
@@ -50206,7 +50219,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811969298}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 756bf227c2b856d41ab4a2f2b2f8dfe4, type: 3}
   m_Name: 
@@ -51476,7 +51489,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982424886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f648f4465d1c44f4a9013537baf50a18, type: 3}
   m_Name: 

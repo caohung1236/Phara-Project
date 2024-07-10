@@ -10,7 +10,6 @@ public class PlayerMovement : OurMonoBehaviour
     public float jumpForce;
     private float originalGravityScale;
     [SerializeField] protected bool isFloating = false;
-    public bool isOnGround = true;
     private Rigidbody2D playerRb;
     public bool isPaused;
     protected override void Awake()
@@ -43,22 +42,24 @@ public class PlayerMovement : OurMonoBehaviour
         if (Input.GetMouseButtonDown(0) && isPaused == false)
         {
             Jump();
-            isFloating = true;
+            // isFloating = true;
+            PlayerDetect.Instance.isOnGround = false;
+            PlayerDetect.Instance.playerAnim.SetFloat("jumpForce", 3);
         }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            isFloating = false;
-        }
+        // if (Input.GetMouseButtonUp(0))
+        // {
+        //     isFloating = false;
+        // }
 
-        if (isFloating && playerRb.velocity.y > 0)
-        {
-            playerRb.gravityScale = 0;
-        }
-        else
-        {
-            playerRb.gravityScale = originalGravityScale;
-        }
+        // if (isFloating && playerRb.velocity.y > 0)
+        // {
+        //     playerRb.gravityScale = 0;
+        // }
+        // else
+        // {
+        //     playerRb.gravityScale = originalGravityScale;
+        // }
     }
 
     protected virtual void Jump()

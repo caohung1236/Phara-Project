@@ -23,9 +23,14 @@ public class NPCMap1 : MonoBehaviour
     public GameObject flyObjSpawn;
     public GameObject coBulletSpawn;
     public GameObject coGemsSpawn;
+    public Text tutorialText1;
+    public Text tutorialText2;
+    public GameObject playerMovement;
     public string[] dialogue;
     private int index;
     public float wordSpeed;
+    public float displayDuration = 10f;
+    public float elapsedTime = 0f;
     public bool playerIsClose;
     private bool isDialogueFinished = false;
     private bool isTyping = false;
@@ -40,7 +45,10 @@ public class NPCMap1 : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, bulletSpawn, flyObjSpawn, coBulletSpawn, coGemsSpawn};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, bulletSpawn, flyObjSpawn, coBulletSpawn, coGemsSpawn, playerMovement};
+        Invoke(nameof(HideText), displayDuration);
+        tutorialText1.enabled = true;
+        tutorialText2.enabled = false;
     }
 
     void Update()
@@ -66,7 +74,8 @@ public class NPCMap1 : MonoBehaviour
         if (isDialogueFinished == true)
         {
             transitionAnim.SetTrigger("Start");
-            PlayerMovement.Instance.jumpForce = 3;
+            playerMovement.SetActive(true);
+            tutorialText2.enabled = true;
             background1.SetActive(true);
             background2.SetActive(true);
             background3.SetActive(false);
@@ -74,6 +83,16 @@ public class NPCMap1 : MonoBehaviour
             gameObject.SetActive(false);
             ActivateGameObjects();
             transitionAnim.SetTrigger("End");
+        }
+
+        if (tutorialText2.enabled)
+        {
+            elapsedTime += Time.deltaTime;
+
+            if (elapsedTime >= displayDuration)
+            {
+                tutorialText2.enabled = false;
+            }
         }
     }
 
@@ -141,7 +160,6 @@ public class NPCMap1 : MonoBehaviour
             playerIsClose = true;
             isDialogueFinished = false;
             NPCMove.Instance.speed = 0;
-            PlayerMovement.Instance.jumpForce = 0;
             background1.SetActive(false);
             background2.SetActive(false);
             background3.SetActive(true);
@@ -156,5 +174,10 @@ public class NPCMap1 : MonoBehaviour
         {
             go.SetActive(true);
         }
+    }
+
+    private void HideText()
+    {
+        tutorialText1.enabled = false;
     }
 }

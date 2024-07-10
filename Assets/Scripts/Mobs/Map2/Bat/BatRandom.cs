@@ -5,7 +5,7 @@ using UnityEngine;
 public class BatRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 15f;
+    protected float rangeX = 35f;
     protected float rangeY = 5.5f;
     protected override void Start()
     {
