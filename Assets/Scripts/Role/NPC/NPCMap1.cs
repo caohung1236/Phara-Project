@@ -24,13 +24,11 @@ public class NPCMap1 : MonoBehaviour
     public GameObject coBulletSpawn;
     public GameObject coGemsSpawn;
     public Text tutorialText1;
-    public Text tutorialText2;
     public GameObject playerMovement;
     public string[] dialogue;
     private int index;
     public float wordSpeed;
-    public float displayDuration = 10f;
-    public float elapsedTime = 0f;
+    public float displayDuration = 5f;
     public bool playerIsClose;
     private bool isDialogueFinished = false;
     private bool isTyping = false;
@@ -48,7 +46,6 @@ public class NPCMap1 : MonoBehaviour
         gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, bulletSpawn, flyObjSpawn, coBulletSpawn, coGemsSpawn, playerMovement};
         Invoke(nameof(HideText), displayDuration);
         tutorialText1.enabled = true;
-        tutorialText2.enabled = false;
     }
 
     void Update()
@@ -75,7 +72,6 @@ public class NPCMap1 : MonoBehaviour
         {
             transitionAnim.SetTrigger("Start");
             playerMovement.SetActive(true);
-            tutorialText2.enabled = true;
             background1.SetActive(true);
             background2.SetActive(true);
             background3.SetActive(false);
@@ -83,16 +79,6 @@ public class NPCMap1 : MonoBehaviour
             gameObject.SetActive(false);
             ActivateGameObjects();
             transitionAnim.SetTrigger("End");
-        }
-
-        if (tutorialText2.enabled)
-        {
-            elapsedTime += Time.deltaTime;
-
-            if (elapsedTime >= displayDuration)
-            {
-                tutorialText2.enabled = false;
-            }
         }
     }
 

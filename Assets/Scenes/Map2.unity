@@ -6840,7 +6840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &241089488
 Transform:
   m_ObjectHideFlags: 0
@@ -17267,7 +17267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &337841690
 Transform:
   m_ObjectHideFlags: 0
@@ -17295,9 +17295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c4e6eddc724d64d8a2b479c565df1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 0
+  jumpForce: 4.5
   isFloating: 0
-  isOnGround: 1
   isPaused: 0
 --- !u!1 &338551349
 GameObject:
@@ -24498,7 +24497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae742a5999b72842b2005c29284b413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 12
   direction: {x: -1, y: 0, z: 0}
 --- !u!1 &546979391
 GameObject:
@@ -24950,6 +24949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 1229549240}
+  nextSceneIndex: 0
 --- !u!4 &608954239
 Transform:
   m_ObjectHideFlags: 0
@@ -31009,7 +31009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerShooting: {fileID: 1256083657}
   playerExplosion: {fileID: 1871718458}
-  shootingTime: 5
+  shootingTime: 8
   immortalTime: 5
   doubleItemsTime: 5
   remainingTime: 0
@@ -31019,6 +31019,7 @@ MonoBehaviour:
   isGameOver: 0
   isUseExplosionItem: 0
   isOnGround: 1
+  countdownTimer: 0
   bulletEffect: {fileID: 1944256705}
   shieldEffect: {fileID: 2046207580}
   explosionEffect: {fileID: 1143076205}
@@ -31028,6 +31029,7 @@ MonoBehaviour:
   picksItemsParticles: {fileID: 274016814}
   hitEffectParticles: {fileID: 817449166}
   targetObject: {fileID: 715901704}
+  tutorialText2: {fileID: 1627106277}
   playerAnim: {fileID: 857371967}
 --- !u!61 &715901708
 BoxCollider2D:
@@ -36527,6 +36529,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 837302712}
   pausePanelRect: {fileID: 651646374}
   pauseButtonRect: {fileID: 133384821319015334}
+  timerTextRect: {fileID: 0}
   gemsCollectRect: {fileID: 666035877}
   groundMobRect: {fileID: 1680798298}
   groundMobRect2: {fileID: 484397877}
@@ -38276,7 +38279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1060498092
 Transform:
   m_ObjectHideFlags: 0
@@ -38579,7 +38582,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "TH\u1EA6N R\u1EEANG ELF'LONA"
+  m_Text: TINH LINH ELF'LONA
 --- !u!222 &1074475026
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39282,7 +39285,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.11046839, y: 0.012838244}
@@ -39795,6 +39798,7 @@ RectTransform:
   - {fileID: 1811370767}
   - {fileID: 1576663432}
   - {fileID: 446053808}
+  - {fileID: 1627106278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -48768,10 +48772,30 @@ MonoBehaviour:
   coShieldSpawn: {fileID: 1713405015}
   coGemsSpawn: {fileID: 320389561}
   obstacle1: {fileID: 1060498089}
+  playerMovement: {fileID: 337841689}
   dialogue:
-  - "Xin ch\xE0o!"
-  - "Ch\xFAc b\u1EA1n may m\u1EAFn \u1EDF ch\u1EB7ng \u0111\u01B0\u1EDDng ph\xEDa
-    tr\u01B0\u1EDBc!"
+  - "Xin ch\xE0o Phara. T\xF4i l\xE0 ng\u01B0\u1EDDi cai qu\u1EA3n khu r\u1EEBng
+    n\xE0y. Tinh linh Efl\u2019Lona!"
+  - "T\xF4i \u0111\xE3 \u0111\u1EE3i b\u1EA1n r\u1EA5t l\xE2u r\u1ED3i \u0111\u1EA5y!"
+  - "B\u1EA1n c\xF3 tin v\xE0o l\u1EDDi ti\xEAn tri kh\xF4ng?"
+  - "T\xF4i \u0111\xE3 nh\u1EADn \u0111\u01B0\u1EE3c m\u1ED9t l\u1EDDi ti\xEAn tri
+    v\xE0 t\xF4i bi\u1EBFt \u0111\u01B0\u1EE3c m\u1ED9t c\xF4 ph\xF9 th\u1EE7y nh\u1ECF
+    t\xEAn l\xE0 Phara s\u1EBD \u0111\u1EBFn \u0111\xE2y! C\xF4 \u1EA5y l\xE0 s\u1EBD
+    l\xE0 ng\u01B0\u1EDDi c\u1EE9u r\u1ED7i r\u1ED7i h\xE0nh tinh n\xE0y!"
+  - "T\xF4i s\u1EBD gi\xFAp c\xF4 v\u01B0\u1EE3t qua \u0111\u01B0\u1EE3c khu r\u1EEBng
+    ph\u1EABn n\u1ED9 n\xE0y! Trong Khu r\u1EEBng n\xE0y c\xF3 r\u1EA5t nhi\u1EC1u
+    lo\xE0i qu\xE1i v\u1EADt hung d\u1EEF!"
+  - "Trong s\u1ED1 \u0111\xF3 nguy hi\u1EC3m nh\u1EA5t l\xE0 d\u01A1i h\u1EAFc \xE1m,
+    ch\xFAng th\u01B0\u1EDDng xuy\xEAn t\u1EA5n c\xF4ng \u1EDF tr\xEAn cao v\u1EDBi
+    t\u1ED1c \u0111\u1ED9 \u0111\xE1ng g\u1EDDm!"
+  - "N\u1EBFu b\u1EA1n b\u1EA1n ngh\u0129 \u1EDF d\u01B0\u1EDBi m\u1EB7t \u0111\u1EA5t
+    s\u1EBD an to\xE0n th\xEC b\u1EA1n \u0111\xE3 nh\u1EA7m! \u1EDE d\u01B0\u1EDBi
+    m\u1EB7t \u0111\u1EA5t l\xE0 \u0111\u1ECBa \u0111i\u1EC3m t\u1EA5n c\xF4ng c\u1EE7a
+    nh\u1EEFng qu\xE1i v\u1EADt n\u1EA5m v\xE0 y\xEAu tinh!"
+  - "B\xEAn c\u1EA1nh \u0111\xF3 b\u1EA1n c\u0169ng ph\u1EA3i c\u1EA9n th\u1EADn
+    nh\u1EEFng r\u1EC5 c\xE2y s\u1EBD xu\u1EA5t hi\u1EC7n b\u1EA5t ng\u1EDD v\xE0
+    t\u1EA5n c\xF4ng t\u1EEB d\u01B0\u1EDBi m\u1EB7t \u0111\u1EA5t!"
+  - "Ch\xFAc b\u1EA1n may m\u1EAFn Phara!"
   wordSpeed: 0.0001
   playerIsClose: 0
 --- !u!1 &1618751409
@@ -48908,6 +48932,85 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1627106277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1627106278}
+  - component: {fileID: 1627106280}
+  - component: {fileID: 1627106279}
+  m_Layer: 5
+  m_Name: TutorialText2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1627106278
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627106277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1224583026}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1627106279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627106277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1627106280
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627106277}
+  m_CullTransparentMesh: 1
 --- !u!1 &1635337051
 GameObject:
   m_ObjectHideFlags: 0
@@ -49979,7 +50082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1871718459
 Transform:
   m_ObjectHideFlags: 0

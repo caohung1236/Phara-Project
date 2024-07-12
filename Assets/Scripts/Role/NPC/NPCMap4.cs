@@ -18,6 +18,7 @@ public class NPCMap4 : MonoBehaviour
     public GameObject sceneTransition;
     public GameObject timer;
     public Text dialogueText;
+    public GameObject playerMovement;
     [SerializeField] Animator transitionAnim;
     public string[] dialogue;
     private int index;
@@ -36,7 +37,7 @@ public class NPCMap4 : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {timer, obstacles1};
+        gameObjects = new GameObject[] {timer, obstacles1, playerMovement};
     }
 
     void Update()
@@ -62,7 +63,7 @@ public class NPCMap4 : MonoBehaviour
         if (isDialogueFinished == true)
         {
             transitionAnim.SetTrigger("Start");
-            PlayerMovement.Instance.jumpForce = 3.5f;
+            playerMovement.SetActive(true);
             background1.SetActive(true);
             background2.SetActive(true);
             background3.SetActive(false);
@@ -139,7 +140,6 @@ public class NPCMap4 : MonoBehaviour
             playerIsClose = true;
             isDialogueFinished = false;
             NPCMove.Instance.speed = 0;
-            PlayerMovement.Instance.jumpForce = 0;
             background1.SetActive(false);
             background2.SetActive(false);
             background3.SetActive(false);

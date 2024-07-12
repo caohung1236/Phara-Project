@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelChanger : MonoBehaviour
 {
     [SerializeField] Animator transitionAnim;
+    public int nextSceneIndex;
     private static LevelChanger instance;
     public static LevelChanger Instance { get { return instance; } }
 
@@ -27,7 +28,6 @@ public class LevelChanger : MonoBehaviour
     IEnumerator LoadNextLevel()
     {
         yield return new WaitForSeconds(1);
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) // Kiểm tra xem có scene tiếp theo không
         {
             transitionAnim.SetTrigger("Start");

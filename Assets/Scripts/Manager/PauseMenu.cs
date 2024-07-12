@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] RectTransform pausePanelRect;
     [SerializeField] RectTransform pauseButtonRect;
+    [SerializeField] RectTransform timerTextRect;
     [SerializeField] RectTransform gemsCollectRect;
     [SerializeField] RectTransform groundMobRect;
     [SerializeField] RectTransform groundMobRect2;

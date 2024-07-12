@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +23,9 @@ public class PlayerDetect : OurMonoBehaviour
     public bool isGameOver = false;
     public bool isUseExplosionItem = false;
     public bool isOnGround = true;
+    
+    public float countdownTimer = 0f;
+    private bool isTutorialText2Active = false;
     public GameObject bulletEffect;
     public GameObject shieldEffect;
     public GameObject explosionEffect;
@@ -31,6 +35,7 @@ public class PlayerDetect : OurMonoBehaviour
     public GameObject picksItemsParticles;
     public GameObject hitEffectParticles;
     public GameObject targetObject;
+    public GameObject tutorialText2;
     private new ParticleSystem particleSystem;
     private ParticleSystem hitParticleSystem;
     private GameObject particleSystemInstance;
@@ -98,6 +103,16 @@ public class PlayerDetect : OurMonoBehaviour
                 GameManager.Instance.gemsCount += 2;
             }
         }
+
+        if (isTutorialText2Active == true)
+        {
+            countdownTimer -= Time.deltaTime;
+            if (countdownTimer <= 0)
+            { 
+                tutorialText2.SetActive(false);
+                isTutorialText2Active = false;
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision2D)
@@ -114,7 +129,7 @@ public class PlayerDetect : OurMonoBehaviour
             AudioManager.Instance.PlaySFX("PlayerHit");
             myCollider.enabled = false;
             myRigidbody.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
-            myRigidbody.gravityScale = 100;
+            myRigidbody.gravityScale = 2;
             PlayerMovement.Instance.jumpForce = 0;
             isGameOver = true;
         }
@@ -341,6 +356,7 @@ public class PlayerDetect : OurMonoBehaviour
                 PlayerMovement.Instance.jumpForce = 0;
                 explosionEffect.SetActive(true);
                 explosion.SetActive(true);
+                playerAnim.SetFloat("jumpForce", 1f);
                 particleSystem.Play();
             }
 
@@ -373,6 +389,8 @@ public class PlayerDetect : OurMonoBehaviour
         if (collider2D.gameObject.CompareTag("NPC"))
         {
             playerAnim.SetTrigger("Run");
+            isTutorialText2Active = true;
+            tutorialText2.SetActive(true);
         }
     }
 
@@ -391,7 +409,7 @@ public class PlayerDetect : OurMonoBehaviour
             Debug.Log("Destroy...");
             myCollider.enabled = false;
             myRigidbody.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
-            myRigidbody.gravityScale = 100;
+            myRigidbody.gravityScale = 2;
             PlayerMovement.Instance.jumpForce = 0;
             isGameOver = true;
         }

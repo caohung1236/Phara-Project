@@ -16511,6 +16511,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 837302712}
   pausePanelRect: {fileID: 651646374}
   pauseButtonRect: {fileID: 133384821319015334}
+  timerTextRect: {fileID: 0}
   gemsCollectRect: {fileID: 1608322495}
   groundMobRect: {fileID: 666035877}
   groundMobRect2: {fileID: 1680798298}
@@ -17505,6 +17506,7 @@ MonoBehaviour:
   isGameOver: 0
   isUseExplosionItem: 0
   isOnGround: 1
+  countdownTimer: 0
   bulletEffect: {fileID: 1985381830}
   shieldEffect: {fileID: 174283811}
   explosionEffect: {fileID: 1468152633}
@@ -17514,6 +17516,7 @@ MonoBehaviour:
   picksItemsParticles: {fileID: 383861929}
   hitEffectParticles: {fileID: 1512397852}
   targetObject: {fileID: 917915545}
+  tutorialText2: {fileID: 1645119121}
   playerAnim: {fileID: 334849424}
 --- !u!61 &917915551
 BoxCollider2D:
@@ -39783,6 +39786,7 @@ RectTransform:
   - {fileID: 138079336}
   - {fileID: 1171562468}
   - {fileID: 427578630}
+  - {fileID: 1645119122}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -41851,7 +41855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1469668081
 Transform:
   m_ObjectHideFlags: 0
@@ -41879,9 +41883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c4e6eddc724d64d8a2b479c565df1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 0
+  jumpForce: 4.5
   isFloating: 0
-  isOnGround: 1
   isPaused: 0
 --- !u!1 &1470725401
 GameObject:
@@ -48056,6 +48059,7 @@ MonoBehaviour:
   coDoubleSpawn: {fileID: 1910287541}
   coGemsSpawn: {fileID: 320389561}
   obstacles1: {fileID: 904186568}
+  playerMovement: {fileID: 1469668080}
   dialogue:
   - Hello!
   wordSpeed: 0.001
@@ -48440,6 +48444,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -300}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!1 &1645119121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1645119122}
+  - component: {fileID: 1645119124}
+  - component: {fileID: 1645119123}
+  m_Layer: 5
+  m_Name: TutorialText2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1645119122
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645119121}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1224583026}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1645119123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645119121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1645119124
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645119121}
+  m_CullTransparentMesh: 1
 --- !u!1 &1658117880
 GameObject:
   m_ObjectHideFlags: 0

@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.2
   repeatDistance: 20.9
 --- !u!212 &113848642
 SpriteRenderer:
@@ -709,6 +709,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &170629409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 170629410}
+  - component: {fileID: 170629412}
+  - component: {fileID: 170629411}
+  m_Layer: 5
+  m_Name: TutorialText2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &170629410
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170629409}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1224583026}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &170629411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170629409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &170629412
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170629409}
+  m_CullTransparentMesh: 1
 --- !u!1 &174283811
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +1071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 1
   repeatDistance: 20.9
 --- !u!1 &235980576
 GameObject:
@@ -6893,7 +6972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.3
   repeatDistance: 20.9
 --- !u!1 &334849421
 GameObject:
@@ -17676,7 +17755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.2
   repeatDistance: 20.9
 --- !u!1 &564360278
 GameObject:
@@ -18175,7 +18254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   repeatDistance: 20.9
 --- !u!1 &651646373
 GameObject:
@@ -18265,7 +18344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 655735593}
   - component: {fileID: 655735595}
-  - component: {fileID: 655735594}
+  - component: {fileID: 655735596}
   m_Layer: 0
   m_Name: model
   m_TagString: Untagged
@@ -18281,27 +18360,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655735592}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 258670327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &655735594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655735592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  direction: {x: -1, y: 0, z: 0}
 --- !u!212 &655735595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18354,6 +18419,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &655735596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655735592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  direction: {x: -1, y: 0, z: 0}
 --- !u!1 &658690011
 GameObject:
   m_ObjectHideFlags: 0
@@ -18451,7 +18530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.3
   repeatDistance: 20.9
 --- !u!1 &667863749
 GameObject:
@@ -18781,7 +18860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   repeatDistance: 20.9
 --- !u!212 &691769027
 SpriteRenderer:
@@ -19367,11 +19446,12 @@ MonoBehaviour:
   pauseMenu: {fileID: 837302712}
   pausePanelRect: {fileID: 651646374}
   pauseButtonRect: {fileID: 133384821319015334}
-  gemsCollectRect: {fileID: 956609514}
+  timerTextRect: {fileID: 956609514}
+  gemsCollectRect: {fileID: 1285011064}
   groundMobRect: {fileID: 71091349}
   groundMobRect2: {fileID: 1596655660}
-  groundMobRect3: {fileID: 0}
-  groundMobRect4: {fileID: 0}
+  groundMobRect3: {fileID: 802229100}
+  groundMobRect4: {fileID: 936567758}
   topPosY: 750
   middlePosY: 50
   tweenDuration: 0.3
@@ -19506,7 +19586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.2
   repeatDistance: 20.9
 --- !u!212 &872152475
 SpriteRenderer:
@@ -19789,7 +19869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   repeatDistance: 20.9
 --- !u!61 &913722456
 BoxCollider2D:
@@ -19953,15 +20033,17 @@ MonoBehaviour:
   isGameOver: 0
   isUseExplosionItem: 0
   isOnGround: 1
+  countdownTimer: 0
   bulletEffect: {fileID: 1985381830}
   shieldEffect: {fileID: 174283811}
   explosionEffect: {fileID: 1002836552}
   shield: {fileID: 1058285140}
   explosion: {fileID: 98811959}
-  doubleItems: {fileID: 0}
+  doubleItems: {fileID: 1220125989}
   picksItemsParticles: {fileID: 383861929}
   hitEffectParticles: {fileID: 1154523775911324339}
   targetObject: {fileID: 917915545}
+  tutorialText2: {fileID: 170629409}
   playerAnim: {fileID: 334849424}
 --- !u!82 &917915552
 AudioSource:
@@ -20130,7 +20212,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &936492848
 GameObject:
   m_ObjectHideFlags: 0
@@ -20764,7 +20846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 1
   repeatDistance: 20.9
 --- !u!212 &1031580217
 SpriteRenderer:
@@ -41326,7 +41408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1220125990
 Transform:
   m_ObjectHideFlags: 0
@@ -41459,6 +41541,7 @@ RectTransform:
   - {fileID: 512111853}
   - {fileID: 1192521115}
   - {fileID: 956609514}
+  - {fileID: 170629410}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -42634,7 +42717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.3
   repeatDistance: 20.9
 --- !u!212 &1385909043
 SpriteRenderer:
@@ -42833,7 +42916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1469668081
 Transform:
   m_ObjectHideFlags: 0
@@ -42861,9 +42944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c4e6eddc724d64d8a2b479c565df1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 0
+  jumpForce: 4.5
   isFloating: 0
-  isOnGround: 1
   isPaused: 0
 --- !u!1 &1492563596
 GameObject:
@@ -43512,7 +43594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 1
   repeatDistance: 20.9
 --- !u!212 &1577908553
 SpriteRenderer:
@@ -43611,7 +43693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.3
   repeatDistance: 20.9
 --- !u!212 &1582591936
 SpriteRenderer:
@@ -44034,9 +44116,27 @@ MonoBehaviour:
   sceneTransition: {fileID: 1591724592}
   timer: {fileID: 1058070016}
   dialogueText: {fileID: 1709714700}
+  playerMovement: {fileID: 1469668080}
   transitionAnim: {fileID: 1591724593}
   dialogue:
-  - "Xin ch\xE0o!"
+  - "Xin ch\xE0o c\xF4 g\xE1i!"
+  - "T\xF4i l\xE0 ng\u01B0\u1EDDi b\u1EA3o v\u1EC7 c\u1EE7a th\u01B0\u1EE3ng ngu\u1ED3n
+    Taligo"
+  - "N\u01A1i \u0111\xE2y \u0111\u01B0\u1EE3c t\xF4i b\u1EA3o v\u1EC7 trong su\u1ED1t
+    h\xE0ng ngh\xECn n\u0103m qua!"
+  - "Khi t\u1ED9c ng\u01B0\u1EDDi Ceasar \u0111\u1EBFn \u0111\xE2y t\xF4i \u0111\xE3
+    th\u1EA5t b\u1EA1i trong vi\u1EC7c b\u1EA3o v\u1EC7 n\u01A1i \u0111\xE2y!"
+  - "V\xE0 t\xF4i c\u0169ng \u0111\xE3 b\u1ECB th\xED nghi\u1EC7m n\xEAn m\u1EDBi
+    c\xF3 h\xECnh th\xE1i kh\xE1c bi\u1EC7t so v\u1EDBi nh\u1EEFng golem kh\xE1c"
+  - "Xin l\u1ED7i c\xF4 g\xE1i nh\u01B0ng c\xF4 kh\xF4ng th\u1EC3 \u0111i ti\u1EBFp
+    \u0111\u01B0\u1EE3c!"
+  - "\u0110\u01B0\u1EDDng \u0111i phia tr\u01B0\u1EDBc b\u1ECB c\u1EA3n tr\u1EDF
+    b\u1EDFi r\u1EA5t nhi\u1EC1u c\u1ED9t b\u0103ng!"
+  - "Ch\xFAng r\u1EA5t nguy hi\u1EC3m v\xE0 c\u1EE9ng c\xE1p n\xEAn kh\xF4ng th\u1EC3
+    b\u1ECB ph\xE1 h\u1EE7y \u0111\u01B0\u1EE3c"
+  - "N\u1EBFu c\xF4 mu\u1ED1n v\u01B0\u1EE3t qua th\xEC ph\u1EA3i n\xE9 tr\xE1nh
+    \u0111\u01B0\u1EE3c c\xE1c c\u1ED9t b\u0103ng \u0111\xF3!"
+  - "Ch\xFAc c\xF4 may m\u1EAFn!"
   wordSpeed: 0.0001
   playerIsClose: 0
 --- !u!1 &1622521547
@@ -44187,7 +44287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 1
   repeatDistance: 20.9
 --- !u!212 &1628704453
 SpriteRenderer:
@@ -44338,7 +44438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.2
   repeatDistance: 20.9
 --- !u!1 &1658117880
 GameObject:

@@ -26,6 +26,8 @@ public class NPCMap6 : MonoBehaviour
     public GameObject coDoubleSpawn;
     public GameObject coGemsSpawn;
     public GameObject obstacles1;
+    public GameObject obstacles2;
+    public GameObject limit;
     public string[] dialogue;
     private int index;
     public float wordSpeed;
@@ -43,7 +45,7 @@ public class NPCMap6 : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, mobGroundSpawn4, bulletPlayerSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coGemsSpawn, coDoubleSpawn, obstacles1};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, mobGroundSpawn4, bulletPlayerSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coGemsSpawn, coDoubleSpawn, obstacles1, obstacles2};
     }
 
     void Update()
@@ -69,7 +71,8 @@ public class NPCMap6 : MonoBehaviour
         if (isDialogueFinished == true)
         {
             transitionAnim.SetTrigger("Start");
-            PlayerMovement.Instance.jumpForce = 3;
+            PlayerMovement.Instance.jumpForce = 4.5f;
+            limit.SetActive(false);
             background1.SetActive(true);
             background2.SetActive(true);
             background3.SetActive(false);
