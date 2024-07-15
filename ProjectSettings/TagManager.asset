@@ -38,6 +38,8 @@ TagManager:
   - EnemyFly
   - EnemyBat
   - Thunder
+  - LimitBullet
+  - BulletRobot
   layers:
   - Default
   - TransparentFX

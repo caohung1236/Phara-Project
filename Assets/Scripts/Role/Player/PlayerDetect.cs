@@ -182,96 +182,49 @@ public class PlayerDetect : OurMonoBehaviour
             HandlerDetectEnemy(collider2D);
         }
 
-        if (collider2D.CompareTag("EnemyBird"))
-        {
-            HandlerDetectEnemy(collider2D);
-        }
 
-        if (collider2D.CompareTag("EnemyDragon"))
-        {
-            HandlerDetectEnemy(collider2D);
-        }
 
-        if (collider2D.CompareTag("EnemyBatMonster"))
-        {
-            HandlerDetectEnemy(collider2D);
-        }
 
-        if (collider2D.CompareTag("EnemyPhoenix"))
-        {
-            HandlerDetectEnemy(collider2D);
-        }
+
 
         if (collider2D.CompareTag("Arrow"))
         {
-            if (isInvincible == true)
-            {
-                shieldEffect.SetActive(false);
-                shield.SetActive(false);
-                isInvincible = false;
-                Destroy(collider2D.gameObject);
-                Debug.Log("Destroy...");
-            }
-            else
-            {
-                isGameOver = true;
-                AudioManager.Instance.PlaySFX("PlayerHit");
-                Destroy(gameObject);
-            }
+            HandlerDetectFly(collider2D);
         }
 
         if (collider2D.CompareTag("EnemyBat"))
         {
-            if (isInvincible == true)
-            {
-                shieldEffect.SetActive(false);
-                shield.SetActive(false);
-                isInvincible = false;
-                Destroy(collider2D.gameObject);
-                Debug.Log("Destroy...");
-            }
-            else
-            {
-                isGameOver = true;
-                AudioManager.Instance.PlaySFX("PlayerHit");
-                Destroy(gameObject);
-            }
+            HandlerDetectFly(collider2D);
         }
 
         if (collider2D.CompareTag("EnemyFly"))
         {
-            if (isInvincible == true)
-            {
-                shieldEffect.SetActive(false);
-                shield.SetActive(false);
-                isInvincible = false;
-                Destroy(collider2D.gameObject);
-                Debug.Log("Destroy...");
-            }
-            else
-            {
-                isGameOver = true;
-                AudioManager.Instance.PlaySFX("PlayerHit");
-                Destroy(gameObject);
-            }
+            HandlerDetectFly(collider2D);
         }
 
         if (collider2D.CompareTag("EnemyRobot3"))
         {
-            if (isInvincible == true)
-            {
-                shieldEffect.SetActive(false);
-                shield.SetActive(false);
-                isInvincible = false;
-                Destroy(collider2D.gameObject);
-                Debug.Log("Destroy...");
-            }
-            else
-            {
-                isGameOver = true;
-                AudioManager.Instance.PlaySFX("PlayerHit");
-                Destroy(gameObject);
-            }
+            HandlerDetectFly(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyBird"))
+        {
+            HandlerDetectFly(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyDragon"))
+        {
+            HandlerDetectFly(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyBatMonster"))
+        {
+            HandlerDetectFly(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyPhoenix"))
+        {
+            HandlerDetectFly(collider2D);
         }
 
         if (collider2D.CompareTag("Waves"))
@@ -311,6 +264,24 @@ public class PlayerDetect : OurMonoBehaviour
         if (collider2D.CompareTag("Laser"))
         {
             if (isInvincible == true)
+            {
+                shieldEffect.SetActive(false);
+                shield.SetActive(false);
+                isInvincible = false;
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
+        
+        if (collider2D.CompareTag("BulletRobot"))
+        {
+            if (isInvincible == true || isImmortal == true)
             {
                 shieldEffect.SetActive(false);
                 shield.SetActive(false);
@@ -412,6 +383,24 @@ public class PlayerDetect : OurMonoBehaviour
             myRigidbody.gravityScale = 2;
             PlayerMovement.Instance.jumpForce = 0;
             isGameOver = true;
+        }
+    }
+
+    void HandlerDetectFly(Collider2D collider2D)
+    {
+        if (isInvincible == true)
+        {
+            shieldEffect.SetActive(false);
+            shield.SetActive(false);
+            isInvincible = false;
+            Destroy(collider2D.gameObject);
+            Debug.Log("Destroy...");
+        }
+        else
+        {
+            isGameOver = true;
+            AudioManager.Instance.PlaySFX("PlayerHit");
+            Destroy(gameObject);
         }
     }
 }

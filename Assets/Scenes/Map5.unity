@@ -13705,7 +13705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecefbebe18f1f454abb3eea992aa6a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 5
+  timeLimit: 3.3
   timeElapsed: 0
 --- !u!1 &484397876
 GameObject:
@@ -14774,6 +14774,7 @@ GameObject:
   - component: {fileID: 617037565}
   - component: {fileID: 617037567}
   - component: {fileID: 617037566}
+  - component: {fileID: 617037568}
   m_Layer: 0
   m_Name: Laser_1
   m_TagString: Laser
@@ -14805,7 +14806,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617037564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -14870,6 +14871,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &617037568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617037564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b36f7b2acbfdd4ebad3739958de7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxCollider2D: {fileID: 617037566}
 --- !u!4 &621216361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4464497929771776, guid: 9e4577abe56a95f4a91d29a0473cd30c,
@@ -15411,6 +15425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 1229549240}
+  nextSceneIndex: 0
 --- !u!4 &667863751
 Transform:
   m_ObjectHideFlags: 0
@@ -15886,7 +15901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecefbebe18f1f454abb3eea992aa6a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 1.5
+  timeLimit: 2.3
   timeElapsed: 0
 --- !u!1 &720105866
 GameObject:
@@ -19723,8 +19738,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1174606502}
-  - component: {fileID: 1174606505}
+  - component: {fileID: 1174606506}
   - component: {fileID: 1174606504}
+  - component: {fileID: 1174606505}
   m_Layer: 0
   m_Name: RobotThree_1
   m_TagString: EnemyRobot3
@@ -19777,8 +19793,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &1174606505
-CapsuleCollider2D:
+--- !u!114 &1174606505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174606501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3d3e4662e4e4f4c95eadc677a4c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1174606506
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -19809,9 +19837,19 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07013122, y: -0.23994873}
-  m_Size: {x: 0.8407719, y: 0.77579397}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!4 &1176605905
 Transform:
   m_ObjectHideFlags: 0
@@ -40758,7 +40796,7 @@ GameObject:
   - component: {fileID: 1304704361}
   m_Layer: 0
   m_Name: BulletRobotTwo_1
-  m_TagString: Untagged
+  m_TagString: BulletRobot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41591,7 +41629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecefbebe18f1f454abb3eea992aa6a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 5
+  timeLimit: 3.3
   timeElapsed: 0
 --- !u!1 &1452442351
 GameObject:
@@ -41886,6 +41924,7 @@ MonoBehaviour:
   jumpForce: 4.5
   isFloating: 0
   isPaused: 0
+  isFlyAnimation: 0
 --- !u!1 &1470725401
 GameObject:
   m_ObjectHideFlags: 0
@@ -49777,7 +49816,7 @@ GameObject:
   - component: {fileID: 1818051899}
   m_Layer: 0
   m_Name: BulletRobotOne_1
-  m_TagString: Respawn
+  m_TagString: BulletRobot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

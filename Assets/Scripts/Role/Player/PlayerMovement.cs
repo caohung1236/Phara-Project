@@ -8,10 +8,10 @@ public class PlayerMovement : OurMonoBehaviour
     private static PlayerMovement instance;
     public static PlayerMovement Instance { get => instance; }
     public float jumpForce;
-    private float originalGravityScale;
     [SerializeField] protected bool isFloating = false;
     private Rigidbody2D playerRb;
     public bool isPaused;
+    public bool isFlyAnimation = false;
     protected override void Awake()
     {
         base.Awake();
@@ -26,7 +26,6 @@ public class PlayerMovement : OurMonoBehaviour
     {
         base.Start();
         playerRb = transform.parent.GetComponent<Rigidbody2D>();
-        originalGravityScale = playerRb.gravityScale;
     }
     protected virtual void Update()
     {
@@ -44,7 +43,13 @@ public class PlayerMovement : OurMonoBehaviour
             Jump();
             // isFloating = true;
             PlayerDetect.Instance.isOnGround = false;
+            isFlyAnimation = true;
+        }
+        
+        if (isFlyAnimation == true)
+        {
             PlayerDetect.Instance.playerAnim.SetFloat("jumpForce", 3);
+            isFlyAnimation = false;
         }
 
         // if (Input.GetMouseButtonUp(0))

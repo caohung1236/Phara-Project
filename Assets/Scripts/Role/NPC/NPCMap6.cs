@@ -28,6 +28,7 @@ public class NPCMap6 : MonoBehaviour
     public GameObject obstacles1;
     public GameObject obstacles2;
     public GameObject limit;
+    public Rigidbody2D player;
     public string[] dialogue;
     private int index;
     public float wordSpeed;
@@ -72,6 +73,7 @@ public class NPCMap6 : MonoBehaviour
         {
             transitionAnim.SetTrigger("Start");
             PlayerMovement.Instance.jumpForce = 4.5f;
+            player.constraints = ~RigidbodyConstraints2D.FreezePositionY;
             limit.SetActive(false);
             background1.SetActive(true);
             background2.SetActive(true);
@@ -148,6 +150,7 @@ public class NPCMap6 : MonoBehaviour
             isDialogueFinished = false;
             NPCMove.Instance.speed = 0;
             PlayerMovement.Instance.jumpForce = 0;
+            player.constraints = RigidbodyConstraints2D.FreezePositionY;
             background1.SetActive(false);
             background2.SetActive(false);
             background3.SetActive(true);
