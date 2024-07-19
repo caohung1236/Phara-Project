@@ -11,10 +11,12 @@ public class PlayerDetect : OurMonoBehaviour
     public GameObject playerExplosion;
     [SerializeField] private float shootingTime = 5.0f;
     [SerializeField] private float immortalTime = 5.0f;
+    [SerializeField] private float slowdownTime = 5.0f;
     [SerializeField] private float doubleItemsTime = 5.0f;
     [SerializeField] private float remainingTime;
     [SerializeField] private bool isInvincible = false;
     [SerializeField] private bool isImmortal = false;
+    [SerializeField] private bool isSlowdown = false;
     [SerializeField] private bool isDoubleItems = false;
     private BoxCollider2D myCollider;
     private Rigidbody2D myRigidbody;
@@ -31,6 +33,7 @@ public class PlayerDetect : OurMonoBehaviour
     public GameObject explosionEffect;
     public GameObject shield;
     public GameObject explosion;
+    public GameObject slowdownItems;
     public GameObject doubleItems;
     public GameObject picksItemsParticles;
     public GameObject hitEffectParticles;
@@ -90,6 +93,17 @@ public class PlayerDetect : OurMonoBehaviour
                 explosion.SetActive(false);
                 explosionEffect.SetActive(false);
                 PlayerMovement.Instance.jumpForce = 4.5f;
+            }
+        }
+
+        if (isSlowdown == true)
+        {
+            slowdownTime -= Time.deltaTime;
+            if (slowdownTime <= 0)
+            {
+                isSlowdown = false;
+                slowdownItems.SetActive(false);
+                ParentMoveSpeed.Instance.speed += 3;
             }
         }
 
@@ -324,10 +338,18 @@ public class PlayerDetect : OurMonoBehaviour
                 isImmortal = true;
                 AudioManager.Instance.PlaySFX("Collectable");
                 Destroy(collider2D.gameObject);
-                PlayerMovement.Instance.jumpForce = 0;
                 explosionEffect.SetActive(true);
                 explosion.SetActive(true);
-                playerAnim.SetFloat("jumpForce", 1f);
+                particleSystem.Play();
+            }
+
+            if (collider2D.CompareTag("CollectSlowdown"))
+            {
+                isSlowdown = true;
+                AudioManager.Instance.PlaySFX("Collectable");
+                slowdownItems.SetActive(true);
+                ParentMoveSpeed.Instance.speed -= 3;;
+                Destroy(collider2D.gameObject);
                 particleSystem.Play();
             }
 
@@ -388,7 +410,7 @@ public class PlayerDetect : OurMonoBehaviour
 
     void HandlerDetectFly(Collider2D collider2D)
     {
-        if (isInvincible == true)
+        if (isInvincible == true || isImmortal == true)
         {
             shieldEffect.SetActive(false);
             shield.SetActive(false);

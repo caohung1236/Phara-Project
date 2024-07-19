@@ -18616,7 +18616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 1229549240}
-  nextSceneIndex: 0
+  nextSceneIndex: 10
 --- !u!4 &667863751
 Transform:
   m_ObjectHideFlags: 0
@@ -20081,10 +20081,12 @@ MonoBehaviour:
   playerExplosion: {fileID: 1220125989}
   shootingTime: 5
   immortalTime: 5
+  slowdownTime: 5
   doubleItemsTime: 5
   remainingTime: 0
   isInvincible: 0
   isImmortal: 0
+  isSlowdown: 0
   isDoubleItems: 0
   isGameOver: 0
   isUseExplosionItem: 0
@@ -20095,6 +20097,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 1002836552}
   shield: {fileID: 1058285140}
   explosion: {fileID: 98811959}
+  slowdownItems: {fileID: 0}
   doubleItems: {fileID: 1220125989}
   picksItemsParticles: {fileID: 383861929}
   hitEffectParticles: {fileID: 1154523775911324339}
@@ -20986,6 +20989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1561780892}
+  levelChanger: {fileID: 667863749}
 --- !u!4 &1058070018
 Transform:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class DragonRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(SpawnDragon), 20f, 15f);
+        InvokeRepeating(nameof(SpawnDragon), 15f, 20f);
     }
 
     protected virtual void Update()

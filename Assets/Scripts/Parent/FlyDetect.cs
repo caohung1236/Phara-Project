@@ -20,5 +20,10 @@ public class FlyDetect : MonoBehaviour
             rigidbody2D.AddForce(new Vector2(15, 5), ForceMode2D.Impulse);
             rigidbody2D.gravityScale = 2;
         }
+
+        if (collider2D.CompareTag("Explosion"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

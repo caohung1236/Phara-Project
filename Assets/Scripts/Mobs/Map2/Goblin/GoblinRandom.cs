@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoblinRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 41f;
+    protected float rangeX = 35f;
     protected float rangeY = 1.5f;
     protected override void Start()
     {

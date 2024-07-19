@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     [SerializeField] Text timerText;
+    public GameObject levelChanger;
+
     float elapsedTime;
 
     void Update()
@@ -17,7 +19,7 @@ public class Timer : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}/02:30", minutes, seconds);
         if (minutes >= 2f && seconds >= 30f)
         {
-            SceneManager.LoadScene(1);
+            levelChanger.SetActive(true);
         }
     }
 }

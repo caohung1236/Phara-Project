@@ -27,10 +27,9 @@ public class LevelChanger : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) // Kiểm tra xem có scene tiếp theo không
         {
-            transitionAnim.SetTrigger("Start");
             SceneManager.LoadSceneAsync(nextSceneIndex);
         }
     }

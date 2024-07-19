@@ -7,11 +7,11 @@ public class ThunderRandom : OurMonoBehaviour
     [SerializeField] protected bool isSpawning = false;
     public GameObject warningObject;
     protected float rangeX = 0f;
-    protected float rangeY = 2f;
+    protected float rangeY = 6.3f;
     protected override void Start()
     {
         base.Start();
-        Invoke(nameof(Warning), 45f);
+        Invoke(nameof(Warning), 15f);
     }
 
     protected virtual void Update()
@@ -30,7 +30,7 @@ public class ThunderRandom : OurMonoBehaviour
             isSpawning = true;
         }
         warningObject.SetActive(false);
-        Invoke(nameof(ResetSpawning), 50f);
+        Invoke(nameof(ResetSpawning), 20f);
         Debug.Log("Spawning...");
     }
 

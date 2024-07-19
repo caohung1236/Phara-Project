@@ -140,22 +140,22 @@ public class GameManager : MonoBehaviour
 
     void CountBirds()
     {
-        robot3Text.text = $":{robot3Count}/2";
+        birdsText.text = $":{birdsCount}/2";
     }
 
     void CountDragons()
     {
-        robot3Text.text = $":{robot3Count}/2";
+        dragonsText.text = $":{dragonsCount}/2";
     }
 
     void CountBatMonsters()
     {
-        robot3Text.text = $":{robot3Count}/2";
+        batMonstersText.text = $":{batMonstersCount}/2";
     }
 
     void CountPhoenix()
     {
-        robot3Text.text = $":{robot3Count}/2";
+        phoenixText.text = $":{phoenixCount}/2";
     }
 
     void ConditionsMap1()
