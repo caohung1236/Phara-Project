@@ -6,7 +6,7 @@ public class Robot1Random : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 15f;
-    protected float rangeY = 1.5f;
+    protected float rangeY = 2.15f;
     protected override void Start()
     {
         base.Start();

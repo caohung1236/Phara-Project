@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using System.Threading.Tasks;
+using UnityEditor;
+using Unity.VisualScripting;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -32,6 +34,11 @@ public class PauseMenu : MonoBehaviour
             Debug.LogError("Only 1 PauseMenu allow to exist");
         }
         PauseMenu.instance = this;
+    }
+
+    void Start()
+    {
+        
     }
 
     public void Pause()

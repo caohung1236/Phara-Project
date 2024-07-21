@@ -8,18 +8,24 @@ public class SceneData : OurMonoBehaviour
     private static SceneData instance;
 
     public static SceneData Instance { get => instance; set => instance = value; }
+    public bool isSceneSaved;
 
     protected override void Awake()
     {
         base.Awake();
         SceneData.instance = this;
     }
-    public void SaveScene()
+    private void OnTriggerEnter2D(Collider2D collider2D)
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        PlayerPrefs.SetInt("CurrentScene", currentSceneIndex);
+        if (collider2D.CompareTag("Player"))
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt("CurrentScene", currentSceneIndex);
+            isSceneSaved = true;
+            Debug.Log("Saved");
+        }
     }
-
+    
     public void OnContinueButton()
     {
         int savedSceneIndex = PlayerPrefs.GetInt("CurrentScene", 0);

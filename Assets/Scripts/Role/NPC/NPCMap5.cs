@@ -142,7 +142,6 @@ public class NPCMap5 : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneData.Instance.SaveScene();
             sceneTransition.SetActive(true);
             transitionAnim.SetTrigger("Start");
             playerIsClose = true;

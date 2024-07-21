@@ -6,7 +6,7 @@ public class SlimeRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 30f;
-    protected float rangeY = 1.5f;
+    protected float rangeY = 3.2f;
     protected override void Start()
     {
         base.Start();

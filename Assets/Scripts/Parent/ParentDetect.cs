@@ -17,18 +17,21 @@ public class ParentDetect : MonoBehaviour
     {
         if (collider2D.CompareTag("Bullet"))
         {
+            rigidbody2D.constraints = ~RigidbodyConstraints2D.FreezePosition;
             boxCollider2D.enabled = false;
             rigidbody2D.AddForce(new Vector2(11, 3), ForceMode2D.Impulse);
         }
 
         if (collider2D.CompareTag("Waves"))
         {
+            rigidbody2D.constraints = ~RigidbodyConstraints2D.FreezePosition;
             boxCollider2D.enabled = false;
             rigidbody2D.AddForce(new Vector2(11, 3), ForceMode2D.Impulse);
         }
 
         if (collider2D.CompareTag("Roots"))
         {
+            rigidbody2D.constraints = ~RigidbodyConstraints2D.FreezePosition;
             boxCollider2D.enabled = false;
             rigidbody2D.AddForce(new Vector2(11, 3), ForceMode2D.Impulse);
         }

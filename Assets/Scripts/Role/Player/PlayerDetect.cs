@@ -11,13 +11,11 @@ public class PlayerDetect : OurMonoBehaviour
     public GameObject playerExplosion;
     [SerializeField] private float shootingTime = 5.0f;
     [SerializeField] private float immortalTime = 5.0f;
-    [SerializeField] private float slowdownTime = 5.0f;
     [SerializeField] private float doubleItemsTime = 5.0f;
     [SerializeField] private float remainingTime;
-    [SerializeField] private bool isInvincible = false;
     [SerializeField] private bool isImmortal = false;
-    [SerializeField] private bool isSlowdown = false;
     [SerializeField] private bool isDoubleItems = false;
+    public bool isInvincible = false;
     private BoxCollider2D myCollider;
     private Rigidbody2D myRigidbody;
     private static PlayerDetect instance;
@@ -25,7 +23,6 @@ public class PlayerDetect : OurMonoBehaviour
     public bool isGameOver = false;
     public bool isUseExplosionItem = false;
     public bool isOnGround = true;
-    
     public float countdownTimer = 0f;
     private bool isTutorialText2Active = false;
     public GameObject bulletEffect;
@@ -33,7 +30,6 @@ public class PlayerDetect : OurMonoBehaviour
     public GameObject explosionEffect;
     public GameObject shield;
     public GameObject explosion;
-    public GameObject slowdownItems;
     public GameObject doubleItems;
     public GameObject picksItemsParticles;
     public GameObject hitEffectParticles;
@@ -93,17 +89,6 @@ public class PlayerDetect : OurMonoBehaviour
                 explosion.SetActive(false);
                 explosionEffect.SetActive(false);
                 PlayerMovement.Instance.jumpForce = 4.5f;
-            }
-        }
-
-        if (isSlowdown == true)
-        {
-            slowdownTime -= Time.deltaTime;
-            if (slowdownTime <= 0)
-            {
-                isSlowdown = false;
-                slowdownItems.SetActive(false);
-                ParentMoveSpeed.Instance.speed += 3;
             }
         }
 
@@ -201,11 +186,6 @@ public class PlayerDetect : OurMonoBehaviour
 
 
 
-        if (collider2D.CompareTag("Arrow"))
-        {
-            HandlerDetectFly(collider2D);
-        }
-
         if (collider2D.CompareTag("EnemyBat"))
         {
             HandlerDetectFly(collider2D);
@@ -243,54 +223,23 @@ public class PlayerDetect : OurMonoBehaviour
 
         if (collider2D.CompareTag("Waves"))
         {
-            if (isInvincible == true)
-            {
-                shieldEffect.SetActive(false);
-                shield.SetActive(false);
-                isInvincible = false;
-                Debug.Log("Destroy...");
-            }
-            else
-            {
-                isGameOver = true;
-                AudioManager.Instance.PlaySFX("PlayerHit");
-                Destroy(gameObject);
-            }
+            isGameOver = true;
+            AudioManager.Instance.PlaySFX("PlayerHit");
+            Destroy(gameObject);
         }
 
         if (collider2D.CompareTag("Tide"))
         {
-            if (isInvincible == true)
-            {
-                shieldEffect.SetActive(false);
-                shield.SetActive(false);
-                isInvincible = false;
-                Debug.Log("Destroy...");
-            }
-            else
-            {
-                isGameOver = true;
-                AudioManager.Instance.PlaySFX("PlayerHit");
-                Destroy(gameObject);
-            }
+            isGameOver = true;
+            AudioManager.Instance.PlaySFX("PlayerHit");
+            Destroy(gameObject);
         }
 
         if (collider2D.CompareTag("Laser"))
         {
-            if (isInvincible == true)
-            {
-                shieldEffect.SetActive(false);
-                shield.SetActive(false);
-                isInvincible = false;
-                Destroy(collider2D.gameObject);
-                Debug.Log("Destroy...");
-            }
-            else
-            {
-                isGameOver = true;
-                AudioManager.Instance.PlaySFX("PlayerHit");
-                Destroy(gameObject);
-            }
+            isGameOver = true;
+            AudioManager.Instance.PlaySFX("PlayerHit");
+            Destroy(gameObject);
         }
         
         if (collider2D.CompareTag("BulletRobot"))
@@ -340,16 +289,6 @@ public class PlayerDetect : OurMonoBehaviour
                 Destroy(collider2D.gameObject);
                 explosionEffect.SetActive(true);
                 explosion.SetActive(true);
-                particleSystem.Play();
-            }
-
-            if (collider2D.CompareTag("CollectSlowdown"))
-            {
-                isSlowdown = true;
-                AudioManager.Instance.PlaySFX("Collectable");
-                slowdownItems.SetActive(true);
-                ParentMoveSpeed.Instance.speed -= 3;;
-                Destroy(collider2D.gameObject);
                 particleSystem.Play();
             }
 

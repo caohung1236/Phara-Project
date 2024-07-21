@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -46,7 +44,7 @@ public class GameManager : MonoBehaviour
     public GameObject levelChanger;
     void Awake()
     {
-        GameManager.Instance = this;
+        GameManager.instance = this;
     }
 
     void Update()
@@ -209,7 +207,7 @@ public class GameManager : MonoBehaviour
     public void Retry()
     {
         gameOverMenu.SetActive(false);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     private void ClickEffect()

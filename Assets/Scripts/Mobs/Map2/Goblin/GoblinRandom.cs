@@ -6,7 +6,7 @@ public class GoblinRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 35f;
-    protected float rangeY = 1.5f;
+    protected float rangeY = 3f;
     protected override void Start()
     {
         base.Start();

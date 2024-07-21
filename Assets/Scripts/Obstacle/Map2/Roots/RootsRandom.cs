@@ -7,7 +7,7 @@ public class RootsRandom : OurMonoBehaviour
     [SerializeField] protected bool isSpawning = false;
     public GameObject warningObject;
     protected float rangeX = 0f;
-    protected float rangeY = 0.6f;
+    protected float rangeY = 1.5f;
     protected override void Start()
     {
         base.Start();

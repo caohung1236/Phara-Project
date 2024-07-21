@@ -7,16 +7,18 @@ public class CrabRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 39f;
-    protected float rangeY = 1.5f;
+    protected float rangeY = 2.9f;
     protected override void Start()
     {
         base.Start();
-        Invoke(nameof(SpawnCrab), 5f);
     }
 
     protected virtual void Update()
     {
-
+        if (!isSpawning)
+        {
+            SpawnCrab();
+        }
     }
 
     protected virtual void SpawnCrab()

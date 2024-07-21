@@ -11,11 +11,12 @@ public class TideRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        Invoke(nameof(Warning), 65f);
+        InvokeRepeating(nameof(Warning), 15f, 25f);
     }
 
     protected virtual void Update()
     {
+
     }
 
     protected virtual void SpawnTide()
@@ -30,7 +31,6 @@ public class TideRandom : OurMonoBehaviour
             isSpawning = true;
         }
         warningObject.SetActive(false);
-        Invoke(nameof(ResetSpawning), 70f);
         Debug.Log("Spawning...");
     }
 

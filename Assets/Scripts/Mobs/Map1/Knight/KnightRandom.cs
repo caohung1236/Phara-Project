@@ -5,8 +5,8 @@ using UnityEngine;
 public class KnightRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 38f;
-    protected float rangeY = 1.5f;
+    protected float rangeX = 40f;
+    protected float rangeY = 1.75f;
     protected override void Start()
     {
         base.Start();
@@ -22,7 +22,7 @@ public class KnightRandom : OurMonoBehaviour
 
     protected virtual void SpawnKnight()
     {
-        Vector3 spawnPos = new(Random.Range(35, rangeX), -rangeY, 0);
+        Vector3 spawnPos = new(Random.Range(38, rangeX), -rangeY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
         {
@@ -35,7 +35,7 @@ public class KnightRandom : OurMonoBehaviour
         {
             Destroy(gameObject);
         }
-        Invoke(nameof(ResetSpawning), 6f);
+        Invoke(nameof(ResetSpawning), 7f);
         Debug.Log("Spawning...");
     }
 

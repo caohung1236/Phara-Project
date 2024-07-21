@@ -41,6 +41,8 @@ TagManager:
   - LimitBullet
   - BulletRobot
   - CollectSlowdown
+  - SaveArea
+  - Shield
   layers:
   - Default
   - TransparentFX

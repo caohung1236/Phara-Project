@@ -6,7 +6,7 @@ public class FishRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 42f;
-    protected float rangeY = 1.5f;
+    protected float rangeY = 2.75f;
     protected override void Start()
     {
         base.Start();

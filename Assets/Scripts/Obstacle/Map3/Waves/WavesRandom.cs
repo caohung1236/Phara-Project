@@ -11,7 +11,7 @@ public class WavesRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        Invoke(nameof(Warning), 25f);
+        InvokeRepeating(nameof(Warning), 30f, 40f);
     }
 
     protected virtual void Update()
@@ -31,7 +31,6 @@ public class WavesRandom : OurMonoBehaviour
             isSpawning = true;
         }
         warningObject.SetActive(false);
-        Invoke(nameof(ResetSpawning), 30f);
         Debug.Log("Spawning...");
     }
 
