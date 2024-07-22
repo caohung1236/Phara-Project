@@ -25,7 +25,6 @@ public class NPCMap5 : MonoBehaviour
     public GameObject coBulletSpawn;
     public GameObject coShieldSpawn;
     public GameObject coExplosionSpawn;
-    public GameObject coSlowdownSpawn;
     public GameObject coGemsSpawn;
     public GameObject obstacles1;
     public GameObject playerMovement;
@@ -46,7 +45,7 @@ public class NPCMap5 : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, bulletPlayerSpawn, bulletRobot1Spawn, bulletRobot2Spawn, flyObjSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coGemsSpawn, coSlowdownSpawn, obstacles1, playerMovement};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, bulletPlayerSpawn, bulletRobot1Spawn, bulletRobot2Spawn, flyObjSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coGemsSpawn, obstacles1, playerMovement};
     }
 
     void Update()

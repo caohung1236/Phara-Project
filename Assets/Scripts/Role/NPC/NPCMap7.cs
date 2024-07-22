@@ -20,10 +20,12 @@ public class NPCMap7 : MonoBehaviour
     public GameObject mobGroundSpawn3;
     public GameObject flySpawn1;
     public GameObject flySpawn2;
+    public GameObject flySpawn3;
     public GameObject bulletPlayerSpawn;
     public GameObject coBulletSpawn;
     public GameObject coShieldSpawn;
     public GameObject coExplosionSpawn;
+    public GameObject coDoubleSpawn;
     public GameObject coGemsSpawn;
     public GameObject obstacles1;
     public GameObject obstacles2;
@@ -45,7 +47,7 @@ public class NPCMap7 : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, flySpawn1, flySpawn2, bulletPlayerSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coGemsSpawn, obstacles1, obstacles2, playerMovement};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, flySpawn1, flySpawn2, flySpawn2, bulletPlayerSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coDoubleSpawn, coGemsSpawn, obstacles1, obstacles2, playerMovement};
     }
 
     void Update()

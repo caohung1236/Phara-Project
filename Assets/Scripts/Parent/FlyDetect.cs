@@ -17,8 +17,8 @@ public class FlyDetect : MonoBehaviour
         if (collider2D.CompareTag("Bullet"))
         {
             boxCollider2D.enabled = false;
-            rigidbody2D.AddForce(new Vector2(15, 5), ForceMode2D.Impulse);
-            rigidbody2D.gravityScale = 2;
+            rigidbody2D.AddForce(new Vector2(11, 3), ForceMode2D.Impulse);
+            rigidbody2D.gravityScale = 1;
         }
 
         if (collider2D.CompareTag("Explosion"))

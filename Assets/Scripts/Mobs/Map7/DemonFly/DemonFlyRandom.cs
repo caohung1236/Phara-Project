@@ -6,7 +6,7 @@ public class DemonFlyRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 22f;
-    protected float rangeY = 5f;
+    protected float rangeY = 6f;
     protected override void Start()
     {
         base.Start();
@@ -23,7 +23,7 @@ public class DemonFlyRandom : OurMonoBehaviour
     protected virtual void SpawnDemonFly()
     {
         float spawnPosX = UnityEngine.Random.Range(rangeX, rangeX + rangeX);
-        float spawnPosY = UnityEngine.Random.Range(3f, rangeY);
+        float spawnPosY = UnityEngine.Random.Range(3.5f, rangeY);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
@@ -33,7 +33,7 @@ public class DemonFlyRandom : OurMonoBehaviour
             newFly.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 10f);
+        Invoke(nameof(ResetSpawning), 8f);
         Debug.Log("Spawning...");
     }
 

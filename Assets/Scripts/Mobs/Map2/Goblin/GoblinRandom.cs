@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoblinRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 35f;
+    protected float rangeX = 28f;
     protected float rangeY = 3f;
     protected override void Start()
     {
@@ -22,7 +22,7 @@ public class GoblinRandom : OurMonoBehaviour
 
     protected virtual void SpawnGoblin()
     {
-        Vector3 spawnPos = new(Random.Range(38, rangeX), -rangeY, 0);
+        Vector3 spawnPos = new(Random.Range(25, rangeX), -rangeY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
         {
@@ -31,7 +31,7 @@ public class GoblinRandom : OurMonoBehaviour
             newGoblin.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 3f);
+        Invoke(nameof(ResetSpawning), 4f);
         Debug.Log("Spawning...");
     }
 

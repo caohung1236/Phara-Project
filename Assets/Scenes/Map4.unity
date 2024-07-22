@@ -20081,13 +20081,11 @@ MonoBehaviour:
   playerExplosion: {fileID: 1220125989}
   shootingTime: 5
   immortalTime: 5
-  slowdownTime: 5
   doubleItemsTime: 5
   remainingTime: 0
-  isInvincible: 0
   isImmortal: 0
-  isSlowdown: 0
   isDoubleItems: 0
+  isInvincible: 0
   isGameOver: 0
   isUseExplosionItem: 0
   isOnGround: 1
@@ -20097,7 +20095,6 @@ MonoBehaviour:
   explosionEffect: {fileID: 1002836552}
   shield: {fileID: 1058285140}
   explosion: {fileID: 98811959}
-  slowdownItems: {fileID: 0}
   doubleItems: {fileID: 1220125989}
   picksItemsParticles: {fileID: 383861929}
   hitEffectParticles: {fileID: 1154523775911324339}
@@ -46746,8 +46743,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -450, y: 65}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -400, y: 30}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2073761019
 MonoBehaviour:
@@ -46910,6 +46907,11 @@ MonoBehaviour:
   dragonsCount: 0
   batMonstersCount: 0
   phoenixCount: 0
+  hellHorseCount: 0
+  hellDogCount: 0
+  groundDragonCount: 0
+  monsterFlyCount: 0
+  demonFlyCount: 0
   gemsText: {fileID: 1253917136}
   slimesText: {fileID: 780019615}
   knightsText: {fileID: 1271601758}
@@ -46926,6 +46928,11 @@ MonoBehaviour:
   dragonsText: {fileID: 1492707507}
   batMonstersText: {fileID: 74195784}
   phoenixText: {fileID: 2072487932}
+  hellHorseText: {fileID: 2072487932}
+  hellDogText: {fileID: 2072487932}
+  groundDragonText: {fileID: 2072487932}
+  monsterFlyText: {fileID: 2072487932}
+  demonFlyText: {fileID: 2072487932}
   levelChanger: {fileID: 667863749}
 --- !u!1 &2122866006
 GameObject:
@@ -47114,8 +47121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: -8.899902}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -5, y: -9}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &655440021904787807
 MonoBehaviour:

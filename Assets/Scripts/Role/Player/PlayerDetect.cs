@@ -131,6 +131,7 @@ public class PlayerDetect : OurMonoBehaviour
             myRigidbody.gravityScale = 2;
             PlayerMovement.Instance.jumpForce = 0;
             isGameOver = true;
+            Timer.Instance.StopTimer();
         }
 
         if (collision2D.gameObject.CompareTag("LimitKill"))
@@ -181,10 +182,29 @@ public class PlayerDetect : OurMonoBehaviour
             HandlerDetectEnemy(collider2D);
         }
 
+        if (collider2D.CompareTag("EnemyHellHorse"))
+        {
+            HandlerDetectEnemy(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyHellDog"))
+        {
+            HandlerDetectEnemy(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyGroundDragon"))
+        {
+            HandlerDetectEnemy(collider2D);
+        }
 
 
 
 
+
+        if (collider2D.CompareTag("Arrow"))
+        {
+            HandlerDetectFly(collider2D);
+        }
 
         if (collider2D.CompareTag("EnemyBat"))
         {
@@ -219,6 +239,23 @@ public class PlayerDetect : OurMonoBehaviour
         if (collider2D.CompareTag("EnemyPhoenix"))
         {
             HandlerDetectFly(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyMonsterFly"))
+        {
+            HandlerDetectFly(collider2D);
+        }
+
+        if (collider2D.CompareTag("EnemyDemonFly"))
+        {
+            HandlerDetectFly(collider2D);
+        }
+
+        if (collider2D.CompareTag("Roots"))
+        {
+            isGameOver = true;
+            AudioManager.Instance.PlaySFX("PlayerHit");
+            Destroy(gameObject);
         }
 
         if (collider2D.CompareTag("Waves"))

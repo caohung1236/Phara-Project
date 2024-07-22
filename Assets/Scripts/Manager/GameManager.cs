@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     public int dragonsCount = 0;
     public int batMonstersCount = 0;
     public int phoenixCount = 0;
+    public int hellHorseCount = 0;
+    public int hellDogCount = 0;
+    public int groundDragonCount = 0;
+    public int monsterFlyCount = 0;
+    public int demonFlyCount = 0;
     public Text gemsText;
     public Text slimesText;
     public Text knightsText;
@@ -41,6 +46,11 @@ public class GameManager : MonoBehaviour
     public Text dragonsText;
     public Text batMonstersText;
     public Text phoenixText;
+    public Text hellHorseText;
+    public Text hellDogText;
+    public Text groundDragonText;
+    public Text monsterFlyText;
+    public Text demonFlyText;
     public GameObject levelChanger;
     void Awake()
     {
@@ -50,28 +60,43 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CountGems();
+
         CountSlimes();
         CountKnights();
+
         CountGoblins();
         CountMushrooms();
         CountBats();
+
         CountCrab();
         CountFish();
         CountFly();
+
         CountRobot1();
         CountRobot2();
         CountRobot3();
+
         CountBirds();
         CountDragons();
         CountDragons();
         CountBatMonsters();
         CountPhoenix();
+
+        CountHellHorse();
+        CountHellDog();
+        CountGroundDragon();
+        CountMonsterFly();
+        CountDemonFly();
+
         ConditionsMap1();
         ConditionsMap2();
         ConditionsMap3();
         ConditionsMap5();
         ConditionsMap6();
+        ConditionsMap7();
+
         ClickEffect();
+
         IsGameOver();
     }
 
@@ -156,6 +181,31 @@ public class GameManager : MonoBehaviour
         phoenixText.text = $":{phoenixCount}/2";
     }
 
+    void CountHellHorse()
+    {
+        hellHorseText.text = $":{hellHorseCount}/2";
+    }
+
+    void CountHellDog()
+    {
+        hellDogText.text = $":{hellDogCount}/2";
+    }
+
+    void CountGroundDragon()
+    {
+        groundDragonText.text = $":{groundDragonCount}/2";
+    }
+
+    void CountMonsterFly()
+    {
+        monsterFlyText.text = $":{monsterFlyCount}/2";
+    }
+
+    void CountDemonFly()
+    {
+        demonFlyText.text = $":{demonFlyCount}/2";
+    }
+
     void ConditionsMap1()
     {
         if (gemsCount >= 1 && slimesCount >= 1 && knightsCount >= 2)
@@ -195,6 +245,15 @@ public class GameManager : MonoBehaviour
             levelChanger.SetActive(true);
         }
     }
+
+    void ConditionsMap7()
+    {
+        if (gemsCount >= 2 && hellHorseCount >= 2 && hellDogCount >= 2 && groundDragonCount >= 2 && dragonsCount >= 2 && monsterFlyCount >= 2 && demonFlyCount >= 2)
+        {
+            levelChanger.SetActive(true);
+        }
+    }
+
 
     void IsGameOver()
     {

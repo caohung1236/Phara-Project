@@ -22,8 +22,9 @@ public class HealthMonster : MonoBehaviour
             if (health == 0)
             {
                 boxCollider2D.enabled = false;
-                rigidbody2D.AddForce(new Vector2(15, 5), ForceMode2D.Impulse);
-                rigidbody2D.gravityScale = 2;
+                rigidbody2D.constraints = ~RigidbodyConstraints2D.FreezePosition;
+                rigidbody2D.AddForce(new Vector2(11, 3), ForceMode2D.Impulse);
+                rigidbody2D.gravityScale = 1;
             }
         }
 

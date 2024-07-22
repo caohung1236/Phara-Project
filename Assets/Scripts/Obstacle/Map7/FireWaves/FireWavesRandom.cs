@@ -11,7 +11,7 @@ public class FireWavesRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        Invoke(nameof(Warning), 25f);
+        InvokeRepeating(nameof(Warning), 20f, 20f);
     }
 
     protected virtual void Update()
@@ -30,7 +30,6 @@ public class FireWavesRandom : OurMonoBehaviour
             isSpawning = true;
         }
         warningObject.SetActive(false);
-        Invoke(nameof(ResetSpawning), 30f);
         Debug.Log("Spawning...");
     }
 

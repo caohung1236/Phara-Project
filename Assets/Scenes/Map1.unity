@@ -16936,11 +16936,9 @@ MonoBehaviour:
   playerExplosion: {fileID: 797022155}
   shootingTime: 5
   immortalTime: 5
-  slowdownTime: 5
   doubleItemsTime: 5
   remainingTime: 0
   isImmortal: 0
-  isSlowdown: 0
   isDoubleItems: 0
   isInvincible: 0
   isGameOver: 0
@@ -16952,7 +16950,6 @@ MonoBehaviour:
   explosionEffect: {fileID: 1253788916}
   shield: {fileID: 1058285140}
   explosion: {fileID: 375280498}
-  slowdownItems: {fileID: 0}
   doubleItems: {fileID: 797022155}
   picksItemsParticles: {fileID: 383861929}
   hitEffectParticles: {fileID: 383861929}
@@ -44716,6 +44713,11 @@ MonoBehaviour:
   dragonsCount: 0
   batMonstersCount: 0
   phoenixCount: 0
+  hellHorseCount: 0
+  hellDogCount: 0
+  groundDragonCount: 0
+  monsterFlyCount: 0
+  demonFlyCount: 0
   gemsText: {fileID: 898488467}
   slimesText: {fileID: 127743374}
   knightsText: {fileID: 254644131}
@@ -44732,6 +44734,11 @@ MonoBehaviour:
   dragonsText: {fileID: 1335989920}
   batMonstersText: {fileID: 1184947346}
   phoenixText: {fileID: 410305061}
+  hellHorseText: {fileID: 245311967}
+  hellDogText: {fileID: 245311967}
+  groundDragonText: {fileID: 245311967}
+  monsterFlyText: {fileID: 245311967}
+  demonFlyText: {fileID: 245311967}
   levelChanger: {fileID: 239923657}
 --- !u!1 &2110914674
 GameObject:
@@ -45167,8 +45174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: -8.899902}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -5, y: -9}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 1, y: 1}
 --- !u!224 &284816745017126898
 RectTransform:
@@ -45186,8 +45193,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -420, y: 65}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -400, y: 30}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &655440021904787807
 MonoBehaviour:

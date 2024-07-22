@@ -6,7 +6,7 @@ public class Robot3Random : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 15f;
-    protected float rangeY = 4f;
+    protected float rangeY = 5f;
     protected override void Start()
     {
         base.Start();
@@ -23,7 +23,7 @@ public class Robot3Random : OurMonoBehaviour
     protected virtual void SpawnRobot3()
     {
         float spawnPosX = UnityEngine.Random.Range(rangeX, rangeX + rangeX);
-        float spawnPosY = UnityEngine.Random.Range(2f, rangeY);
+        float spawnPosY = UnityEngine.Random.Range(3f, rangeY);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)

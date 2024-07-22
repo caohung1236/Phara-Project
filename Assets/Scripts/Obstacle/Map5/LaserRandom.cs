@@ -13,7 +13,7 @@ public class LaserRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(SpawnLaser), 15f, 15f);
+        InvokeRepeating(nameof(SpawnLaser), 20f, 15f);
     }
 
     protected virtual void Update()

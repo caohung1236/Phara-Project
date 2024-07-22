@@ -43,6 +43,11 @@ TagManager:
   - CollectSlowdown
   - SaveArea
   - Shield
+  - EnemyHellHorse
+  - EnemyHellDog
+  - EnemyGroundDragon
+  - EnemyMonsterFly
+  - EnemyDemonFly
   layers:
   - Default
   - TransparentFX
