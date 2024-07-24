@@ -5,7 +5,7 @@ using UnityEngine;
 public class MonsterFlyRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 30f;
+    protected float rangeX = 25f;
     protected float rangeY = 5f;
     protected override void Start()
     {
@@ -33,7 +33,7 @@ public class MonsterFlyRandom : OurMonoBehaviour
             newFly.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 4f);
+        Invoke(nameof(ResetSpawning), 3f);
         Debug.Log("Spawning...");
     }
 

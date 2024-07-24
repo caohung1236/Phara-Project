@@ -47,7 +47,7 @@ public class NPCMap7 : MonoBehaviour
 
     void Start()
     {
-        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, flySpawn1, flySpawn2, flySpawn2, bulletPlayerSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coDoubleSpawn, coGemsSpawn, obstacles1, obstacles2, playerMovement};
+        gameObjects = new GameObject[] {mobGroundSpawn1, mobGroundSpawn2, mobGroundSpawn3, flySpawn1, flySpawn2, flySpawn3, bulletPlayerSpawn, coBulletSpawn, coShieldSpawn, coExplosionSpawn, coDoubleSpawn, coGemsSpawn, obstacles1, obstacles2, playerMovement};
     }
 
     void Update()

@@ -10,7 +10,7 @@ public class CollectDoubleRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        Invoke(nameof(SpawnCollectible), 30f);
+        InvokeRepeating(nameof(SpawnCollectible), 15f, 90f);
     }
 
     protected virtual void Update()
@@ -21,7 +21,7 @@ public class CollectDoubleRandom : OurMonoBehaviour
     protected virtual void SpawnCollectible()
     {
         float spawnPosX = rangeX;
-        float spawnPosY = Random.Range(rangeY, 3.5f);
+        float spawnPosY = Random.Range(rangeY, 5.5f);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
@@ -31,7 +31,6 @@ public class CollectDoubleRandom : OurMonoBehaviour
             newCollect.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 30f);
         Debug.Log("Spawning...");
     }
 

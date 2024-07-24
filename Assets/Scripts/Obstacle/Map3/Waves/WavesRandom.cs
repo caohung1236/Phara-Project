@@ -6,12 +6,12 @@ public class WavesRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     public GameObject warningObject;
-    protected float rangeX = 4f;
-    protected float rangeY = 2.5f;
+    protected float rangeX = 1f;
+    protected float rangeY = 1f;
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(Warning), 30f, 40f);
+        InvokeRepeating(nameof(Warning), 25f, 35f);
     }
 
     protected virtual void Update()

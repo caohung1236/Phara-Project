@@ -48,6 +48,8 @@ TagManager:
   - EnemyGroundDragon
   - EnemyMonsterFly
   - EnemyDemonFly
+  - FireWaves
+  - MeteorRain
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,6 @@ using UnityEngine.Rendering;
 
 public class BulletDetect : MonoBehaviour
 {
-    int killCount = 0;
     protected virtual void OnTriggerEnter2D(UnityEngine.Collider2D collider2D)
     {
         if (collider2D.CompareTag("EnemySlime"))
@@ -82,7 +81,6 @@ public class BulletDetect : MonoBehaviour
 
         if (collider2D.CompareTag("EnemyDragon"))
         {
-            GameManager.Instance.dragonsCount += 1;
             HandlerKillEnemy();
         }
 
@@ -100,11 +98,6 @@ public class BulletDetect : MonoBehaviour
 
         if (collider2D.CompareTag("EnemyHellHorse"))
         {
-            killCount++;
-            if (killCount == 2)
-            {
-                GameManager.Instance.hellHorseCount += 1;
-            }
             HandlerKillEnemy();
         }
 
@@ -116,7 +109,6 @@ public class BulletDetect : MonoBehaviour
 
         if (collider2D.CompareTag("EnemyGroundDragon"))
         {
-            GameManager.Instance.groundDragonCount += 1;
             HandlerKillEnemy();
         }
 

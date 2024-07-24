@@ -31,7 +31,7 @@ public class HellDogRandom : OurMonoBehaviour
             newHellDog.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 11.5f);
+        Invoke(nameof(ResetSpawning), 10f);
         Debug.Log("Spawning...");
     }
 

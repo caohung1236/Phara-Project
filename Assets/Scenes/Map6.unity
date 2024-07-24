@@ -15577,7 +15577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -320}
+  m_AnchoredPosition: {x: 300, y: -80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &667863749
@@ -15610,7 +15610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 1229549240}
-  nextSceneIndex: 0
+  nextSceneIndex: 14
 --- !u!4 &667863751
 Transform:
   m_ObjectHideFlags: 0
@@ -16639,12 +16639,15 @@ MonoBehaviour:
   pauseMenu: {fileID: 837302712}
   pausePanelRect: {fileID: 651646374}
   pauseButtonRect: {fileID: 133384821319015334}
-  timerTextRect: {fileID: 0}
+  timerTextRect: {fileID: 1628254004}
   gemsCollectRect: {fileID: 1608322495}
   groundMobRect: {fileID: 666035877}
-  groundMobRect2: {fileID: 1680798298}
+  groundMobRect2: {fileID: 1994202297}
   groundMobRect3: {fileID: 484397877}
-  groundMobRect4: {fileID: 1994202297}
+  groundMobRect4: {fileID: 71091349}
+  groundMobRect5: {fileID: 1680798298}
+  groundMobRect6: {fileID: 666035877}
+  groundMobRect7: {fileID: 802229100}
   topPosY: 750
   middlePosY: 50
   tweenDuration: 0.3
@@ -17211,9 +17214,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerShooting: {fileID: 31287028}
   playerExplosion: {fileID: 842796079}
-  shootingTime: 10
-  immortalTime: 7
-  doubleItemsTime: 10
+  shootingTime: 8
+  immortalTime: 10
+  doubleItemsTime: 12
   remainingTime: 0
   isImmortal: 0
   isDoubleItems: 0
@@ -47907,7 +47910,25 @@ MonoBehaviour:
   limit: {fileID: 1886659162}
   player: {fileID: 917915547}
   dialogue:
-  - Hello!
+  - "Cu\u1ED1i c\xF9ng th\xEC c\xF4 \u0111\xE3 \u0111\u1EBFn \u0111\u01B0\u1EE3c
+    \u0111\xE2y r\u1ED3i Phara!"
+  - "Cu\u1ED9c h\xE0nh tr\xECnh c\u1EE7a c\xF4 \u0111\xE3 s\u1EAFp k\u1EBFt th\xFAc
+    r\u1ED3i \u0111\xF3!"
+  - "Ng\xE0i \u1EA5y \u0111ang \u0111\u1EE3i c\xF4 \u1EDF ph\xEDa tr\u01B0\u1EDBc!"
+  - "Nh\u01B0ng tr\u01B0\u1EDBc h\u1EBFt c\xF4 ph\u1EA3i v\u01B0\u1EE3t qua \u0111\u01B0\u1EE3c
+    nh\u1EEFng th\u1EED th\xE1ch \u0111\u1EC3 \u0111\u1EBFn \u0111\u01B0\u1EE3c ph\xEDa
+    b\xEAn kia!"
+  - "Tr\u01B0\u1EDBc h\u1EBFt c\xF4 s\u1EBD ph\u1EA3i \u0111\u1ED1i m\u1EB7t v\u1EDBi
+    nh\u1EEFng con qu\xE1i v\u1EADt \u0111\u01B0\u1EE3c g\u1ECDi l\xE0 Nh\u1EEFng
+    k\u1EBB canh g\xE1c b\u1EA7u tr\u1EDDi ch\xFAng l\xE0 nh\u1EEFng qu\xE1i v\u1EADt
+    c\xF3 t\u1ED1c \u0111\u1ED9 bay r\u1EA5t cao!"
+  - "V\xE0 c\xF2n n\u1EEFa t\xF4i tin ch\u1EAFc r\u1EB1ng b\u1EA1n \u0111\u1EC3 bi\u1EBFt
+    v\u1EC1 b\xE3o s\u1EA5m s\xE9t!"
+  - "V\xE0 c\xF2n n\u1EEFa t\xF4i tin ch\u1EAFc r\u1EB1ng b\u1EA1n \u0111\u1EC3 bi\u1EBFt
+    v\u1EC1 b\xE3o s\u1EA5m s\xE9t!"
+  - "H\xE3y c\u1EA9n th\u1EADn nh\u1EEFng c\u01A1n b\xE3o s\u1EA5m s\xE9t t\u1EEB
+    ph\xEDa tr\xEAn. N\u1EBFu v\u01B0\u1EE3t qua nh\u1EEFng \u0111i\u1EC1u tr\xEAn!"
+  - "S\u1EBD c\xF3 m\u1ED9t b\u1EA5t ng\u1EDD d\xE0nh cho b\u1EA1n \u0111\u1EA5y!"
   wordSpeed: 0.0001
   playerIsClose: 0
 --- !u!1 &1608322494
@@ -48661,7 +48682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -240}
+  m_AnchoredPosition: {x: 300, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1690191533
@@ -56810,7 +56831,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.19438267, y: -3.1340888}

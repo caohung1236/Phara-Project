@@ -11,11 +11,12 @@ public class FireWavesRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(Warning), 20f, 20f);
+        InvokeRepeating(nameof(Warning), 15f, 15f);
     }
 
     protected virtual void Update()
     {
+
     }
 
     protected virtual void SpawnWaves()

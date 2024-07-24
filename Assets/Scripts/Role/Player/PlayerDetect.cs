@@ -92,16 +92,17 @@ public class PlayerDetect : OurMonoBehaviour
             }
         }
 
-        if (isDoubleItems == true)
-        {
-            doubleItemsTime -= Time.deltaTime;
-            if (doubleItemsTime <= 0)
-            {
-                isDoubleItems = false;
-                doubleItems.SetActive(false);
-                GameManager.Instance.gemsCount += 2;
-            }
-        }
+        // if (isDoubleItems == true)
+        // {
+        //     doubleItemsTime -= Time.deltaTime;
+        //     if (doubleItemsTime <= 0)
+        //     {
+        //         isDoubleItems = false;
+        //         doubleItems.SetActive(false);
+        //         GameManager.Instance.gemsCount += 2;
+        //     }
+        // }
+
 
         if (isTutorialText2Active == true)
         {
@@ -260,23 +261,92 @@ public class PlayerDetect : OurMonoBehaviour
 
         if (collider2D.CompareTag("Waves"))
         {
-            isGameOver = true;
-            AudioManager.Instance.PlaySFX("PlayerHit");
-            Destroy(gameObject);
+            if (isImmortal == true)
+            {
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
         }
 
         if (collider2D.CompareTag("Tide"))
         {
-            isGameOver = true;
-            AudioManager.Instance.PlaySFX("PlayerHit");
-            Destroy(gameObject);
+            if (isImmortal == true)
+            {
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
         }
 
         if (collider2D.CompareTag("Laser"))
         {
-            isGameOver = true;
-            AudioManager.Instance.PlaySFX("PlayerHit");
-            Destroy(gameObject);
+            if (isImmortal == true)
+            {
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
+
+        if (collider2D.CompareTag("Thunder"))
+        {
+            if (isImmortal == true)
+            {
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
+
+        if (collider2D.CompareTag("FireWaves"))
+        {
+            if (isImmortal == true)
+            {
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
+
+        if (collider2D.CompareTag("MeteorRain"))
+        {
+            if (isImmortal == true)
+            {
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
         }
         
         if (collider2D.CompareTag("BulletRobot"))
@@ -331,9 +401,10 @@ public class PlayerDetect : OurMonoBehaviour
 
             if (collider2D.CompareTag("CollectDouble"))
             {
-                isDoubleItems = true;
                 AudioManager.Instance.PlaySFX("Collectable");
-                doubleItems.SetActive(true);
+                // isDoubleItems = true;
+                // doubleItems.SetActive(true);
+                GameManager.Instance.gemsCount  *= 2;
                 Destroy(collider2D.gameObject);
                 particleSystem.Play();
             }

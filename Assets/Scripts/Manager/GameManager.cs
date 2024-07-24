@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public int dragonsCount = 0;
     public int batMonstersCount = 0;
     public int phoenixCount = 0;
-    public int hellHorseCount = 0;
+    public float hellHorseCount = 0;
     public int hellDogCount = 0;
     public int groundDragonCount = 0;
     public int monsterFlyCount = 0;

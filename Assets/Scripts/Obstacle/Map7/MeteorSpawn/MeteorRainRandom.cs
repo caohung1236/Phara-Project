@@ -6,12 +6,12 @@ public class MeteorRainRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     public GameObject warningObject;
-    protected float rangeX = 0f;
+    protected float rangeX = -0.5f;
     protected float rangeY = 1f;
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(Warning), 40f, 40f);
+        InvokeRepeating(nameof(Warning), 25f, 25f);
     }
 
     protected virtual void Update()

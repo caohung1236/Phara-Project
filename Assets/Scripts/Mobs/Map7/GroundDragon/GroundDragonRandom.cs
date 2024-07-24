@@ -31,7 +31,7 @@ public class GroundDragonRandom : OurMonoBehaviour
             newGroundDragon.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 9f);
+        Invoke(nameof(ResetSpawning), 7f);
         Debug.Log("Spawning...");
     }
 

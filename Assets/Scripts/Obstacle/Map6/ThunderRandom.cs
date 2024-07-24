@@ -11,7 +11,7 @@ public class ThunderRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(SpawnThunder), 20f, 15f);
+        InvokeRepeating(nameof(Warning), 20f, 15f);
     }
 
     protected virtual void Update()
@@ -30,7 +30,6 @@ public class ThunderRandom : OurMonoBehaviour
             isSpawning = true;
         }
         warningObject.SetActive(false);
-        Invoke(nameof(ResetSpawning), 20f);
         Debug.Log("Spawning...");
     }
 
