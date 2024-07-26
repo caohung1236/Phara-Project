@@ -10,6 +10,7 @@ public class BulletDetect : MonoBehaviour
         if (collider2D.CompareTag("EnemySlime"))
         {
             GameManager.Instance.slimesCount += 1;
+            GameManager.Instance.slimesCount3 += 1;
             HandlerKillEnemy();
         }
 

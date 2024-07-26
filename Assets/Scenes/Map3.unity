@@ -235,7 +235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80}
+  m_AnchoredPosition: {x: 20, y: -80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &31287028
@@ -15421,7 +15421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -160}
+  m_AnchoredPosition: {x: 20, y: -160}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &493001620
@@ -17192,7 +17192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 20, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &667863749
@@ -18666,7 +18666,7 @@ GameObject:
   - component: {fileID: 898488468}
   - component: {fileID: 898488467}
   m_Layer: 5
-  m_Name: GemsCountText
+  m_Name: GemsCountText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18900,10 +18900,8 @@ MonoBehaviour:
   playerExplosion: {fileID: 842796079}
   shootingTime: 7
   immortalTime: 7
-  doubleItemsTime: 5
   remainingTime: 0
   isImmortal: 0
-  isDoubleItems: 0
   isInvincible: 0
   isGameOver: 0
   isUseExplosionItem: 0
@@ -49244,7 +49242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -240}
+  m_AnchoredPosition: {x: 320, y: -80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1631446343
@@ -49780,7 +49778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -320}
+  m_AnchoredPosition: {x: 320, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1690295443
@@ -58051,7 +58049,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 257251638}
   gemsCount: 0
+  gemsCount2: 0
+  gemsCount3: 0
+  gemsCount5: 0
+  gemsCount6: 0
+  gemsCount7: 0
   slimesCount: 0
+  slimesCount3: 0
   knightsCount: 0
   goblinsCount: 0
   mushroomsCount: 0
@@ -58071,8 +58075,14 @@ MonoBehaviour:
   groundDragonCount: 0
   monsterFlyCount: 0
   demonFlyCount: 0
-  gemsText: {fileID: 898488467}
+  gemsText: {fileID: 439166539}
+  gemsText2: {fileID: 439166539}
+  gemsText3: {fileID: 898488467}
+  gemsText5: {fileID: 439166539}
+  gemsText6: {fileID: 439166539}
+  gemsText7: {fileID: 439166539}
   slimesText: {fileID: 127743374}
+  slimesText3: {fileID: 439166539}
   knightsText: {fileID: 1595191856}
   goblinsText: {fileID: 1361002801}
   mushroomsText: {fileID: 1091481148}

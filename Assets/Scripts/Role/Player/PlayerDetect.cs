@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,10 +10,8 @@ public class PlayerDetect : OurMonoBehaviour
     public GameObject playerExplosion;
     [SerializeField] private float shootingTime = 5.0f;
     [SerializeField] private float immortalTime = 5.0f;
-    [SerializeField] private float doubleItemsTime = 5.0f;
     [SerializeField] private float remainingTime;
     [SerializeField] private bool isImmortal = false;
-    [SerializeField] private bool isDoubleItems = false;
     public bool isInvincible = false;
     private BoxCollider2D myCollider;
     private Rigidbody2D myRigidbody;
@@ -91,18 +88,6 @@ public class PlayerDetect : OurMonoBehaviour
                 PlayerMovement.Instance.jumpForce = 4.5f;
             }
         }
-
-        // if (isDoubleItems == true)
-        // {
-        //     doubleItemsTime -= Time.deltaTime;
-        //     if (doubleItemsTime <= 0)
-        //     {
-        //         isDoubleItems = false;
-        //         doubleItems.SetActive(false);
-        //         GameManager.Instance.gemsCount += 2;
-        //     }
-        // }
-
 
         if (isTutorialText2Active == true)
         {
@@ -402,9 +387,8 @@ public class PlayerDetect : OurMonoBehaviour
             if (collider2D.CompareTag("CollectDouble"))
             {
                 AudioManager.Instance.PlaySFX("Collectable");
-                // isDoubleItems = true;
-                // doubleItems.SetActive(true);
-                GameManager.Instance.gemsCount  *= 2;
+                GameManager.Instance.gemsCount6 *= 2;
+                GameManager.Instance.gemsCount7 *= 2;
                 Destroy(collider2D.gameObject);
                 particleSystem.Play();
             }
@@ -413,6 +397,11 @@ public class PlayerDetect : OurMonoBehaviour
             {
                 AudioManager.Instance.PlaySFX("Collectable");
                 GameManager.Instance.gemsCount += 1;
+                GameManager.Instance.gemsCount2 += 1;
+                GameManager.Instance.gemsCount3 += 1;
+                GameManager.Instance.gemsCount5 += 1;
+                GameManager.Instance.gemsCount6 += 0.5f;
+                GameManager.Instance.gemsCount7 += 1;
                 Destroy(collider2D.gameObject);
                 particleSystem.Play();
             }

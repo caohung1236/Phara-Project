@@ -1597,7 +1597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 1229549240}
-  nextSceneIndex: 4
+  nextSceneIndex: 5
 --- !u!4 &239923659
 Transform:
   m_ObjectHideFlags: 0
@@ -13880,7 +13880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -160}
+  m_AnchoredPosition: {x: 20, y: -160}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &494375396
@@ -15177,7 +15177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 20, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &669510136
@@ -16276,12 +16276,15 @@ MonoBehaviour:
   pauseMenu: {fileID: 837302712}
   pausePanelRect: {fileID: 651646374}
   pauseButtonRect: {fileID: 133384821319015334}
-  timerTextRect: {fileID: 0}
+  timerTextRect: {fileID: 1213219789}
   gemsCollectRect: {fileID: 666035877}
   groundMobRect: {fileID: 1680798298}
   groundMobRect2: {fileID: 484397877}
   groundMobRect3: {fileID: 494375397}
   groundMobRect4: {fileID: 1945119084}
+  groundMobRect5: {fileID: 1213219789}
+  groundMobRect6: {fileID: 1213219789}
+  groundMobRect7: {fileID: 1213219789}
   topPosY: 750
   middlePosY: 50
   tweenDuration: 0.3
@@ -16936,10 +16939,8 @@ MonoBehaviour:
   playerExplosion: {fileID: 797022155}
   shootingTime: 7
   immortalTime: 5
-  doubleItemsTime: 5
   remainingTime: 0
   isImmortal: 0
-  isDoubleItems: 0
   isInvincible: 0
   isGameOver: 0
   isUseExplosionItem: 0
@@ -42618,7 +42619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80}
+  m_AnchoredPosition: {x: 20, y: -80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1700949885
@@ -44698,7 +44699,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 257251638}
   gemsCount: 0
+  gemsCount2: 0
+  gemsCount3: 0
+  gemsCount5: 0
+  gemsCount6: 0
+  gemsCount7: 0
   slimesCount: 0
+  slimesCount3: 0
   knightsCount: 0
   goblinsCount: 0
   mushroomsCount: 0
@@ -44719,7 +44726,13 @@ MonoBehaviour:
   monsterFlyCount: 0
   demonFlyCount: 0
   gemsText: {fileID: 898488467}
+  gemsText2: {fileID: 1213219787}
+  gemsText3: {fileID: 1213219787}
+  gemsText5: {fileID: 1213219787}
+  gemsText6: {fileID: 1213219787}
+  gemsText7: {fileID: 1213219787}
   slimesText: {fileID: 127743374}
+  slimesText3: {fileID: 1213219787}
   knightsText: {fileID: 254644131}
   goblinsText: {fileID: 245311967}
   mushroomsText: {fileID: 1171877808}

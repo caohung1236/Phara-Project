@@ -10,7 +10,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get => instance; set => instance = value; }
     public GameObject gameOverMenu;
     public int gemsCount = 0;
+    public int gemsCount2 = 0;
+    public int gemsCount3 = 0;
+    public int gemsCount5 = 0;
+    public float gemsCount6 = 0;
+    public int gemsCount7 = 0;
     public int slimesCount = 0;
+    public int slimesCount3 = 0;
     public int knightsCount = 0;
     public int goblinsCount = 0;
     public int mushroomsCount = 0;
@@ -25,13 +31,19 @@ public class GameManager : MonoBehaviour
     public int dragonsCount = 0;
     public int batMonstersCount = 0;
     public int phoenixCount = 0;
-    public float hellHorseCount = 0;
+    public int hellHorseCount = 0;
     public int hellDogCount = 0;
     public int groundDragonCount = 0;
     public int monsterFlyCount = 0;
     public int demonFlyCount = 0;
     public Text gemsText;
+    public Text gemsText2;
+    public Text gemsText3;
+    public Text gemsText5;
+    public Text gemsText6;
+    public Text gemsText7;
     public Text slimesText;
+    public Text slimesText3;
     public Text knightsText;
     public Text goblinsText;
     public Text mushroomsText;
@@ -60,6 +72,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CountGems();
+        CountGems2();
+        CountGems3();
+        CountGems5();
+        CountGems6();
+        CountGems7();
 
         CountSlimes();
         CountKnights();
@@ -71,6 +88,7 @@ public class GameManager : MonoBehaviour
         CountCrab();
         CountFish();
         CountFly();
+        CountSlimes3();
 
         CountRobot1();
         CountRobot2();
@@ -102,113 +120,142 @@ public class GameManager : MonoBehaviour
 
     void CountGems()
     {
-        gemsText.text = $":{gemsCount}/1";
+        gemsText.text = $":{gemsCount}/7";
+    }
+
+    void CountGems2()
+    {
+        gemsText2.text = $":{gemsCount2}/9";
+    }
+
+    void CountGems3()
+    {
+        gemsText3.text = $":{gemsCount3}/10";
+    }
+
+    void CountGems5()
+    {
+        gemsText5.text = $":{gemsCount5}/20";
+    }
+
+    void CountGems6()
+    {
+        gemsText6.text = $":{gemsCount6}/30";
+    }
+
+    void CountGems7()
+    {
+        gemsText7.text = $":{gemsCount7}/60";
     }
 
     void CountSlimes()
     {
-        slimesText.text = $":{slimesCount}/1";
+        slimesText.text = $":{slimesCount}/7";
     }
 
     void CountKnights()
     {
-        knightsText.text = $":{knightsCount}/2";
+        knightsText.text = $":{knightsCount}/10";
     }
 
     void CountGoblins()
     {
-        goblinsText.text = $":{goblinsCount}/2";
+        goblinsText.text = $":{goblinsCount}/7";
     }
 
     void CountMushrooms()
     {
-        mushroomsText.text = $":{mushroomsCount}/2";
+        mushroomsText.text = $":{mushroomsCount}/10";
     }
 
     void CountBats()
     {
-        batsText.text = $":{batsCount}/2";
+        batsText.text = $":{batsCount}/3";
     }
 
     void CountCrab()
     {
-        crabText.text = $":{crabCount}/2";
+        crabText.text = $":{crabCount}/10";
     }
 
     void CountFish()
     {
-        fishText.text = $":{fishCount}/2";
+        fishText.text = $":{fishCount}/13";
     }
-
 
     void CountFly()
     {
-        flyText.text = $":{flyCount}/2";
+        flyText.text = $":{flyCount}/5";
+    }
+
+    void CountSlimes3()
+    {
+        slimesText3.text = $":{slimesCount3}/15";
     }
 
     void CountRobot1()
     {
-        robot1Text.text = $":{robot1Count}/2";
+        robot1Text.text = $":{robot1Count}/15";
     }
 
     void CountRobot2()
     {
-        robot2Text.text = $":{robot2Count}/2";
+        robot2Text.text = $":{robot2Count}/17";
     }
 
     void CountRobot3()
     {
-        robot3Text.text = $":{robot3Count}/2";
+        robot3Text.text = $":{robot3Count}/7";
     }
 
     void CountBirds()
     {
-        birdsText.text = $":{birdsCount}/2";
+        birdsText.text = $":{birdsCount}/20";
     }
 
     void CountDragons()
     {
-        dragonsText.text = $":{dragonsCount}/2";
+        dragonsText.text = $":{dragonsCount}/15";
     }
 
     void CountBatMonsters()
     {
-        batMonstersText.text = $":{batMonstersCount}/2";
+        batMonstersText.text = $":{batMonstersCount}/15";
     }
 
     void CountPhoenix()
     {
-        phoenixText.text = $":{phoenixCount}/2";
+        phoenixText.text = $":{phoenixCount}/10";
     }
 
     void CountHellHorse()
     {
-        hellHorseText.text = $":{hellHorseCount}/2";
+        hellHorseText.text = $":{hellHorseCount}/20";
     }
 
     void CountHellDog()
     {
-        hellDogText.text = $":{hellDogCount}/2";
+        hellDogText.text = $":{hellDogCount}/25";
     }
 
     void CountGroundDragon()
     {
-        groundDragonText.text = $":{groundDragonCount}/2";
+        groundDragonText.text = $":{groundDragonCount}/15";
     }
 
     void CountMonsterFly()
     {
-        monsterFlyText.text = $":{monsterFlyCount}/2";
+        monsterFlyText.text = $":{monsterFlyCount}/25";
     }
 
     void CountDemonFly()
     {
-        demonFlyText.text = $":{demonFlyCount}/2";
+        demonFlyText.text = $":{demonFlyCount}/25";
     }
 
     void ConditionsMap1()
     {
-        if (gemsCount >= 1 && slimesCount >= 1 && knightsCount >= 2)
+        if (gemsCount >= 7 && slimesCount >= 7 && knightsCount >= 10)
         {
             levelChanger.SetActive(true);
         }
@@ -216,7 +263,7 @@ public class GameManager : MonoBehaviour
 
     void ConditionsMap2()
     {
-        if (gemsCount >= 2 && goblinsCount >= 2 && mushroomsCount >= 2 && batsCount >= 2)
+        if (gemsCount2 >= 9 && goblinsCount >= 7 && mushroomsCount >= 10 && batsCount >= 3)
         {
             levelChanger.SetActive(true);
         }
@@ -224,7 +271,7 @@ public class GameManager : MonoBehaviour
 
     void ConditionsMap3()
     {
-        if (gemsCount >= 2 && slimesCount >= 2 && crabCount >= 2 && fishCount >= 2 && flyCount >= 2)
+        if (gemsCount3 >= 10 && slimesCount3 >= 15 && crabCount >= 10 && fishCount >= 15 && flyCount >= 5)
         {
             levelChanger.SetActive(true);
         }
@@ -232,7 +279,7 @@ public class GameManager : MonoBehaviour
 
     void ConditionsMap5()
     {
-        if (gemsCount >= 2 && robot1Count >= 2 && robot2Count >= 2 && robot3Count >= 2)
+        if (gemsCount5 >= 20 && robot1Count >= 15 && robot2Count >= 17 && robot3Count >= 7)
         {
             levelChanger.SetActive(true);
         }
@@ -240,7 +287,7 @@ public class GameManager : MonoBehaviour
 
     void ConditionsMap6()
     {
-        if (gemsCount >= 2 && birdsCount >= 2 && dragonsCount >= 2 && batMonstersCount >= 2 && phoenixCount >= 2)
+        if (gemsCount6 >= 30 && birdsCount >= 20 && dragonsCount >= 15 && batMonstersCount >= 15 && phoenixCount >= 10)
         {
             levelChanger.SetActive(true);
         }
@@ -248,7 +295,7 @@ public class GameManager : MonoBehaviour
 
     void ConditionsMap7()
     {
-        if (gemsCount >= 2 && hellHorseCount >= 2 && hellDogCount >= 2 && groundDragonCount >= 2 && dragonsCount >= 2 && monsterFlyCount >= 2 && demonFlyCount >= 2)
+        if (gemsCount7 >= 60 && hellHorseCount >= 20 && hellDogCount >= 25 && groundDragonCount >= 15 && dragonsCount >= 15 && monsterFlyCount >= 25 && demonFlyCount >= 25)
         {
             levelChanger.SetActive(true);
         }

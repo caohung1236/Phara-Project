@@ -80,7 +80,7 @@ public class PauseMenu : MonoBehaviour
         canvasGroup.DOFade(1, tweenDuration).SetUpdate(true);
         canvasGroup2.DOFade(1, tweenDuration).SetUpdate(true);
         pausePanelRect.DOAnchorPosY(middlePosY, tweenDuration).SetUpdate(true);
-        pauseButtonRect.DOAnchorPosX(100, tweenDuration).SetUpdate(true);
+        pauseButtonRect.DOAnchorPosX(200, tweenDuration).SetUpdate(true);
         gemsCollectRect.DOAnchorPosX(-400, tweenDuration).SetUpdate(true);
         groundMobRect.DOAnchorPosX(-400, tweenDuration).SetUpdate(true);
         groundMobRect2.DOAnchorPosX(-400, tweenDuration).SetUpdate(true);

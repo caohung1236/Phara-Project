@@ -10,7 +10,7 @@ public class CollectDoubleRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(SpawnCollectible), 15f, 90f);
+        InvokeRepeating(nameof(SpawnCollectible), 15f,100f);
     }
 
     protected virtual void Update()

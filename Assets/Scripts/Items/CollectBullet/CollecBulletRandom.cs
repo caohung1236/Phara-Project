@@ -6,7 +6,7 @@ public class CollectBulletRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
     protected float rangeX = 40f;
-    protected float rangeY = -2f;
+    protected float rangeY = 2f;
     protected override void Start()
     {
         base.Start();
@@ -23,7 +23,7 @@ public class CollectBulletRandom : OurMonoBehaviour
     protected virtual void SpawnCollectible()
     {
         float spawnPosX = rangeX;
-        float spawnPosY = Random.Range(rangeY, 5.5f);
+        float spawnPosY = Random.Range(rangeY, 4.5f);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)

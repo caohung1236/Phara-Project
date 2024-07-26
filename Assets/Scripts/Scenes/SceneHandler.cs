@@ -10,6 +10,7 @@ public class SceneHandler : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip clickSound;
     public GameObject settingsMenu;
+    public GameObject creditPanel;
 
     private void Start()
     {
@@ -39,5 +40,11 @@ public class SceneHandler : MonoBehaviour
     public void Back()
     {
         settingsMenu.SetActive(false);
+        creditPanel.SetActive(false);
+    }
+
+    public void Credit()
+    {
+        creditPanel.SetActive(true);
     }
 }

@@ -18616,7 +18616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 1229549240}
-  nextSceneIndex: 10
+  nextSceneIndex: 9
 --- !u!4 &667863751
 Transform:
   m_ObjectHideFlags: 0
@@ -19508,6 +19508,9 @@ MonoBehaviour:
   groundMobRect2: {fileID: 1596655660}
   groundMobRect3: {fileID: 802229100}
   groundMobRect4: {fileID: 936567758}
+  groundMobRect5: {fileID: 0}
+  groundMobRect6: {fileID: 0}
+  groundMobRect7: {fileID: 0}
   topPosY: 750
   middlePosY: 50
   tweenDuration: 0.3
@@ -20081,10 +20084,8 @@ MonoBehaviour:
   playerExplosion: {fileID: 1220125989}
   shootingTime: 5
   immortalTime: 5
-  doubleItemsTime: 5
   remainingTime: 0
   isImmortal: 0
-  isDoubleItems: 0
   isInvincible: 0
   isGameOver: 0
   isUseExplosionItem: 0
@@ -46892,7 +46893,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 257251638}
   gemsCount: 0
+  gemsCount2: 0
+  gemsCount3: 0
+  gemsCount5: 0
+  gemsCount6: 0
+  gemsCount7: 0
   slimesCount: 0
+  slimesCount3: 0
   knightsCount: 0
   goblinsCount: 0
   mushroomsCount: 0
@@ -46913,7 +46920,13 @@ MonoBehaviour:
   monsterFlyCount: 0
   demonFlyCount: 0
   gemsText: {fileID: 1253917136}
+  gemsText2: {fileID: 0}
+  gemsText3: {fileID: 0}
+  gemsText5: {fileID: 0}
+  gemsText6: {fileID: 0}
+  gemsText7: {fileID: 0}
   slimesText: {fileID: 780019615}
+  slimesText3: {fileID: 0}
   knightsText: {fileID: 1271601758}
   goblinsText: {fileID: 787660792}
   mushroomsText: {fileID: 1699712847}

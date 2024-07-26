@@ -660,7 +660,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 72928249}
-  - component: {fileID: 72928248}
   - component: {fileID: 72928247}
   m_Layer: 0
   m_Name: Map 6
@@ -721,20 +720,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &72928248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72928246}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c15e62340162344bbc21f2261b7f962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5.5
-  repeatDistance: 20.9
 --- !u!4 &72928249
 Transform:
   m_ObjectHideFlags: 0
@@ -1160,17 +1145,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138344617}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 666035877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -16.4}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -3.1969, y: -5.4773}
+  m_SizeDelta: {x: 131.9685, y: 133.5671}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &138344619
 MonoBehaviour:
@@ -1185,7 +1170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5019608, g: 0.5019608, b: 0.9764706, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13896,7 +13881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -160}
+  m_AnchoredPosition: {x: 20, y: -160}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &493001620
@@ -15577,7 +15562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300, y: -80}
+  m_AnchoredPosition: {x: 320, y: -80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &667863749
@@ -15610,7 +15595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 1229549240}
-  nextSceneIndex: 14
+  nextSceneIndex: 13
 --- !u!4 &667863751
 Transform:
   m_ObjectHideFlags: 0
@@ -16360,7 +16345,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &787517239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17216,10 +17201,8 @@ MonoBehaviour:
   playerExplosion: {fileID: 842796079}
   shootingTime: 8
   immortalTime: 10
-  doubleItemsTime: 12
   remainingTime: 0
   isImmortal: 0
-  isDoubleItems: 0
   isInvincible: 0
   isGameOver: 0
   isUseExplosionItem: 0
@@ -17265,7 +17248,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0073189735, y: -0.06649244}
@@ -17406,7 +17389,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.012931347, y: -0.06746423}
@@ -17696,7 +17679,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.7, y: 1.8}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -18956,7 +18939,7 @@ GameObject:
   - component: {fileID: 1090266366}
   - component: {fileID: 1090266365}
   m_Layer: 5
-  m_Name: GemsCountText
+  m_Name: GemsCountText6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19014,7 +18997,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: :0/20
+  m_Text: :0/30
 --- !u!222 &1090266366
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47965,7 +47948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 20, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1612377408
@@ -48682,7 +48665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300, y: 0}
+  m_AnchoredPosition: {x: 320, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1690191533
@@ -50099,7 +50082,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 942809809}
@@ -50166,7 +50149,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009457231, y: 0.21161419}
+  m_Offset: {x: 0.022209704, y: -0.07319176}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -50177,7 +50160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7394545, y: 0.85010636}
+  m_Size: {x: 1.2070464, y: 1.2156782}
   m_EdgeRadius: 0
 --- !u!114 &1912096605
 MonoBehaviour:
@@ -50948,7 +50931,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80}
+  m_AnchoredPosition: {x: 20, y: -80}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1995563207
@@ -66491,7 +66474,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 257251638}
   gemsCount: 0
+  gemsCount2: 0
+  gemsCount3: 0
+  gemsCount5: 0
+  gemsCount6: 0
+  gemsCount7: 0
   slimesCount: 0
+  slimesCount3: 0
   knightsCount: 0
   goblinsCount: 0
   mushroomsCount: 0
@@ -66511,8 +66500,14 @@ MonoBehaviour:
   groundDragonCount: 0
   monsterFlyCount: 0
   demonFlyCount: 0
-  gemsText: {fileID: 1090266365}
+  gemsText: {fileID: 1253917136}
+  gemsText2: {fileID: 1253917136}
+  gemsText3: {fileID: 1253917136}
+  gemsText5: {fileID: 1253917136}
+  gemsText6: {fileID: 1090266365}
+  gemsText7: {fileID: 1253917136}
   slimesText: {fileID: 1271601758}
+  slimesText3: {fileID: 1253917136}
   knightsText: {fileID: 120831510}
   goblinsText: {fileID: 1999115148}
   mushroomsText: {fileID: 975451977}
