@@ -112,6 +112,7 @@ public class GameManager : MonoBehaviour
         ConditionsMap5();
         ConditionsMap6();
         ConditionsMap7();
+        // ConditionsEnd();
 
         ClickEffect();
 

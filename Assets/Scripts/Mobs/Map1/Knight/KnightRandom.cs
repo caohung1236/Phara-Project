@@ -5,7 +5,7 @@ using UnityEngine;
 public class KnightRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 36f;
+    protected float rangeX = 39f;
     protected float rangeY = 1.75f;
     protected override void Start()
     {
@@ -22,7 +22,7 @@ public class KnightRandom : OurMonoBehaviour
 
     protected virtual void SpawnKnight()
     {
-        Vector3 spawnPos = new(Random.Range(32, rangeX), -rangeY, 0);
+        Vector3 spawnPos = new(Random.Range(35, rangeX), -rangeY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
         {

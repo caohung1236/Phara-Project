@@ -27,6 +27,7 @@ public class SceneHandler : MonoBehaviour
     {
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
+        SceneData.Instance.isSceneSaved = false;
 #else
     Application.Quit();
 #endif

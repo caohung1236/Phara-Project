@@ -5,8 +5,8 @@ using UnityEngine;
 public class DemonFlyRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 20f;
-    protected float rangeY = 6f;
+    protected float rangeX = 25f;
+    protected float rangeY = 5f;
     protected override void Start()
     {
         base.Start();
@@ -23,7 +23,7 @@ public class DemonFlyRandom : OurMonoBehaviour
     protected virtual void SpawnDemonFly()
     {
         float spawnPosX = UnityEngine.Random.Range(rangeX, rangeX + rangeX);
-        float spawnPosY = UnityEngine.Random.Range(4f, rangeY);
+        float spawnPosY = UnityEngine.Random.Range(3f, rangeY);
         Vector3 spawnPos = new(spawnPosX, spawnPosY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)

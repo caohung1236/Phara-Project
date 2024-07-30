@@ -333,6 +333,21 @@ public class PlayerDetect : OurMonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if (collider2D.CompareTag("LimitKill"))
+        {
+            if (isImmortal == true)
+            {
+                Destroy(collider2D.gameObject);
+                Debug.Log("Destroy...");
+            }
+            else
+            {
+                isGameOver = true;
+                AudioManager.Instance.PlaySFX("PlayerHit");
+                Destroy(gameObject);
+            }
+        }
         
         if (collider2D.CompareTag("BulletRobot"))
         {
