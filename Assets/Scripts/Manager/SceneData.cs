@@ -28,8 +28,15 @@ public class SceneData : OurMonoBehaviour
     
     public void OnContinueButton()
     {
-        int savedSceneIndex = PlayerPrefs.GetInt("CurrentScene", 0);
-        SceneManager.LoadScene(savedSceneIndex);
+        if (PlayerDetect.Instance.isGameOver == true)
+        {
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            int savedSceneIndex = PlayerPrefs.GetInt("CurrentScene", 0);
+            SceneManager.LoadScene(savedSceneIndex);
+        }
         Time.timeScale = 1;
     }
 }

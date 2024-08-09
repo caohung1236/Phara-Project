@@ -10,7 +10,13 @@ public class SceneHandler : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip clickSound;
     public GameObject settingsMenu;
-    public GameObject creditPanel;
+    public GameObject creditMenu;
+    [SerializeField] RectTransform optionsPanelRect;
+    [SerializeField] RectTransform creditPanelRect;
+    [SerializeField] float topPosY, middlePosY;
+    [SerializeField] float tweenDuration;
+    [SerializeField] CanvasGroup canvasGroup;
+    [SerializeField] CanvasGroup canvasGroup2;
 
     private void Start()
     {
@@ -36,16 +42,35 @@ public class SceneHandler : MonoBehaviour
     public void Settings()
     {
         settingsMenu.SetActive(true);
+        OptionsPanelIntro();
     }
 
     public void Back()
     {
+        OptionsPanelOutro();
         settingsMenu.SetActive(false);
-        creditPanel.SetActive(false);
+        creditMenu.SetActive(false);
     }
 
     public void Credit()
     {
-        creditPanel.SetActive(true);
+        creditMenu.SetActive(true);
+        OptionsPanelIntro();
+    }
+
+    void OptionsPanelIntro()
+    {
+        canvasGroup.DOFade(1, tweenDuration).SetUpdate(true);
+        canvasGroup2.DOFade(1, tweenDuration).SetUpdate(true);
+        optionsPanelRect.DOAnchorPosY(middlePosY, tweenDuration).SetUpdate(true);
+        creditPanelRect.DOAnchorPosY(middlePosY, tweenDuration).SetUpdate(true);
+    }
+
+    void OptionsPanelOutro()
+    {
+        canvasGroup.DOFade(1, tweenDuration).SetUpdate(true);
+        canvasGroup2.DOFade(1, tweenDuration).SetUpdate(true);
+        optionsPanelRect.DOAnchorPosY(topPosY, tweenDuration).SetUpdate(true);
+        creditPanelRect.DOAnchorPosY(topPosY, tweenDuration).SetUpdate(true);
     }
 }

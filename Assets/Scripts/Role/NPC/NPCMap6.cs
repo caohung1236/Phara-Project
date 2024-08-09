@@ -72,7 +72,7 @@ public class NPCMap6 : MonoBehaviour
         if (isDialogueFinished == true)
         {
             transitionAnim.SetTrigger("Start");
-            PlayerMovement.Instance.jumpForce = 4.5f;
+            PlayerMovement.Instance.jumpForce = 4f;
             player.constraints = ~RigidbodyConstraints2D.FreezePositionY;
             limit.SetActive(false);
             background1.SetActive(true);
