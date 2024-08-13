@@ -16555,10 +16555,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 877941276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f648c4e415d36b74e820df01942582d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 8
   direction: {x: -1, y: 0, z: 0}
 --- !u!1 &879414024
 GameObject:
@@ -43513,7 +43513,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1841154679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb5c04677b6c344898a9f792e524a62, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10

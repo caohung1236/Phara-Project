@@ -5,12 +5,12 @@ using UnityEngine;
 public class Robot2Random : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 23f;
+    protected float rangeX = 20f;
     protected float rangeY = 2.1f;
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(SpawnRobot2), 30f, 20f);
+        InvokeRepeating(nameof(SpawnRobot2), 20f, 12f);
     }
 
     protected virtual void Update()

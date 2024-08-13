@@ -974,7 +974,7 @@ MonoBehaviour:
     s\u1EA1ch cho nhi\u1EC1u v\xF9ng \u0111\u1EA5t v\xE0 nu\xF4i d\u01B0\u1EE1ng
     khu r\u1EEBng Kindra. Lorado t\u1EEBng l\xE0 ng\xF4i nh\xE0 c\u1EE7a nhi\u1EC1u
     sinh v\u1EADt d\u01B0\u1EDBi n\u01B0\u1EDBc v\xE0 c\xE1c b\u1ED9 t\u1ED9c ven
-    s\xF4ng, \u0111\u1EB7c bi\u1EC7t l\xE0 v\u01B0\u01A1ng qu\u1ED1c slime, n\u01A1i
+    s\xF4ng, \u0111\u1EB7c bi\u1EC7t l\xE0 v\u01B0\u01A1ng qu\u1ED1c Slime, n\u01A1i
     m\xE0 h\u1EA7u nh\u01B0 t\u1EA5t c\u1EA3 slime tr\xEAn h\xE0nh tinh \u0111\u1EC1u
     c\xF3 ngu\u1ED3n g\u1ED1c t\u1EEB \u0111\xE2y. Xung quanh s\xF4ng l\xE0 nh\u1EEFng
     ng\u1ECDn n\xFAi h\xF9ng v\u0129 v\xE0 khu r\u1EEBng xanh m\xE1t, t\u1EA1o n\xEAn
@@ -995,9 +995,9 @@ MonoBehaviour:
     m\u1ED9t h\u1ED3 n\u01B0\u1EDBc th\u1EA3i kh\u1ED5ng l\u1ED3. Sinh v\u1EADt n\u01A1i
     \u0111\xE2y b\u1ECB nhi\u1EC5m \u0111\u1ED9c v\xE0 \u0111\u1ED9t bi\u1EBFn, tr\u1EDF
     th\xE0nh nh\u1EEFng con qu\xE1i v\u1EADt \u0111i\xEAn lo\u1EA1n.\r \u0110\u1EC3
-    \u0111\u1EBFn \u0111\u01B0\u1EE3c th\u01B0\u1EE3ng ngu\u1ED3n Taligo, ch\xFAng
-    ta c\u1EA7n v\u01B0\u1EE3t qua h\u1ED3 n\u01B0\u1EDBc th\u1EA3i n\xE0y v\xE0
-    g\u1EB7p Vua Slime.\r\n"
+    \u0111\u1EBFn \u0111\u01B0\u1EE3c th\u01B0\u1EE3ng ngu\u1ED3n Taligo, Phara c\u1EA7n
+    v\u01B0\u1EE3t qua h\u1ED3 n\u01B0\u1EDBc th\u1EA3i n\xE0y v\xE0 g\u1EB7p Vua
+    Slime.\r\n"
 --- !u!222 &1572155052
 CanvasRenderer:
   m_ObjectHideFlags: 0

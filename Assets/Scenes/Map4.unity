@@ -42834,8 +42834,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pillar: {fileID: 3913859867344510650, guid: d09f1435bc37c5e47871e186a3aac316, type: 3}
-  spawnRate: 1.8
-  heightOffset: 4.8
+  spawnRate: 2
+  heightOffset: 5
 --- !u!4 &1358823501
 Transform:
   m_ObjectHideFlags: 0

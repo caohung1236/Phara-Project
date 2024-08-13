@@ -6855,7 +6855,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1575144299}
-  - {fileID: 1301414100}
   - {fileID: 1686883351}
   m_Father: {fileID: 680492046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23182,7 +23181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 411747631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f648c4e415d36b74e820df01942582d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
@@ -24495,7 +24494,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 546701833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae742a5999b72842b2005c29284b413, type: 3}
+  m_Script: {fileID: 11500000, guid: 59d42f533b7add14a92701a34dbbe679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
@@ -40652,52 +40651,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawning: 0
---- !u!1 &1301414099
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1301414100}
-  - component: {fileID: 1301414101}
-  m_Layer: 0
-  m_Name: MushroomRun
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1301414100
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1301414099}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.14, y: 0.326, z: -0.0645763}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 241089488}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1301414101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1301414099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb5c04677b6c344898a9f792e524a62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
-  direction: {x: -1, y: 0, z: 0}
 --- !u!1 &1302425737
 GameObject:
   m_ObjectHideFlags: 0
@@ -50025,7 +49978,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1841154679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb5c04677b6c344898a9f792e524a62, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10

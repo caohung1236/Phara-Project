@@ -14630,7 +14630,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 411747631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f648c4e415d36b74e820df01942582d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
@@ -16452,7 +16452,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 546701833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae742a5999b72842b2005c29284b413, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
@@ -18960,7 +18960,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.01293135, y: -0.06746423}
@@ -19101,7 +19101,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.012931347, y: -0.06746423}
@@ -20029,7 +20029,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072749182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb5c04677b6c344898a9f792e524a62, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
@@ -50910,7 +50910,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1841154679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeb5c04677b6c344898a9f792e524a62, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7

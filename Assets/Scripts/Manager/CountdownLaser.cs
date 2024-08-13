@@ -8,7 +8,7 @@ public class CountdownLaser : MonoBehaviour
 
     void Start()
     {
-        Invoke("EnabledCollider", 1.6f);
+        Invoke("EnabledCollider", 1.7f);
     }
 
     void EnabledCollider()

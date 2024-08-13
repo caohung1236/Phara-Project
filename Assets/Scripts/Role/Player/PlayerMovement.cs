@@ -41,7 +41,6 @@ public class PlayerMovement : OurMonoBehaviour
         if (Input.GetMouseButtonDown(0) && isPaused == false)
         {
             Jump();
-            // isFloating = true;
             PlayerDetect.Instance.isOnGround = false;
             isFlyAnimation = true;
         }
@@ -51,20 +50,6 @@ public class PlayerMovement : OurMonoBehaviour
             PlayerDetect.Instance.playerAnim.SetFloat("jumpForce", 3);
             isFlyAnimation = false;
         }
-
-        // if (Input.GetMouseButtonUp(0))
-        // {
-        //     isFloating = false;
-        // }
-
-        // if (isFloating && playerRb.velocity.y > 0)
-        // {
-        //     playerRb.gravityScale = 0;
-        // }
-        // else
-        // {
-        //     playerRb.gravityScale = originalGravityScale;
-        // }
     }
 
     protected virtual void Jump()

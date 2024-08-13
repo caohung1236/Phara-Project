@@ -750,17 +750,17 @@ MonoBehaviour:
     lo\xE0i v\u1EADt m\xE0 c\xF2n \u0111e d\u1ECDa s\u1EF1 t\u1ED3n t\u1EA1i c\u1EE7a
     c\xE1c b\u1ED9 t\u1ED9c s\u1ED1ng chung quanh khu r\u1EEBng.\r \u0110\u1EC3 c\u1EE9u
     r\u1ED7i khu r\u1EEBng Kindra kh\u1ECFi s\u1EF1 t\xE0n ph\xE1 v\xE0 kh\xF4i ph\u1EE5c
-    l\u1EA1i s\u1EF1 c\xE2n b\u1EB1ng thi\xEAn nhi\xEAn, nh\xF3m ph\u1EA3i t\xECm
-    \u0111\u1EBFn Efl'Lona, m\u1ED9t tinh linh th\xF4ng th\xE1i v\xE0 ng\u01B0\u1EDDi
-    cai qu\u1EA3n khu r\u1EEBng n\xE0y. Efl'Lona \u0111\u01B0\u1EE3c cho l\xE0 c\xF3
-    s\u1EF1 hi\u1EC3u bi\u1EBFt s\xE2u s\u1EAFc v\u1EC1 c\xE1c b\xED m\u1EADt c\u1EE7a
-    khu r\u1EEBng v\xE0 c\xF3 kh\u1EA3 n\u0103ng h\u01B0\u1EDBng d\u1EABn nh\xF3m
-    v\u01B0\u1EE3t qua nh\u1EEFng th\u1EED th\xE1ch kh\xF3 kh\u0103n. Cu\u1ED9c g\u1EB7p
-    g\u1EE1 n\xE0y kh\xF4ng ch\u1EC9 l\xE0 c\u01A1 h\u1ED9i \u0111\u1EC3 gi\u1EA3i
-    c\u1EE9u m\u1ED9t ph\u1EA7n c\u1EE7a h\xE0nh tinh Itaria m\xE0 c\xF2n l\xE0 m\u1ED9t
-    th\u1EED th\xE1ch v\u1EC1 l\xF2ng can \u0111\u1EA3m v\xE0 tr\xED tu\u1EC7 c\u1EE7a
-    nh\u1EEFng ai d\xE1m \u0111\u01B0\u01A1ng \u0111\u1EA7u v\u1EDBi nh\u1EEFng s\u1EF1
-    thay \u0111\u1ED5i \u0111\xE1ng s\u1EE3 c\u1EE7a th\u1EBF gi\u1EDBi t\u1EF1 nhi\xEAn.\r\n"
+    l\u1EA1i s\u1EF1 c\xE2n b\u1EB1ng thi\xEAn nhi\xEAn, Phara ph\u1EA3i t\xECm \u0111\u1EBFn
+    Efl'Lona, m\u1ED9t tinh linh th\xF4ng th\xE1i v\xE0 ng\u01B0\u1EDDi cai qu\u1EA3n
+    khu r\u1EEBng n\xE0y. Efl'Lona \u0111\u01B0\u1EE3c cho l\xE0 c\xF3 s\u1EF1 hi\u1EC3u
+    bi\u1EBFt s\xE2u s\u1EAFc v\u1EC1 c\xE1c b\xED m\u1EADt c\u1EE7a khu r\u1EEBng
+    v\xE0 c\xF3 kh\u1EA3 n\u0103ng h\u01B0\u1EDBng d\u1EABn Phara v\u01B0\u1EE3t
+    qua nh\u1EEFng th\u1EED th\xE1ch kh\xF3 kh\u0103n. Cu\u1ED9c g\u1EB7p g\u1EE1
+    n\xE0y kh\xF4ng ch\u1EC9 l\xE0 c\u01A1 h\u1ED9i \u0111\u1EC3 gi\u1EA3i c\u1EE9u
+    m\u1ED9t ph\u1EA7n c\u1EE7a h\xE0nh tinh Itaria m\xE0 c\xF2n l\xE0 m\u1ED9t th\u1EED
+    th\xE1ch v\u1EC1 l\xF2ng can \u0111\u1EA3m v\xE0 tr\xED tu\u1EC7 c\u1EE7a nh\u1EEFng
+    ai d\xE1m \u0111\u01B0\u01A1ng \u0111\u1EA7u v\u1EDBi nh\u1EEFng s\u1EF1 thay
+    \u0111\u1ED5i \u0111\xE1ng s\u1EE3 c\u1EE7a th\u1EBF gi\u1EDBi t\u1EF1 nhi\xEAn.\r\n"
 --- !u!222 &1572155052
 CanvasRenderer:
   m_ObjectHideFlags: 0

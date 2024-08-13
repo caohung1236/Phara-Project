@@ -14361,7 +14361,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 546701833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 59d42f533b7add14a92701a34dbbe679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
@@ -14822,7 +14822,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617037564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -16299,7 +16299,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 167c79811d1db744b8469af8a8467e10, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13be90d4ac9365144be3b736bcbb19ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

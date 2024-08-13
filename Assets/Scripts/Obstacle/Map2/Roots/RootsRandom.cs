@@ -11,14 +11,14 @@ public class RootsRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        Invoke(nameof(Warning), 25f);
+        InvokeRepeating(nameof(Warning), 20f, 15f);
     }
 
     protected virtual void Update()
     {
     }
 
-    protected virtual void SpawnWaves()
+    protected virtual void SpawnRoots()
     {
         Vector3 spawnPos = new(rangeX, -rangeY, 0);
         Quaternion rotation = transform.rotation;
@@ -30,7 +30,6 @@ public class RootsRandom : OurMonoBehaviour
             isSpawning = true;
         }
         warningObject.SetActive(false);
-        Invoke(nameof(ResetSpawning), 30f);
         Debug.Log("Spawning...");
     }
 
@@ -44,6 +43,6 @@ public class RootsRandom : OurMonoBehaviour
         Vector3 spawnPos = new(0, -3, 0);
         warningObject.transform.position = spawnPos;
         warningObject.SetActive(true);
-        Invoke(nameof(SpawnWaves), 3f);
+        Invoke(nameof(SpawnRoots), 3f);
     }
 }

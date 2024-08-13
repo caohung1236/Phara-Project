@@ -889,7 +889,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7b7a802f1e99e81458bea8bcdc0aa798, type: 3}
-    m_FontSize: 52
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -903,29 +903,30 @@ MonoBehaviour:
   m_Text: "Phara l\xE0 m\u1ED9t c\xF4 g\xE1i 17 tu\u1ED5i, h\u1ECDc sinh trung h\u1ECDc.
     B\u1ED1 m\u1EB9 c\xF4 \u1EA5y \u0111\u1EC1u l\xE0 nh\u1EEFng nh\xE0 m\xF4i tr\u01B0\u1EDDng
     h\u1ECDc n\u1ED5i ti\u1EBFng v\xE0 ho\u1EA1t \u0111\u1ED9ng trong l\u0129nh v\u1EF1c
-    n\xE0y v\u1EDBi quy\u1EBFt t\xE2m. C\xF4 \u1EA5y tham gia ho\u1EA1t \u0111\u1ED9ng
-    t\xECnh nguy\u1EC7n b\u1EA3o v\u1EC7 m\xF4i tr\u01B0\u1EDDng. \u0110\u1ED1i v\u1EDBi
-    c\xF4 b\xE9, vi\u1EC7c b\u1EA3o v\u1EC7 m\xF4i tr\u01B0\u1EDDng l\xE0 \u0111i\u1EC1u
-    c\u1EA7n thi\u1EBFt v\xE0 quan tr\u1ECDng, v\xEC s\u1EF1 t\xE0n ph\xE1 m\xF4i
-    tr\u01B0\u1EDDng c\u1EE7a con ng\u01B0\u1EDDi \u0111ang g\xE2y ra nhi\u1EC1u
-    h\u1EADu qu\u1EA3 ti\xEAu c\u1EF1c cho tr\xE1i \u0111\u1EA5t. \u01AF\u1EDBc m\u01A1
-    c\u1EE7a c\xF4 \u1EA5y l\xE0 m\u1ED9t ng\xE0y vi\u1EC7c b\u1EA3o v\u1EC7 m\xF4i
-    tr\u01B0\u1EDDng kh\xF4ng c\xF2n l\xE0 v\u1EA5n \u0111\u1EC1 kh\xF3 kh\u0103n.
-    Hay n\xF3i c\xE1ch kh\xE1c, c\xF4 \u01B0\u1EDBc mong tr\xE1i \u0111\u1EA5t kh\xF4ng
-    c\xF2n b\u1ECB \xF4 nhi\u1EC5m m\xF4i tr\u01B0\u1EDDng. M\u1ED9t h\xF4m, khi
-    c\xF4 \u0111ang tham gia \u0111o\xE0n t\xECnh nguy\u1EC7n d\u1ECDn d\u1EB9p r\xE1c
-    th\u1EA3i c\u1EE7a kh\xE1ch du l\u1ECBch t\u1EA1i m\u1ED9t con s\xF4ng n\u1ED5i
-    ti\u1EBFng, m\u1ED9t tai n\u1EA1n x\u1EA3y ra. Khi c\xF4 t\u1EC9nh d\u1EADy,
-    c\xF4 th\u1EA5y m\xECnh \u1EDF m\u1ED9t n\u01A1i xa l\u1EA1. Khung c\u1EA3nh
-    xung quanh tuy\u1EC7t \u0111\u1EB9p v\u1EDBi ng\u1ECDn n\xFAi h\xF9ng v\u0129,
-    b\u1EA7u tr\u1EDDi \u0111\u1EA7y sao v\xE0 m\u1EB7t tr\u0103ng to l\u1EDBn chi\u1EBFu
-    s\xE1ng nh\u01B0 ban ng\xE0y. C\xF4 nh\u1EADn ra trang ph\u1EE5c v\xE0 ngo\u1EA1i
-    h\xECnh c\u1EE7a m\xECnh \u0111\xE3 thay \u0111\u1ED5i. L\xFAc \u0111\xF3, m\u1ED9t
-    gi\u1ECDng n\xF3i trong \u0111\u1EA7u c\xF4 xu\u1EA5t hi\u1EC7n. \u0110\xF3 l\xE0
-    Vahana, m\u1ED9t v\u1ECB th\u1EA7n c\u1EE7a th\u1EBF gi\u1EDBi n\xE0y, hi\u1EC7n
-    th\xE2n c\u1EE7a M\u1EB7t Tr\u0103ng Ihari, ng\u01B0\u1EDDi c\xF3 nhi\u1EC7m
-    v\u1EE5 soi r\u1ECDi v\xE0 d\u1EABn l\u1ED1i cho ng\u01B0\u1EDDi d\xE2n. Ch\xE0o
-    m\u1EEBng b\u1EA1n \u0111\u1EBFn v\u1EDBi th\u1EBF gi\u1EDBi n\xE0y, Phara! \U0001F319"
+    n\xE0y v\u1EDBi nhi\u1EC1u t\xE2m huy\u1EBFt. C\xF4 \u1EA5y tham gia ho\u1EA1t
+    \u0111\u1ED9ng t\xECnh nguy\u1EC7n b\u1EA3o v\u1EC7 m\xF4i tr\u01B0\u1EDDng.
+    \u0110\u1ED1i v\u1EDBi c\xF4 b\xE9, vi\u1EC7c b\u1EA3o v\u1EC7 m\xF4i tr\u01B0\u1EDDng
+    l\xE0 \u0111i\u1EC1u c\u1EA7n thi\u1EBFt v\xE0 quan tr\u1ECDng, v\xEC s\u1EF1
+    t\xE0n ph\xE1 m\xF4i tr\u01B0\u1EDDng c\u1EE7a con ng\u01B0\u1EDDi \u0111ang
+    g\xE2y ra nhi\u1EC1u h\u1EADu qu\u1EA3 ti\xEAu c\u1EF1c cho Tr\xE1i \u0110\u1EA5t.
+    \u01AF\u1EDBc m\u01A1 c\u1EE7a c\xF4 \u1EA5y l\xE0 m\u1ED9t ng\xE0y vi\u1EC7c
+    b\u1EA3o v\u1EC7 m\xF4i tr\u01B0\u1EDDng kh\xF4ng c\xF2n l\xE0 v\u1EA5n \u0111\u1EC1
+    kh\xF3 kh\u0103n. Hay n\xF3i c\xE1ch kh\xE1c, c\xF4 \u01B0\u1EDBc mong tr\xE1i
+    \u0111\u1EA5t kh\xF4ng c\xF2n b\u1ECB \xF4 nhi\u1EC5m m\xF4i tr\u01B0\u1EDDng.
+    M\u1ED9t h\xF4m, khi c\xF4 \u0111ang tham gia \u0111o\xE0n t\xECnh nguy\u1EC7n
+    d\u1ECDn d\u1EB9p r\xE1c th\u1EA3i c\u1EE7a kh\xE1ch du l\u1ECBch t\u1EA1i m\u1ED9t
+    con s\xF4ng n\u1ED5i ti\u1EBFng, m\u1ED9t tai n\u1EA1n x\u1EA3y ra. Khi c\xF4
+    t\u1EC9nh d\u1EADy, c\xF4 th\u1EA5y m\xECnh \u1EDF m\u1ED9t n\u01A1i xa l\u1EA1.
+    Khung c\u1EA3nh xung quanh tuy\u1EC7t \u0111\u1EB9p v\u1EDBi ng\u1ECDn n\xFAi
+    h\xF9ng v\u0129, b\u1EA7u tr\u1EDDi \u0111\u1EA7y sao v\xE0 m\u1EB7t tr\u0103ng
+    to l\u1EDBn chi\u1EBFu s\xE1ng nh\u01B0 ban ng\xE0y. C\xF4 nh\u1EADn ra trang
+    ph\u1EE5c v\xE0 ngo\u1EA1i h\xECnh c\u1EE7a m\xECnh \u0111\xE3 thay \u0111\u1ED5i.
+    L\xFAc \u0111\xF3, m\u1ED9t gi\u1ECDng n\xF3i trong \u0111\u1EA7u c\xF4 xu\u1EA5t
+    hi\u1EC7n. \u0110\xF3 l\xE0 Vahana, m\u1ED9t v\u1ECB th\u1EA7n c\u1EE7a th\u1EBF
+    gi\u1EDBi n\xE0y, hi\u1EC7n th\xE2n c\u1EE7a M\u1EB7t Tr\u0103ng Ihari, ng\u01B0\u1EDDi
+    c\xF3 nhi\u1EC7m v\u1EE5 soi r\u1ECDi v\xE0 d\u1EABn l\u1ED1i cho ng\u01B0\u1EDDi
+    d\xE2n. Ch\xE0o m\u1EEBng b\u1EA1n \u0111\u1EBFn v\u1EDBi th\u1EBF gi\u1EDBi
+    n\xE0y, Phara! \U0001F319"
 --- !u!222 &1572155052
 CanvasRenderer:
   m_ObjectHideFlags: 0
