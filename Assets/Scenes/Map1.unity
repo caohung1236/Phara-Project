@@ -14306,7 +14306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae742a5999b72842b2005c29284b413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 18
+  speed: 15
   direction: {x: -1, y: 0, z: 0}
 --- !u!1 &546979391
 GameObject:
@@ -16558,7 +16558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2e26c09589fe147a68e5d5f41fa0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 10
   direction: {x: -1, y: 0, z: 0}
 --- !u!1 &879414024
 GameObject:
@@ -18177,7 +18177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecefbebe18f1f454abb3eea992aa6a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 5
+  timeLimit: 15
   timeElapsed: 0
 --- !u!1 &1112313335
 GameObject:
@@ -18660,8 +18660,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00075320154, y: -0.0007152857}
-  m_Size: {x: 0.19569993, y: 0.096486166}
+  m_Offset: {x: -0.52587914, y: -0.18890654}
+  m_Size: {x: 0.56298023, y: 0.47287315}
   m_Direction: 1
 --- !u!4 &1176605905
 Transform:
@@ -43349,7 +43349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecefbebe18f1f454abb3eea992aa6a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 5
+  timeLimit: 15
   timeElapsed: 0
 --- !u!1 &1836939260
 GameObject:

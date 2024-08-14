@@ -70,7 +70,7 @@ public class PlayerDetect : OurMonoBehaviour
         {
             remainingTime -= Time.deltaTime;
 
-            if (remainingTime <= 0)
+            if (remainingTime < 0)
             {
                 bulletEffect.SetActive(false);
                 playerShooting.SetActive(false);

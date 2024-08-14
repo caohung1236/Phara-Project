@@ -5,7 +5,7 @@ using UnityEngine;
 public class MushroomRandom : OurMonoBehaviour
 {
     [SerializeField] protected bool isSpawning = false;
-    protected float rangeX = 33f;
+    protected float rangeX = 30f;
     protected float rangeY = 2.8f;
     protected override void Start()
     {
@@ -22,7 +22,7 @@ public class MushroomRandom : OurMonoBehaviour
 
     protected virtual void SpawnMushroom()
     {
-        Vector3 spawnPos = new(Random.Range(30, rangeX), -rangeY, 0);
+        Vector3 spawnPos = new(rangeX, -rangeY, 0);
         Quaternion rotation = transform.rotation;
         if (PlayerDetect.Instance.isGameOver == false)
         {
@@ -31,7 +31,7 @@ public class MushroomRandom : OurMonoBehaviour
             newMushroom.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 6f);
+        Invoke(nameof(ResetSpawning), 5f);
         Debug.Log("Spawning...");
     }
 

@@ -44,7 +44,8 @@ public abstract class Spawner : OurMonoBehaviour
         }
     }
 
-    public virtual Transform Spawn(string prefabName, Vector3 spawnPos, Quaternion rotation)
+    public virtual Transform Spawn(string prefabName, 
+    Vector3 spawnPos, Quaternion rotation)
     {
         Transform prefab = GetPrefabByName(prefabName);
         if (prefab == null)

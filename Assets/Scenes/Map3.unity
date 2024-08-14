@@ -41455,8 +41455,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49980,8 +49980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb5c04677b6c344898a9f792e524a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
-  direction: {x: 1, y: 0, z: 0}
 --- !u!1 &1709714699
 GameObject:
   m_ObjectHideFlags: 0
@@ -51800,8 +51798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb5c04677b6c344898a9f792e524a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
-  direction: {x: 1, y: 0, z: 0}
 --- !u!1 &1976125982
 GameObject:
   m_ObjectHideFlags: 0
@@ -58094,8 +58090,8 @@ MonoBehaviour:
   gemsText5: {fileID: 439166539}
   gemsText6: {fileID: 439166539}
   gemsText7: {fileID: 439166539}
-  slimesText: {fileID: 127743374}
-  slimesText3: {fileID: 439166539}
+  slimesText: {fileID: 1465025643}
+  slimesText3: {fileID: 127743374}
   knightsText: {fileID: 1595191856}
   goblinsText: {fileID: 1361002801}
   mushroomsText: {fileID: 1091481148}

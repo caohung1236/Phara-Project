@@ -121,12 +121,12 @@ public class GameManager : MonoBehaviour
 
     void CountGems()
     {
-        gemsText.text = $":{gemsCount}/7";
+        gemsText.text = $":{gemsCount}/3";
     }
 
     void CountGems2()
     {
-        gemsText2.text = $":{gemsCount2}/9";
+        gemsText2.text = $":{gemsCount2}/5";
     }
 
     void CountGems3()
@@ -151,27 +151,27 @@ public class GameManager : MonoBehaviour
 
     void CountSlimes()
     {
-        slimesText.text = $":{slimesCount}/7";
+        slimesText.text = $":{slimesCount}/3";
     }
 
     void CountKnights()
     {
-        knightsText.text = $":{knightsCount}/10";
+        knightsText.text = $":{knightsCount}/5";
     }
 
     void CountGoblins()
     {
-        goblinsText.text = $":{goblinsCount}/7";
+        goblinsText.text = $":{goblinsCount}/3";
     }
 
     void CountMushrooms()
     {
-        mushroomsText.text = $":{mushroomsCount}/10";
+        mushroomsText.text = $":{mushroomsCount}/5";
     }
 
     void CountBats()
     {
-        batsText.text = $":{batsCount}/3";
+        batsText.text = $":{batsCount}/2";
     }
 
     void CountCrab()
@@ -256,7 +256,7 @@ public class GameManager : MonoBehaviour
 
     void ConditionsMap1()
     {
-        if (gemsCount >= 7 && slimesCount >= 7 && knightsCount >= 10)
+        if (gemsCount >= 3 && slimesCount >= 3 && knightsCount >= 5)
         {
             levelChanger.SetActive(true);
         }
@@ -264,7 +264,7 @@ public class GameManager : MonoBehaviour
 
     void ConditionsMap2()
     {
-        if (gemsCount2 >= 9 && goblinsCount >= 7 && mushroomsCount >= 10 && batsCount >= 3)
+        if (gemsCount2 >= 5 && goblinsCount >= 5 && mushroomsCount >= 3 && batsCount >= 2)
         {
             levelChanger.SetActive(true);
         }

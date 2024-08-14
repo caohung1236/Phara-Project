@@ -10,14 +10,13 @@ public class CollectShieldRandom : OurMonoBehaviour
     protected override void Start()
     {
         base.Start();
+        InvokeRepeating(nameof(SpawnCollectible), 30f, 35f);
+
     }
 
     protected virtual void Update()
     {
-        if (!isSpawning)
-        {
-            SpawnCollectible();
-        }
+
     }
 
     protected virtual void SpawnCollectible()
@@ -33,7 +32,6 @@ public class CollectShieldRandom : OurMonoBehaviour
             newCollect.gameObject.SetActive(true);
             isSpawning = true;
         }
-        Invoke(nameof(ResetSpawning), 40f);
         Debug.Log("Spawning...");
     }
 

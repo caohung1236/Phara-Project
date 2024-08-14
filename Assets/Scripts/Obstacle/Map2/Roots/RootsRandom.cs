@@ -7,11 +7,11 @@ public class RootsRandom : OurMonoBehaviour
     [SerializeField] protected bool isSpawning = false;
     public GameObject warningObject;
     protected float rangeX = 0f;
-    protected float rangeY = 1.5f;
+    protected float rangeY = 2.3f;
     protected override void Start()
     {
         base.Start();
-        InvokeRepeating(nameof(Warning), 20f, 15f);
+        InvokeRepeating(nameof(Warning), 20f, 30f);
     }
 
     protected virtual void Update()
